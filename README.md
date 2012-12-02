@@ -18,15 +18,15 @@ Colorscheme is in early development stage, so this could serve as working previe
 
 ### Ruby
 
-![Screenshot](http://i.imgur.com/3Slq3.png)
+![Screenshot](http://i.imgur.com/as2Tr.png)
 
 ### C
 
-![Screenshot](http://i.imgur.com/mjMNe.png)
+![Screenshot](http://i.imgur.com/rvCBM.png)
 
 ### Vim
 
-![Screenshot](http://i.imgur.com/XqBj6.png)
+![Screenshot](http://i.imgur.com/SeSHg.png)
 
 ToDo
 ----
