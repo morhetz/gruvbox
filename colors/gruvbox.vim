@@ -1,7 +1,7 @@
 " Supporting code --------------------------------------------------------------
 " Initialisation {{{
 
-set background=dark
+"set background=dark
 
 if version > 580
     hi clear
@@ -29,27 +29,51 @@ endif
 
 let s:gb = {}
 
-let s:gb.dark0  = ['282828', 235]
-let s:gb.dark1  = ['3c3836', 237]
-let s:gb.dark2  = ['504945', 239]
-let s:gb.dark3  = ['665c54', 241]
-let s:gb.dark4  = ['7c6f64', 243]
+if &background == "dark"
+    let s:gb.dark0  = ['282828', 235]
+    let s:gb.dark1  = ['3c3836', 237]
+    let s:gb.dark2  = ['504945', 239]
+    let s:gb.dark3  = ['665c54', 241]
+    let s:gb.dark4  = ['7c6f64', 243]
 
-let s:gb.medium = ['928374', 245]
+    let s:gb.medium = ['928374', 245]
 
-let s:gb.light0 = ['fdf4c1', 247]
-let s:gb.light1 = ['ebdbb2', 223]
-let s:gb.light2 = ['d5c4a1', 251]
-let s:gb.light3 = ['bdae93', 253]
-let s:gb.light4 = ['a89984', 255]
+    let s:gb.light0 = ['fdf4c1', 247]
+    let s:gb.light1 = ['ebdbb2', 223]
+    let s:gb.light2 = ['d5c4a1', 251]
+    let s:gb.light3 = ['bdae93', 253]
+    let s:gb.light4 = ['a89984', 255]
 
-let s:gb.red    = ['fb4934', 167]
-let s:gb.orange = ['fe8019', 208]
-let s:gb.yellow = ['fabd2f', 214]
-let s:gb.green  = ['b8bb26', 142]
-let s:gb.aqua   = ['8ec07c', 108]
-let s:gb.blue   = ['83a598', 109]
-let s:gb.purple = ['d3869b', 175]
+    let s:gb.red    = ['fb4934', 167]
+    let s:gb.orange = ['fe8019', 208]
+    let s:gb.yellow = ['fabd2f', 214]
+    let s:gb.green  = ['b8bb26', 142]
+    let s:gb.aqua   = ['8ec07c', 108]
+    let s:gb.blue   = ['83a598', 109]
+    let s:gb.purple = ['d3869b', 175]
+else
+    let s:gb.dark0  = ['fdf4c1', 235]
+    let s:gb.dark1  = ['ebdbb2', 237]
+    let s:gb.dark2  = ['d5c4a1', 239]
+    let s:gb.dark3  = ['bdae93', 241]
+    let s:gb.dark4  = ['a89984', 243]
+
+    let s:gb.medium = ['928374', 245]
+
+    let s:gb.light0 = ['282828', 247]
+    let s:gb.light1 = ['3c3836', 223]
+    let s:gb.light2 = ['504945', 251]
+    let s:gb.light3 = ['665c54', 253]
+    let s:gb.light4 = ['7c6f64', 255]
+
+    let s:gb.red    = ['9d0006', 167]
+    let s:gb.orange = ['af3a03', 208]
+    let s:gb.yellow = ['b57614', 214]
+    let s:gb.green  = ['79740e', 142]
+    let s:gb.aqua   = ['427b58', 108]
+    let s:gb.blue   = ['076678', 109]
+    let s:gb.purple = ['8f3f71', 175]
+endif
 
 "}}}
 " Highlighting Function {{{
@@ -134,7 +158,7 @@ if version >= 700
     call s:HL('MatchParen', 'orange', 'dark3', 'bold')
 endif
 
-if version >= 730
+if version >= 703
     " Highlighted screen columns
     call s:HL('ColorColumn',  'none', 'dark1')
 
