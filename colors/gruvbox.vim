@@ -1,13 +1,21 @@
-" Supporting code --------------------------------------------------------------
+" -----------------------------------------------------------------------------
+" File: gruvbox.vim
+" Description: Retro groove color scheme for Vim
+" Author: morhetz <morhetz@gmail.com>
+" Source: https://github.com/morhetz/gruvbox
+" Last Modified: 6 Dec 2012
+" -----------------------------------------------------------------------------
+
+" Supporting code -------------------------------------------------------------
 " Initialisation {{{
 
 "set background=dark
 
 if version > 580
-    hi clear
-    if exists("syntax_on")
-        syntax reset
-    endif
+	hi clear
+	if exists("syntax_on")
+		syntax reset
+	endif
 endif
 
 let g:colors_name="gruvbox"
@@ -18,10 +26,10 @@ let g:colors_name="gruvbox"
 """ else
 """   let s:low_color = 1
 """ endif
-"}}}
+" }}}
 
 if !has("gui_running") && &t_Co != 88 && &t_Co != 256
-    finish
+	finish
 endif
 
 "}}}
@@ -30,110 +38,112 @@ endif
 let s:gb = {}
 
 if &background == "dark"
-    let s:gb.dark0  = ['282828', 235]
-    let s:gb.dark1  = ['3c3836', 237]
-    let s:gb.dark2  = ['504945', 239]
-    let s:gb.dark3  = ['665c54', 241]
-    let s:gb.dark4  = ['7c6f64', 243]
+	let s:gb.dark0  = ['282828', 235]
+	let s:gb.dark1  = ['3c3836', 237]
+	let s:gb.dark2  = ['504945', 239]
+	let s:gb.dark3  = ['665c54', 241]
+	let s:gb.dark4  = ['7c6f64', 243]
 
-    let s:gb.medium = ['928374', 245]
+	let s:gb.medium = ['928374', 245]
 
-    let s:gb.light0 = ['fdf4c1', 247]
-    let s:gb.light1 = ['ebdbb2', 223]
-    let s:gb.light2 = ['d5c4a1', 251]
-    let s:gb.light3 = ['bdae93', 253]
-    let s:gb.light4 = ['a89984', 255]
+	let s:gb.light0 = ['fdf4c1', 247]
+	let s:gb.light1 = ['ebdbb2', 223]
+	let s:gb.light2 = ['d5c4a1', 251]
+	let s:gb.light3 = ['bdae93', 253]
+	let s:gb.light4 = ['a89984', 255]
 
-    let s:gb.red    = ['fb4934', 167]
-    let s:gb.orange = ['fe8019', 208]
-    let s:gb.yellow = ['fabd2f', 214]
-    let s:gb.green  = ['b8bb26', 142]
-    let s:gb.aqua   = ['8ec07c', 108]
-    let s:gb.blue   = ['83a598', 109]
-    let s:gb.purple = ['d3869b', 175]
+	let s:gb.red    = ['fb4934', 167]
+	let s:gb.orange = ['fe8019', 208]
+	let s:gb.yellow = ['fabd2f', 214]
+	let s:gb.green  = ['b8bb26', 142]
+	let s:gb.aqua   = ['8ec07c', 108]
+	let s:gb.blue   = ['83a598', 109]
+	let s:gb.purple = ['d3869b', 175]
 else
-    let s:gb.dark0  = ['fdf4c1', 235]
-    let s:gb.dark1  = ['ebdbb2', 237]
-    let s:gb.dark2  = ['d5c4a1', 239]
-    let s:gb.dark3  = ['bdae93', 241]
-    let s:gb.dark4  = ['a89984', 243]
+	let s:gb.dark0  = ['fdf4c1', 235]
+	let s:gb.dark1  = ['ebdbb2', 237]
+	let s:gb.dark2  = ['d5c4a1', 239]
+	let s:gb.dark3  = ['bdae93', 241]
+	let s:gb.dark4  = ['a89984', 243]
 
-    let s:gb.medium = ['928374', 245]
+	let s:gb.medium = ['928374', 245]
 
-    let s:gb.light0 = ['282828', 247]
-    let s:gb.light1 = ['3c3836', 223]
-    let s:gb.light2 = ['504945', 251]
-    let s:gb.light3 = ['665c54', 253]
-    let s:gb.light4 = ['7c6f64', 255]
+	let s:gb.light0 = ['282828', 247]
+	let s:gb.light1 = ['3c3836', 223]
+	let s:gb.light2 = ['504945', 251]
+	let s:gb.light3 = ['665c54', 253]
+	let s:gb.light4 = ['7c6f64', 255]
 
-    let s:gb.red    = ['9d0006', 167]
-    let s:gb.orange = ['af3a03', 208]
-    let s:gb.yellow = ['b57614', 214]
-    let s:gb.green  = ['79740e', 142]
-    let s:gb.aqua   = ['427b58', 108]
-    let s:gb.blue   = ['076678', 109]
-    let s:gb.purple = ['8f3f71', 175]
+	let s:gb.red    = ['9d0006', 167]
+	let s:gb.orange = ['af3a03', 208]
+	let s:gb.yellow = ['b57614', 214]
+	let s:gb.green  = ['79740e', 142]
+	let s:gb.aqua   = ['427b58', 108]
+	let s:gb.blue   = ['076678', 109]
+	let s:gb.purple = ['8f3f71', 175]
 endif
 
-"}}}
+" }}}
 " Highlighting Function {{{
+
 function! s:HL(group, fg, ...)
-    " Arguments: group, guifg, guibg, gui, guisp
+	" Arguments: group, guifg, guibg, gui, guisp
 
-    let histring = 'hi ' . a:group . ' '
+	let histring = 'hi ' . a:group . ' '
 
-    if strlen(a:fg)
-        if a:fg == 'fg'
-            let histring .= 'guifg=fg ctermfg=fg '
-        elseif a:fg == 'bg'
-            let histring .= 'guifg=bg ctermfg=bg '
-        elseif a:fg == 'none'
-            let histring .= 'guifg=NONE ctermfg=NONE '
-        else
-            let c = get(s:gb, a:fg)
-            let histring .= 'guifg=#' . c[0] . ' ctermfg=' . c[1] . ' '
-        endif
-    endif
-
-    if a:0 >= 1 && strlen(a:1)
-        if a:1 == 'bg'
-            let histring .= 'guibg=bg ctermbg=bg '
-        elseif a:fg == 'fg'
-            let histring .= 'guibg=fg ctermbg=fg '
-        elseif a:1 == 'none'
-            let histring .= 'guibg=NONE ctermfg=NONE '
-        else
-            let c = get(s:gb, a:1)
-            let histring .= 'guibg=#' . c[0] . ' ctermbg=' . c[1] . ' '
-        endif
-    else
-        let histring .= 'guibg=NONE ctermbg=NONE '
-    endif
-
-    if a:0 >= 2 && strlen(a:2)
-        if a:2 == 'none'
-            let histring .= 'gui=NONE cterm=NONE '
-        else
-            let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
+	if strlen(a:fg)
+		if a:fg == 'fg'
+			let histring .= 'guifg=fg ctermfg=fg '
+		elseif a:fg == 'bg'
+			let histring .= 'guifg=bg ctermfg=bg '
+		elseif a:fg == 'none'
+			let histring .= 'guifg=NONE ctermfg=NONE '
+		else
+			let c = get(s:gb, a:fg)
+			let histring .= 'guifg=#' . c[0] . ' ctermfg=' . c[1] . ' '
+		endif
 	endif
-    else
-	let histring .= 'gui=NONE cterm=NONE '
-    endif
 
-    if a:0 >= 3 && strlen(a:3)
-        if a:3 == 'none'
-            let histring .= 'guisp=NONE '
+	if a:0 >= 1 && strlen(a:1)
+		if a:1 == 'bg'
+			let histring .= 'guibg=bg ctermbg=bg '
+		elseif a:fg == 'fg'
+			let histring .= 'guibg=fg ctermbg=fg '
+		elseif a:1 == 'none'
+			let histring .= 'guibg=NONE ctermfg=NONE '
+		else
+			let c = get(s:gb, a:1)
+			let histring .= 'guibg=#' . c[0] . ' ctermbg=' . c[1] . ' '
+		endif
 	else
-            let c = get(s:gb, a:3)
-            let histring .= 'guisp=#' . c[0] . ' '
+		let histring .= 'guibg=NONE ctermbg=NONE '
 	endif
-    endif
 
-    execute histring
+	if a:0 >= 2 && strlen(a:2)
+		if a:2 == 'none'
+			let histring .= 'gui=NONE cterm=NONE '
+		else
+			let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
+	endif
+	else
+		let histring .= 'gui=NONE cterm=NONE '
+	endif
+
+	if a:0 >= 3 && strlen(a:3)
+		if a:3 == 'none'
+			let histring .= 'guisp=NONE '
+		else
+			let c = get(s:gb, a:3)
+			let histring .= 'guisp=#' . c[0] . ' '
+		endif
+	endif
+
+	execute histring
 endfunction
+
 " }}}
 
-" Actual colorscheme -----------------------------------------------------------
+" Actual colorscheme ----------------------------------------------------------
 " Vanilla Vim {{{
 
 " General/UI {{{
@@ -142,31 +152,31 @@ endfunction
 call s:HL('Normal', 'light1', 'dark0')
 
 if version >= 700
-    " Screen line that the cursor is
-    call s:HL('CursorLine',   'none', 'dark1')
-    " Screen column that the cursor is
-    call s:HL('CursorColumn', 'none', 'dark1')
+	" Screen line that the cursor is
+	call s:HL('CursorLine',   'none', 'dark1')
+	" Screen column that the cursor is
+	call s:HL('CursorColumn', 'none', 'dark1')
 
-    " Tab pages line filler
-    call s:HL('TabLineFill', 'dark4', 'bg')
-    " Active tab page label
-    call s:HL('TabLineSel', 'bg', 'dark4', 'bold')
-    " Not active tab page label
-    call s:HL('TabLine', 'dark4', 'bg')
+	" Tab pages line filler
+	call s:HL('TabLineFill', 'dark4', 'bg')
+	" Active tab page label
+	call s:HL('TabLineSel', 'bg', 'dark4', 'bold')
+	" Not active tab page label
+	call s:HL('TabLine', 'dark4', 'bg')
 
-    " Match paired bracket under the cursor
-    call s:HL('MatchParen', 'orange', 'dark3', 'bold')
+	" Match paired bracket under the cursor
+	call s:HL('MatchParen', 'orange', 'dark3', 'bold')
 endif
 
 if version >= 703
-    " Highlighted screen columns
-    call s:HL('ColorColumn',  'none', 'dark1')
+	" Highlighted screen columns
+	call s:HL('ColorColumn',  'none', 'dark1')
 
-    " Concealed element: \lambda → λ"
-    call s:HL('Conceal', 'blue', 'none')"
+	" Concealed element: \lambda → λ"
+	call s:HL('Conceal', 'blue', 'none')"
 
-    " Line number of CursorLine 
-    call s:HL('CursorLineNr', 'yellow', 'dark1')
+	" Line number of CursorLine 
+	call s:HL('CursorLineNr', 'yellow', 'dark1')
 endif
 
 call s:HL('NonText',    'dark2')
@@ -297,14 +307,14 @@ call s:HL('Typedef', 'yellow')
 " Completion Menu {{{
 
 if version >= 700
-    " Popup menu: normal item
-    call s:HL('Pmenu', 'light1', 'dark2')
-    " Popup menu: selected item
-    call s:HL('PmenuSel', 'dark2', 'blue', 'bold')
-    " Popup menu: scrollbar
-    call s:HL('PmenuSbar', 'none', 'dark2')
-    " Popup menu: scrollbar thumb
-    call s:HL('PmenuThumb', 'none', 'dark4')
+	" Popup menu: normal item
+	call s:HL('Pmenu', 'light1', 'dark2')
+	" Popup menu: selected item
+	call s:HL('PmenuSel', 'dark2', 'blue', 'bold')
+	" Popup menu: scrollbar
+	call s:HL('PmenuSbar', 'none', 'dark2')
+	" Popup menu: scrollbar thumb
+	call s:HL('PmenuThumb', 'none', 'dark4')
 endif
 
 " }}}
@@ -323,22 +333,30 @@ call s:HL('DiffText',   'dark0', 'yellow')
 " Spelling {{{
 
 if has("spell")
-    " Not capitalised word
-    call s:HL('SpellCap',   'none', 'none', 'undercurl', 'red')
-    " Not recognized word
-    call s:HL('SpellBad',   'none', 'none', 'undercurl', 'blue')
-    " Wrong spelling for selected region
-    call s:HL('SpellLocal', 'none', 'none', 'undercurl', 'aqua')
-    " Rare word
-    call s:HL('SpellRare',  'none', 'none', 'undercurl', 'purple')
+	" Not capitalised word
+	call s:HL('SpellCap',   'none', 'none', 'undercurl', 'red')
+	" Not recognized word
+	call s:HL('SpellBad',   'none', 'none', 'undercurl', 'blue')
+	" Wrong spelling for selected region
+	call s:HL('SpellLocal', 'none', 'none', 'undercurl', 'aqua')
+	" Rare word
+	call s:HL('SpellRare',  'none', 'none', 'undercurl', 'purple')
 endif
 
 " }}}
 
 " }}}
 
+" Plugin specific -------------------------------------------------------------
+" EasyMotion {{{
+
+hi! def link EasyMotionTarget Search
+hi! def link EasyMotionShade Comment
+
+" }}}
+
 " Filetype specific -----------------------------------------------------------
-"{{{ Diff
+" Diff {{{
 
 call s:HL('diffAdded', 'green')
 call s:HL('diffRemoved', 'red')
@@ -349,4 +367,4 @@ call s:HL('diffNewFile', 'yellow')
 
 call s:HL('diffLine', 'blue')
 
-"}}}
+" }}}

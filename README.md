@@ -14,24 +14,38 @@ Designed as a bright theme with pastel 'retro groove' colors and light/dark mode
 Screenshots
 -----------
 
-Colorscheme is in early development stage, so this could serve as working preview.
+Color scheme is in early development stage, so this could serve as working preview.
 
-### Ruby
+### Dark mode
 
-![Screenshot](http://i.imgur.com/as2Tr.png)
+![Screenshot](http://i.imgur.com/2870c.png)
 
-### C
+### Ligth mode
 
-![Screenshot](http://i.imgur.com/rvCBM.png)
+![Screenshot](http://i.imgur.com/oS9I3.png)
 
-### Vim
+Usage
+-----
 
-![Screenshot](http://i.imgur.com/SeSHg.png)
+gruvbox comes in two modes, dark and light. To toggle between them with F5 you can add these to your .vimrc
+
+	map <F5> :call ToggleBg()<CR>
+	function! ToggleBg()
+		if &background == 'dark'
+			set bg=light
+		else
+			set bg=dark
+		endif
+	endfunc
+
+Just setting background to an appropriate value would work as well
+
+	set bg=dark    " Setting dark mode
+	set bg=light   " Setting light mode
 
 ToDo
 ----
 
-* Light mode
 * Terminal low-color mode (&lt;256)
 * More fyletype specific highlighting
 * Customizable options (overrides, background switch, etc.)
