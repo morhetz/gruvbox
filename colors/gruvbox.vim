@@ -7,7 +7,7 @@
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
-" Initialisation {{{
+" Initialisation: {{{
 
 "set background=dark
 
@@ -32,8 +32,8 @@ if !has("gui_running") && &t_Co != 88 && &t_Co != 256
 	finish
 endif
 
-"}}}
-" Palette {{{
+" }}}
+" Palette: {{{
 
 let s:gb = {}
 
@@ -84,7 +84,7 @@ else
 endif
 
 " }}}
-" Highlighting Function {{{
+" Highlighting Function: {{{
 
 function! s:HL(group, fg, ...)
 	" Arguments: group, guifg, guibg, gui, guisp
@@ -143,10 +143,9 @@ endfunction
 
 " }}}
 
-" Actual colorscheme ----------------------------------------------------------
-" Vanilla Vim {{{
+" Vanilla colorscheme ----------------------------------------------------------
 
-" General/UI {{{
+" General UI: {{{
 
 " Normal text
 call s:HL('Normal', 'light1', 'dark0')
@@ -165,7 +164,8 @@ if version >= 700
 	call s:HL('TabLine', 'dark4', 'bg')
 
 	" Match paired bracket under the cursor
-	call s:HL('MatchParen', 'orange', 'dark3', 'bold')
+"	call s:HL('MatchParen', 'orange', 'dark3', 'bold')
+	call s:HL('MatchParen', 'none', 'dark3', 'bold')
 endif
 
 if version >= 703
@@ -188,7 +188,7 @@ call s:HL('VisualNOS', 'none',  'dark3', 'inverse')
 call s:HL('Search',    'dark0', 'yellow')
 call s:HL('IncSearch', 'dark0', 'yellow')
 
-call s:HL('Underlined', 'blue', '', 'underline')
+call s:HL('Underlined', 'blue', 'none', 'underline')
 
 call s:HL('StatusLine',   'dark0', 'dark4', 'bold')
 call s:HL('StatusLineNC', 'light4', 'dark2', 'bold')
@@ -217,7 +217,7 @@ call s:HL('Question',   'orange', 'none', 'bold')
 call s:HL('WarningMsg', 'red', 'none', 'bold')
 
 " }}}
-" Gutter {{{
+" Gutter: {{{
 
 " Line number for :number and :# commands
 call s:HL('LineNr', 'dark4')
@@ -231,7 +231,7 @@ call s:HL('Folded', 'medium', 'dark1', 'italic')
 call s:HL('FoldColumn', 'medium', 'dark1')
 
 " }}}
-" Cursor {{{
+" Cursor: {{{
 
 " Character under cursor
 call s:HL('Cursor',  'none', 'none', 'inverse')
@@ -243,7 +243,7 @@ call s:HL('iCursor', 'none', 'none', 'inverse')
 call s:HL('lCursor', 'none', 'none', 'inverse')
 
 " }}}
-" Syntax highlighting {{{
+" Syntax Highlighting: {{{
 
 call s:HL('Special', 'orange')
 
@@ -304,7 +304,7 @@ call s:HL('Structure', 'aqua')
 call s:HL('Typedef', 'yellow')
 
 " }}}
-" Completion Menu {{{
+" Completion Menu: {{{
 
 if version >= 700
 	" Popup menu: normal item
@@ -318,7 +318,7 @@ if version >= 700
 endif
 
 " }}}
-" Diffs {{{
+" Diffs: {{{
 
 call s:HL('DiffDelete', 'dark0', 'red')
 call s:HL('DiffAdd',    'dark0', 'green')
@@ -330,7 +330,7 @@ call s:HL('DiffChange', 'dark0', 'aqua')
 call s:HL('DiffText',   'dark0', 'yellow')
 
 " }}}
-" Spelling {{{
+" Spelling: {{{
 
 if has("spell")
 	" Not capitalised word
@@ -345,18 +345,49 @@ endif
 
 " }}}
 
-" }}}
-
 " Plugin specific -------------------------------------------------------------
-" EasyMotion {{{
+" EasyMotion: {{{
 
 hi! def link EasyMotionTarget Search
 hi! def link EasyMotionShade Comment
 
 " }}}
+" Indent Guides: {{{
+
+let g:indent_guides_auto_colors = 0
+
+"call s:HL('IndentGuidesOdd', 'bg', 'dark2')
+"call s:HL('IndentGuidesEven', 'bg', 'dark1')
+
+call s:HL('IndentGuidesOdd', 'bg', 'dark2', 'inverse')
+call s:HL('IndentGuidesEven', 'bg', 'dark3', 'inverse')
+
+" }}}
+" Better Rainbow Parentheses: {{{
+
+let g:rbpt_colorpairs = [
+    \ ['brown',       '#458588'],
+    \ ['Darkblue',    '#b16286'],
+    \ ['darkgray',    '#cc241d'],
+    \ ['darkgreen',   '#d65d0e'],
+    \ ['darkcyan',    '#458588'],
+    \ ['darkred',     '#b16286'],
+    \ ['darkmagenta', '#cc241d'],
+    \ ['brown',       '#d65d0e'],
+    \ ['gray',        '#458588'],
+    \ ['black',       '#b16286'],
+    \ ['darkmagenta', '#cc241d'],
+    \ ['Darkblue',    '#d65d0e'],
+    \ ['darkgreen',   '#458588'],
+    \ ['darkcyan',    '#b16286'],
+    \ ['darkred',     '#cc241d'],
+    \ ['red',         '#d65d0e'],
+    \ ]
+
+"}}}
 
 " Filetype specific -----------------------------------------------------------
-" Diff {{{
+" Diff: {{{
 
 call s:HL('diffAdded', 'green')
 call s:HL('diffRemoved', 'red')
@@ -366,5 +397,52 @@ call s:HL('diffFile', 'orange')
 call s:HL('diffNewFile', 'yellow')
 
 call s:HL('diffLine', 'blue')
+
+" }}}
+" Html: {{{
+
+call s:HL('htmlTag', 'blue')
+call s:HL('htmlEndTag', 'blue')
+
+call s:HL('htmlTagName', 'aqua', '', 'bold')
+call s:HL('htmlArg', 'aqua')
+
+call s:HL('htmlScriptTag', 'purple')
+call s:HL('htmlTagN', 'light1')
+call s:HL('htmlSpecialTagName', 'aqua', '', 'bold')
+
+call s:HL('htmlLink', 'light4', '', 'underline')
+
+call s:HL('htmlSpecialChar', 'orange')
+
+" }}}
+" Vim: {{{
+
+call s:HL('vimCommentTitle', 'light4', '', 'bold,italic')
+
+"hi! def link vimVar Identifier
+"hi! def link vimFunc Function
+"hi! def link vimUserFunc Function
+
+
+"call s:HL('vimUserFunc', 'green', '', 'bold')
+"call s:HL('vimFunction', 'green', '', 'bold')
+
+"call s:HL('vimFunc', 'blue')
+"call s:HL('vimFuncName', 'blue')
+
+"call s:HL('vimVar', 'purple')
+"call s:HL('vimIsCommand', 'purple')
+
+
+"call s:HL('vimMapMod', 'purple', '', 'bold,italic')
+"call s:HL('vimMapModKey', 'purple', '', 'bold,italic')
+
+"call s:HL('vimFunction', 'purple')
+"call s:HL('vimUserFunc', 'purple')
+"call s:HL('vimUserFunc', 'purple')
+
+"hi! def link vimFunc Function
+"hi! def link vimUserFunc Function
 
 " }}}
