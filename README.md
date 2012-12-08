@@ -3,13 +3,13 @@ gruvbox
 
 Retro groove color scheme for Vim.
 
-Gruvbox is heavily inspired by [badwolf][], [jellybeans][] and [solarized][].
+Gruvbox is heavily inspired by [badwolf][1], [jellybeans][2] and [solarized][3].
 
-Designed as a bright theme with pastel 'retro groove' colors and light/dark mode switching in the way of [solarized][]. The main focus when developing Gruvbox is to keep colors easily distinguishable, contrast enough and still pleasant for the eyes.
+Designed as a bright theme with pastel 'retro groove' colors and light/dark mode switching in the way of [solarized][3]. The main focus when developing Gruvbox is to keep colors easily distinguishable, contrast enough and still pleasant for the eyes.
 
-   [badwolf]: https://github.com/sjl/badwolf
-   [jellybeans]: https://github.com/nanotech/jellybeans.vim
-   [solarized]: http://ethanschoonover.com/solarized
+   [1]: https://github.com/sjl/badwolf
+   [2]: https://github.com/nanotech/jellybeans.vim
+   [3]: http://ethanschoonover.com/solarized
 
 Screenshots
 -----------
@@ -23,6 +23,16 @@ Color scheme is in early development stage, so this could serve as working previ
 ### Ligth mode
 
 ![Screenshot](http://i.imgur.com/oS9I3.png)
+
+Features
+--------
+
+* Distraction-free HTML highlighting
+* Hand-tuned plugin-specific highlighting for [EasyMotion][4], [Better Rainbow Parentheses][5] and [Indent Guides][6]
+
+   [4]: https://github.com/Lokaltog/vim-easymotion
+   [5]: https://github.com/kien/rainbow_parentheses.vim
+   [6]: https://github.com/nathanaelkane/vim-indent-guides
 
 Usage
 -----
