@@ -20,7 +20,7 @@ Color scheme is in early development stage, so this could serve as working previ
 
 ![Screenshot](http://i.imgur.com/2870c.png)
 
-### Ligth mode
+### Light mode
 
 ![Screenshot](http://i.imgur.com/oS9I3.png)
 
