@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 9 Dec 2012
+" Last Modified: 11 Oct 2013
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -20,16 +20,40 @@ endif
 
 let g:colors_name="gruvbox"
 
-" To be done {{{
-""" if has("gui_running") || &t_Co == 88 || &t_Co == 256
-"""   let s:low_color = 0
-""" else
-"""   let s:low_color = 1
-""" endif
-" }}}
-
-if !has("gui_running") && &t_Co != 88 && &t_Co != 256
+if !has("gui_running") && &t_Co != 256
 	finish
+endif
+
+" }}}
+" Global settings: {{{
+
+if !exists("g:gruvbox_bold")
+	let g:gruvbox_bold=1
+endif
+if !exists("g:gruvbox_italic")
+	let g:gruvbox_italic=1
+endif
+if !exists("g:gruvbox_underline")
+	let g:gruvbox_underline=1
+endif
+
+if !exists("g:gruvbox_italicize_comments")
+	let g:gruvbox_italicize_comments=1
+endif
+if !exists("g:gruvbox_italicize_strings")
+	let g:gruvbox_italicize_strings=0
+endif
+
+if !exists("g:gruvbox_termcolors")
+	let g:gruvbox_termcolors=256
+endif
+
+if !exists("g:gruvbox_invert_indent_guides")
+	let g:gruvbox_invert_indent_guides=0
+endif
+
+if !exists("g:gruvbox_hls_cursor")
+	let g:gruvbox_hls_cursor="orange"
 endif
 
 " }}}
@@ -38,49 +62,75 @@ endif
 let s:gb = {}
 
 if &background == "dark"
-	let s:gb.dark0  = ['282828', 235]
-	let s:gb.dark1  = ['3c3836', 237]
-	let s:gb.dark2  = ['504945', 239]
-	let s:gb.dark3  = ['665c54', 241]
-	let s:gb.dark4  = ['7c6f64', 243]
+	let s:gb.dark0  = ['282828', 235]     " 40-40-40
+	let s:gb.dark1  = ['3c3836', 237]     " 60-56-54
+	let s:gb.dark2  = ['504945', 239]     " 80-73-69
+	let s:gb.dark3  = ['665c54', 241]     " 102-92-84
+	let s:gb.dark4  = ['7c6f64', 243]     " 124-111-100
 
-	let s:gb.medium = ['928374', 245]
+	let s:gb.medium = ['928374', 245]     " 146-131-116
 
-	let s:gb.light0 = ['fdf4c1', 247]
-	let s:gb.light1 = ['ebdbb2', 223]
-	let s:gb.light2 = ['d5c4a1', 251]
-	let s:gb.light3 = ['bdae93', 253]
-	let s:gb.light4 = ['a89984', 255]
+	let s:gb.light0 = ['fdf4c1', 229]     " 253-244-193
+	let s:gb.light1 = ['ebdbb2', 223]     " 235-219-178
+	let s:gb.light2 = ['d5c4a1', 250]     " 213-196-161
+	let s:gb.light3 = ['bdae93', 248]     " 189-174-147
+	let s:gb.light4 = ['a89984', 246]     " 168-153-132
 
-	let s:gb.red    = ['fb4934', 167]
-	let s:gb.orange = ['fe8019', 208]
-	let s:gb.yellow = ['fabd2f', 214]
-	let s:gb.green  = ['b8bb26', 142]
-	let s:gb.aqua   = ['8ec07c', 108]
-	let s:gb.blue   = ['83a598', 109]
-	let s:gb.purple = ['d3869b', 175]
+	let s:gb.red    = ['fb4934', 167]     " 251-73-52
+	let s:gb.green  = ['b8bb26', 142]     " 184-187-38
+	let s:gb.yellow = ['fabd2f', 214]     " 250-189-47
+	let s:gb.blue   = ['83a598', 109]     " 131-165-152
+	let s:gb.purple = ['d3869b', 175]     " 211-134-155
+	let s:gb.aqua   = ['8ec07c', 108]     " 142-192-124
+	let s:gb.orange = ['fe8019', 208]     " 254-128-25
+
+	if g:gruvbox_termcolors == 16
+		let s:gb.dark0  = ['282828', 0]
+		let s:gb.light4 = ['a89984', 7]
+		let s:gb.medium = ['928374', 8]
+		let s:gb.red    = ['fb4934', 9]
+		let s:gb.green  = ['b8bb26', 10]
+		let s:gb.yellow = ['fabd2f', 11]
+		let s:gb.blue   = ['83a598', 12]
+		let s:gb.purple = ['d3869b', 13]
+		let s:gb.aqua   = ['8ec07c', 14]
+		let s:gb.light1 = ['ebdbb2', 15]
+	endif
 else
-	let s:gb.dark0  = ['fdf4c1', 235]
-	let s:gb.dark1  = ['ebdbb2', 237]
-	let s:gb.dark2  = ['d5c4a1', 239]
-	let s:gb.dark3  = ['bdae93', 241]
-	let s:gb.dark4  = ['a89984', 243]
+	let s:gb.dark0  = ['fdf4c1', 229]     " 253-244-193
+	let s:gb.dark1  = ['ebdbb2', 223]     " 235-219-178
+	let s:gb.dark2  = ['d5c4a1', 250]     " 213-196-161
+	let s:gb.dark3  = ['bdae93', 248]     " 189-174-147
+	let s:gb.dark4  = ['a89984', 246]     " 168-153-132
 
-	let s:gb.medium = ['928374', 245]
+	let s:gb.medium = ['928374', 244]     " 146-131-116
 
-	let s:gb.light0 = ['282828', 247]
-	let s:gb.light1 = ['3c3836', 223]
-	let s:gb.light2 = ['504945', 251]
-	let s:gb.light3 = ['665c54', 253]
-	let s:gb.light4 = ['7c6f64', 255]
+	let s:gb.light0 = ['282828', 235]     " 40-40-40
+	let s:gb.light1 = ['3c3836', 237]     " 60-56-54
+	let s:gb.light2 = ['504945', 239]     " 80-73-69
+	let s:gb.light3 = ['665c54', 241]     " 102-92-84
+	let s:gb.light4 = ['7c6f64', 243]     " 124-111-100
 
-	let s:gb.red    = ['9d0006', 167]
-	let s:gb.orange = ['af3a03', 208]
-	let s:gb.yellow = ['b57614', 214]
-	let s:gb.green  = ['79740e', 142]
-	let s:gb.aqua   = ['427b58', 108]
-	let s:gb.blue   = ['076678', 109]
-	let s:gb.purple = ['8f3f71', 175]
+	let s:gb.red    = ['9d0006', 88]      " 157-0-6
+	let s:gb.green  = ['79740e', 100]     " 121-116-14
+	let s:gb.yellow = ['b57614', 136]     " 181-118-20
+	let s:gb.blue   = ['076678', 24]      " 7-102-120
+	let s:gb.purple = ['8f3f71', 96]      " 143-63-113
+	let s:gb.aqua   = ['427b58', 66]      " 66-123-88
+	let s:gb.orange = ['af3a03', 130]     " 175-58-3
+
+	if g:gruvbox_termcolors == 16
+		let s:gb.dark0  = ['fdf4c1', 0]
+		let s:gb.light4 = ['7c6f64', 7]
+		let s:gb.medium = ['928374', 8]
+		let s:gb.red    = ['9d0006', 9]
+		let s:gb.green  = ['79740e', 10]
+		let s:gb.yellow = ['b57614', 11]
+		let s:gb.blue   = ['076678', 12]
+		let s:gb.purple = ['8f3f71', 13]
+		let s:gb.aqua   = ['427b58', 14]
+		let s:gb.light1 = ['3c3836', 15]
+	endif
 endif
 
 " }}}
@@ -110,7 +160,7 @@ function! s:HL(group, fg, ...)
 		elseif a:fg == 'fg'
 			let histring .= 'guibg=fg ctermbg=fg '
 		elseif a:1 == 'none'
-			let histring .= 'guibg=NONE ctermfg=NONE '
+			let histring .= 'guibg=NONE ctermbg=NONE '
 		else
 			let c = get(s:gb, a:1)
 			let histring .= 'guibg=#' . c[0] . ' ctermbg=' . c[1] . ' '
@@ -122,9 +172,27 @@ function! s:HL(group, fg, ...)
 	if a:0 >= 2 && strlen(a:2)
 		if a:2 == 'none'
 			let histring .= 'gui=NONE cterm=NONE '
+		elseif a:2 == 'italic' && g:gruvbox_italic == 0
+			let histring .= 'gui=NONE cterm=NONE '
+		elseif a:2 == 'bold' && g:gruvbox_bold == 0
+			let histring .= 'gui=NONE cterm=NONE '
+		elseif a:2 == 'bold,inverse' && g:gruvbox_bold == 0
+			let histring .= 'gui=inverse cterm=inverse '
+		elseif a:2 == 'underline' && g:gruvbox_underline == 0
+			let histring .= 'gui=NONE cterm=NONE '
+		elseif a:2 == 'bold,italic'
+			if g:gruvbox_italic == 0 && g:gruvbox_bold == 0
+				let histring .= 'gui=NONE cterm=NONE '
+			elseif g:gruvbox_italic == 0
+				let histring .= 'gui=bold cterm=bold '
+			elseif g:gruvbox_bold == 0
+				let histring .= 'gui=italic cterm=italic '
+			else
+				let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
+			endif
 		else
 			let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
-	endif
+		endif
 	else
 		let histring .= 'gui=NONE cterm=NONE '
 	endif
@@ -143,8 +211,7 @@ endfunction
 
 " }}}
 
-" Vanilla colorscheme ----------------------------------------------------------
-
+" Vanilla colorscheme ---------------------------------------------------------
 " General UI: {{{
 
 " Normal text
@@ -164,7 +231,6 @@ if version >= 700
 	call s:HL('TabLine', 'dark4', 'bg')
 
 	" Match paired bracket under the cursor
-"	call s:HL('MatchParen', 'orange', 'dark3', 'bold')
 	call s:HL('MatchParen', 'none', 'dark3', 'bold')
 endif
 
@@ -173,9 +239,9 @@ if version >= 703
 	call s:HL('ColorColumn',  'none', 'dark1')
 
 	" Concealed element: \lambda → λ"
-	call s:HL('Conceal', 'blue', 'none')"
+	call s:HL('Conceal', 'blue', 'none')
 
-	" Line number of CursorLine 
+	" Line number of CursorLine
 	call s:HL('CursorLineNr', 'yellow', 'dark1')
 endif
 
@@ -190,8 +256,8 @@ call s:HL('IncSearch', 'dark0', 'yellow')
 
 call s:HL('Underlined', 'blue', 'none', 'underline')
 
-call s:HL('StatusLine',   'dark0', 'dark4', 'bold')
-call s:HL('StatusLineNC', 'light4', 'dark2', 'bold')
+call s:HL('StatusLine',   'dark4', 'dark0', 'bold,inverse')
+call s:HL('StatusLineNC', 'dark2', 'light4', 'bold,inverse')
 
 " The column separating vertically split windows
 call s:HL('VertSplit', 'light4', 'dark2')
@@ -234,7 +300,7 @@ call s:HL('FoldColumn', 'medium', 'dark1')
 " Cursor: {{{
 
 " Character under cursor
-call s:HL('Cursor',  'none', 'none', 'inverse')
+call s:HL('Cursor', 'none', 'none', 'inverse')
 " Visual mode cursor, selection
 call s:HL('vCursor', 'none', 'none', 'inverse')
 " Input moder cursor
@@ -246,9 +312,12 @@ call s:HL('lCursor', 'none', 'none', 'inverse')
 " Syntax Highlighting: {{{
 
 call s:HL('Special', 'orange')
-
-call s:HL('Comment', 'medium', 'none', 'italic')
-call s:HL('Todo',    'fg', 'bg', 'bold')
+if g:gruvbox_italicize_comments == 0
+	call s:HL('Comment', 'medium', 'none')
+else
+	call s:HL('Comment', 'medium', 'none', 'italic')
+endif
+call s:HL('Todo', 'fg', 'bg', 'bold')
 
 " Generic statement
 call s:HL('Statement',   'red')
@@ -286,7 +355,11 @@ call s:HL('Constant',  'purple')
 " Character constant: 'c', '/n'
 call s:HL('Character', 'purple')
 " String constant: "this is a string"
-call s:HL('String',    'green')
+if g:gruvbox_italicize_strings == 0
+	call s:HL('String',  'green')
+else
+	call s:HL('String',  'green', 'none', 'italic')
+endif
 " Boolean constant: TRUE, false
 call s:HL('Boolean',   'purple')
 " Number constant: 234, 0xff
@@ -356,33 +429,35 @@ hi! def link EasyMotionShade Comment
 
 let g:indent_guides_auto_colors = 0
 
-"call s:HL('IndentGuidesOdd', 'bg', 'dark2')
-"call s:HL('IndentGuidesEven', 'bg', 'dark1')
-
-call s:HL('IndentGuidesOdd', 'bg', 'dark2', 'inverse')
-call s:HL('IndentGuidesEven', 'bg', 'dark3', 'inverse')
+if g:gruvbox_invert_indent_guides == 0
+	call s:HL('IndentGuidesOdd', 'bg', 'dark2')
+	call s:HL('IndentGuidesEven', 'bg', 'dark1')
+else
+	call s:HL('IndentGuidesOdd', 'bg', 'dark2', 'inverse')
+	call s:HL('IndentGuidesEven', 'bg', 'dark3', 'inverse')
+endif
 
 " }}}
 " Better Rainbow Parentheses: {{{
 
 let g:rbpt_colorpairs = [
-    \ ['brown',       '#458588'],
-    \ ['Darkblue',    '#b16286'],
-    \ ['darkgray',    '#cc241d'],
-    \ ['darkgreen',   '#d65d0e'],
-    \ ['darkcyan',    '#458588'],
-    \ ['darkred',     '#b16286'],
-    \ ['darkmagenta', '#cc241d'],
-    \ ['brown',       '#d65d0e'],
-    \ ['gray',        '#458588'],
-    \ ['black',       '#b16286'],
-    \ ['darkmagenta', '#cc241d'],
-    \ ['Darkblue',    '#d65d0e'],
-    \ ['darkgreen',   '#458588'],
-    \ ['darkcyan',    '#b16286'],
-    \ ['darkred',     '#cc241d'],
-    \ ['red',         '#d65d0e'],
-    \ ]
+	\ ['brown',       '#458588'],
+	\ ['Darkblue',    '#b16286'],
+	\ ['darkgray',    '#cc241d'],
+	\ ['darkgreen',   '#d65d0e'],
+	\ ['darkcyan',    '#458588'],
+	\ ['darkred',     '#b16286'],
+	\ ['darkmagenta', '#cc241d'],
+	\ ['brown',       '#d65d0e'],
+	\ ['gray',        '#458588'],
+	\ ['black',       '#b16286'],
+	\ ['darkmagenta', '#cc241d'],
+	\ ['Darkblue',    '#d65d0e'],
+	\ ['darkgreen',   '#458588'],
+	\ ['darkcyan',    '#b16286'],
+	\ ['darkred',     '#cc241d'],
+	\ ['red',         '#d65d0e'],
+	\ ]
 
 "}}}
 
@@ -404,29 +479,33 @@ call s:HL('diffLine', 'blue')
 call s:HL('htmlTag', 'blue')
 call s:HL('htmlEndTag', 'blue')
 
-call s:HL('htmlTagName', 'aqua', '', 'bold')
+call s:HL('htmlTagName', 'aqua', 'none', 'bold')
 call s:HL('htmlArg', 'aqua')
 
 call s:HL('htmlScriptTag', 'purple')
 call s:HL('htmlTagN', 'light1')
-call s:HL('htmlSpecialTagName', 'aqua', '', 'bold')
+call s:HL('htmlSpecialTagName', 'aqua', 'none', 'bold')
 
-call s:HL('htmlLink', 'light4', '', 'underline')
+call s:HL('htmlLink', 'light4', 'none', 'underline')
 
 call s:HL('htmlSpecialChar', 'orange')
 
 " }}}
 " Vim: {{{
 
-call s:HL('vimCommentTitle', 'light4', '', 'bold,italic')
+if g:gruvbox_italicize_comments == 0
+	call s:HL('vimCommentTitle', 'light3', 'none', 'bold')
+else
+	call s:HL('vimCommentTitle', 'light3', 'none', 'bold,italic')
+endif
 
 "hi! def link vimVar Identifier
 "hi! def link vimFunc Function
 "hi! def link vimUserFunc Function
 
 
-"call s:HL('vimUserFunc', 'green', '', 'bold')
-"call s:HL('vimFunction', 'green', '', 'bold')
+"call s:HL('vimUserFunc', 'green', 'none', 'bold')
+"call s:HL('vimFunction', 'green', 'none', 'bold')
 
 "call s:HL('vimFunc', 'blue')
 "call s:HL('vimFuncName', 'blue')
@@ -435,8 +514,8 @@ call s:HL('vimCommentTitle', 'light4', '', 'bold,italic')
 "call s:HL('vimIsCommand', 'purple')
 
 
-"call s:HL('vimMapMod', 'purple', '', 'bold,italic')
-"call s:HL('vimMapModKey', 'purple', '', 'bold,italic')
+"call s:HL('vimMapMod', 'purple', 'none', 'bold,italic')
+"call s:HL('vimMapModKey', 'purple', 'none', 'bold,italic')
 
 "call s:HL('vimFunction', 'purple')
 "call s:HL('vimUserFunc', 'purple')
@@ -444,5 +523,34 @@ call s:HL('vimCommentTitle', 'light4', '', 'bold,italic')
 
 "hi! def link vimFunc Function
 "hi! def link vimUserFunc Function
+
+" }}}
+
+" Functions -------------------------------------------------------------------
+" Search Highlighting {{{
+
+function! gruvbox#hls_show()
+	set hlsearch
+	call s:HL('Cursor', 'dark0', g:gruvbox_hls_cursor)
+	call s:HL('vCursor', 'dark0', g:gruvbox_hls_cursor)
+	call s:HL('iCursor', 'dark0', g:gruvbox_hls_cursor)
+	call s:HL('lCursor', 'dark0', g:gruvbox_hls_cursor)
+endfunction
+
+function! gruvbox#hls_hide()
+	set nohlsearch
+	call s:HL('Cursor', 'none', 'none', 'inverse')
+	call s:HL('vCursor', 'none', 'none', 'inverse')
+	call s:HL('iCursor', 'none', 'none', 'inverse')
+	call s:HL('lCursor', 'none', 'none', 'inverse')
+endfunction
+
+function! gruvbox#hls_toggle()
+	if &hlsearch
+		call gruvbox#hls_hide()
+	else
+		call gruvbox#hls_show()
+	endif
+endfunction
 
 " }}}
