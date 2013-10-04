@@ -76,6 +76,8 @@ if &background == "dark"
 	let s:gb.light3 = ['bdae93', 248]     " 189-174-147
 	let s:gb.light4 = ['a89984', 246]     " 168-153-132
 
+	let s:gb.light4_256 = ['a89984', 246] " 168-153-132
+
 	let s:gb.red    = ['fb4934', 167]     " 251-73-52
 	let s:gb.green  = ['b8bb26', 142]     " 184-187-38
 	let s:gb.yellow = ['fabd2f', 214]     " 250-189-47
@@ -110,6 +112,8 @@ else
 	let s:gb.light2 = ['504945', 239]     " 80-73-69
 	let s:gb.light3 = ['665c54', 241]     " 102-92-84
 	let s:gb.light4 = ['7c6f64', 243]     " 124-111-100
+
+	let s:gb.light4_256 = ['7c6f64', 243] " 124-111-100
 
 	let s:gb.red    = ['9d0006', 88]      " 157-0-6
 	let s:gb.green  = ['79740e', 100]     " 121-116-14
@@ -494,9 +498,9 @@ call s:HL('htmlSpecialChar', 'orange')
 " Vim: {{{
 
 if g:gruvbox_italicize_comments == 0
-	call s:HL('vimCommentTitle', 'light3', 'none', 'bold')
+	call s:HL('vimCommentTitle', 'light4_256', 'none', 'bold')
 else
-	call s:HL('vimCommentTitle', 'light3', 'none', 'bold,italic')
+	call s:HL('vimCommentTitle', 'light4_256', 'none', 'bold,italic')
 endif
 
 "hi! def link vimVar Identifier
@@ -528,6 +532,14 @@ endif
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting {{{
+
+function! gruvbox#bg_toggle()
+	if &background == 'dark'
+		set bg=light
+	else
+		set bg=dark
+	endif
+endfunction
 
 function! gruvbox#hls_show()
 	set hlsearch
