@@ -542,6 +542,34 @@ endif
 "hi! def link vimUserFunc Function
 
 " }}}
+" Clojure: {{{
+call s:HL('clojureKeyword', 'blue')
+call s:HL('clojureCond', 'orange')
+call s:HL('clojureSpecial', 'orange')
+call s:HL('clojureDefine', 'orange')
+
+call s:HL('clojureFunc', 'yellow')
+call s:HL('clojureRepeat', 'yellow')
+call s:HL('clojureCharacter', 'aqua')
+call s:HL('clojureStringEscape', 'aqua')
+call s:HL('clojureException', 'red')
+
+call s:HL('clojureRegexp', 'aqua')
+call s:HL('clojureRegexpEscape', 'aqua')
+call s:HL('clojureRegexpCharClass', 'light3', 'none', 'bold')
+call s:HL('clojureRegexpMod', 'light3', 'none', 'bold')
+call s:HL('clojureRegexpQuantifier', 'light3', 'none', 'bold')
+
+call s:HL('clojureParen', 'light3')
+call s:HL('clojureAnonArg', 'yellow')
+call s:HL('clojureVariable', 'blue')
+call s:HL('clojureMacro', 'orange')
+
+call s:HL('clojureMeta', 'yellow')
+call s:HL('clojureDeref', 'yellow')
+call s:HL('clojureQuote', 'yellow')
+call s:HL('clojureUnquote', 'yellow')
+" }}}
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting {{{
