@@ -9,8 +9,6 @@
 " Supporting code -------------------------------------------------------------
 " Initialisation: {{{
 
-"set background=dark
-
 if version > 580
 	hi clear
 	if exists("syntax_on")
@@ -18,42 +16,48 @@ if version > 580
 	endif
 endif
 
-let g:colors_name="gruvbox"
+let g:colors_name='gruvbox'
 
-if !has("gui_running") && &t_Co != 256
+if !has('gui_running') && &t_Co != 256
 	finish
 endif
 
 " }}}
 " Global settings: {{{
 
-if !exists("g:gruvbox_bold")
+if !exists('g:gruvbox_bold')
 	let g:gruvbox_bold=1
 endif
-if !exists("g:gruvbox_italic")
+if !exists('g:gruvbox_italic')
 	let g:gruvbox_italic=1
 endif
-if !exists("g:gruvbox_underline")
+if !exists('g:gruvbox_underline')
 	let g:gruvbox_underline=1
 endif
 
-if !exists("g:gruvbox_italicize_comments")
+if !exists('g:gruvbox_italicize_comments')
 	let g:gruvbox_italicize_comments=1
 endif
-if !exists("g:gruvbox_italicize_strings")
+if !exists('g:gruvbox_italicize_strings')
 	let g:gruvbox_italicize_strings=0
 endif
 
-if !exists("g:gruvbox_termcolors")
+if !exists('g:gruvbox_termcolors')
 	let g:gruvbox_termcolors=256
 endif
 
-if !exists("g:gruvbox_invert_indent_guides")
+if !exists('g:gruvbox_invert_indent_guides')
 	let g:gruvbox_invert_indent_guides=0
 endif
 
-if !exists("g:gruvbox_hls_cursor")
-	let g:gruvbox_hls_cursor="orange"
+if !exists('g:gruvbox_hls_cursor')
+	let g:gruvbox_hls_cursor='orange'
+endif
+
+if &background == 'light'
+	let s:gruvbox_background='light'
+else
+	let s:gruvbox_background='dark'
 endif
 
 " }}}
@@ -61,7 +65,7 @@ endif
 
 let s:gb = {}
 
-if &background == "dark"
+if &background == 'dark'
 	let s:gb.dark0  = ['282828', 235]     " 40-40-40
 	let s:gb.dark1  = ['3c3836', 237]     " 60-56-54
 	let s:gb.dark2  = ['504945', 239]     " 80-73-69
@@ -221,6 +225,15 @@ endfunction
 " Normal text
 call s:HL('Normal', 'light1', 'dark0')
 
+" Correct background (see issue #7):
+" --- Problem with changing between dark and light on 256 color terminal
+" --- https://github.com/morhetz/gruvbox/issues/7
+if s:gruvbox_background == 'light'
+	set background=light
+else
+	set background=dark
+endif
+
 if version >= 700
 	" Screen line that the cursor is
 	call s:HL('CursorLine',   'none', 'dark1')
@@ -242,7 +255,7 @@ if version >= 703
 	" Highlighted screen columns
 	call s:HL('ColorColumn',  'none', 'dark1')
 
-	" Concealed element: \lambda → λ"
+	" Concealed element: \lambda → λ
 	call s:HL('Conceal', 'blue', 'none')
 
 	" Line number of CursorLine
@@ -533,13 +546,13 @@ endif
 " Functions -------------------------------------------------------------------
 " Search Highlighting {{{
 
-function! gruvbox#bg_toggle()
-	if &background == 'dark'
-		set bg=light
-	else
-		set bg=dark
-	endif
-endfunction
+"function! gruvbox#bg_toggle()
+"	if &background == 'dark'
+"		set bg=light
+"	else
+"		set bg=dark
+"	endif
+"endfunction
 
 function! gruvbox#hls_show()
 	set hlsearch

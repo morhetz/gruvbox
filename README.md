@@ -46,6 +46,8 @@ gruvbox comes in two modes, dark and light. To toggle between them with F5 you c
 		else
 			set bg=dark
 		endif
+
+		colo gruvbox
 	endfunc
 
 Just setting background to an appropriate value would work as well
