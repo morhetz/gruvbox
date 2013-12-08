@@ -477,6 +477,15 @@ let g:rbpt_colorpairs = [
 	\ ]
 
 "}}}
+" Airline {{{
+
+if !exists('g:airline_theme_map')
+	let g:airline_theme_map = { 'gruvbox.*': 'tomorrow' }
+else
+	let g:airline_theme_map['gruvbox.*'] = 'tomorrow'
+endif
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
