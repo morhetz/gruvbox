@@ -31,6 +31,9 @@ endif
 if !exists('g:gruvbox_italic')
 	let g:gruvbox_italic=1
 endif
+if !exists('g:gruvbox_undercurl')
+	let g:gruvbox_undercurl=1
+endif
 if !exists('g:gruvbox_underline')
 	let g:gruvbox_underline=1
 endif
@@ -52,6 +55,14 @@ endif
 
 if !exists('g:gruvbox_hls_cursor')
 	let g:gruvbox_hls_cursor='orange'
+endif
+
+if !exists('g:gruvbox_sign_column')
+	let g:gruvbox_sign_column='dark1'
+endif
+
+if !exists('g:gruvbox_invert_signs')
+	let g:gruvbox_invert_signs=0
 endif
 
 if &background == 'light'
@@ -186,6 +197,8 @@ function! s:HL(group, fg, ...)
 			let histring .= 'gui=NONE cterm=NONE '
 		elseif a:2 == 'bold,inverse' && g:gruvbox_bold == 0
 			let histring .= 'gui=inverse cterm=inverse '
+		elseif a:2 == 'undercurl' && g:gruvbox_undercurl == 0
+			let histring .= 'gui=NONE cterm=NONE '
 		elseif a:2 == 'underline' && g:gruvbox_underline == 0
 			let histring .= 'gui=NONE cterm=NONE '
 		elseif a:2 == 'bold,italic'
@@ -306,7 +319,7 @@ call s:HL('WarningMsg', 'red', 'none', 'bold')
 call s:HL('LineNr', 'dark4')
 
 " Column where signs are displayed
-call s:HL('SignColumn', 'none', 'bg')
+call s:HL('SignColumn', 'none', g:gruvbox_sign_column)
 
 " Line used for closed folds
 call s:HL('Folded', 'medium', 'dark1', 'italic')
@@ -335,6 +348,7 @@ else
 	call s:HL('Comment', 'medium', 'none', 'italic')
 endif
 call s:HL('Todo', 'fg', 'bg', 'bold')
+call s:HL('Error', 'bg', 'red', 'bold')
 
 " Generic statement
 call s:HL('Statement',   'red')
@@ -477,12 +491,40 @@ let g:rbpt_colorpairs = [
 	\ ]
 
 "}}}
-" Airline {{{
+" Airline: {{{
 
 if !exists('g:airline_theme_map')
 	let g:airline_theme_map = { 'gruvbox.*': 'tomorrow' }
 else
 	let g:airline_theme_map['gruvbox.*'] = 'tomorrow'
+endif
+
+" }}}
+" GitGutter: {{{
+
+if g:gruvbox_invert_signs == 0
+	call s:HL('GitGutterAdd', 'green', g:gruvbox_sign_column)
+	call s:HL('GitGutterChange', 'aqua', g:gruvbox_sign_column)
+	call s:HL('GitGutterDelete', 'red', g:gruvbox_sign_column)
+else
+	call s:HL('GitGutterAdd', 'green', g:gruvbox_sign_column, 'inverse')
+	call s:HL('GitGutterChange', 'aqua', g:gruvbox_sign_column, 'inverse')
+	call s:HL('GitGutterDelete', 'red', g:gruvbox_sign_column, 'inverse')
+endif
+
+
+" }}}
+" Syntastic: {{{
+
+call s:HL('SyntasticError', 'none', 'none', 'undercurl', 'red')
+call s:HL('SyntasticWarning', 'none', 'none', 'undercurl', 'yellow')
+
+if g:gruvbox_invert_signs == 0
+	call s:HL('SyntasticErrorSign', 'red', g:gruvbox_sign_column)
+	call s:HL('SyntasticWarningSign', 'yellow', g:gruvbox_sign_column)
+else
+	call s:HL('SyntasticErrorSign', 'red', g:gruvbox_sign_column, 'inverse')
+	call s:HL('SyntasticWarningSign', 'yellow', g:gruvbox_sign_column, 'inverse')
 endif
 
 " }}}
