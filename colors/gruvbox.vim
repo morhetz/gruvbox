@@ -269,7 +269,7 @@ call s:HL('Visual',    'none',  'dark3', 'inverse')
 call s:HL('VisualNOS', 'none',  'dark3', 'inverse')
 
 call s:HL('Search',    'dark0', 'yellow')
-call s:HL('IncSearch', 'dark0', 'yellow')
+call s:HL('IncSearch', 'dark0', g:gruvbox_hls_cursor)
 
 call s:HL('Underlined', 'blue', 'none', 'underline')
 
