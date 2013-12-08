@@ -65,6 +65,10 @@ if !exists('g:gruvbox_invert_signs')
 	let g:gruvbox_invert_signs=0
 endif
 
+if !exists('g:gruvbox_invert_selection')
+	let g:gruvbox_invert_selection=1
+endif
+
 if &background == 'light'
 	let s:gruvbox_background='light'
 else
@@ -278,8 +282,13 @@ endif
 call s:HL('NonText',    'dark2')
 call s:HL('SpecialKey', 'dark2')
 
-call s:HL('Visual',    'none',  'dark3', 'inverse')
-call s:HL('VisualNOS', 'none',  'dark3', 'inverse')
+if g:gruvbox_invert_selection == 0
+	call s:HL('Visual',    'none',  'dark2')
+	call s:HL('VisualNOS', 'none',  'dark2')
+else
+	call s:HL('Visual',    'none',  'dark3', 'inverse')
+	call s:HL('VisualNOS', 'none',  'dark3', 'inverse')
+endif
 
 call s:HL('Search',    'dark0', 'yellow')
 call s:HL('IncSearch', 'dark0', g:gruvbox_hls_cursor)
