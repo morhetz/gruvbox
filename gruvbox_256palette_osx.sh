@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
-if [[ "$TERM" == "screen" || "$TERM" == "screen-256color" ]]; then
-	if [[ -n "$TMUX" ]]; then
+if [ "${TERM%%-*}" = "screen" ]; then
+	if [ -n "$TMUX" ]; then
 		echo -ne "\x1bPtmux;\x1b\x1b]4;235;rgb:28/28/28\a\x1b\\"
 		echo -ne "\x1bPtmux;\x1b\x1b]4;237;rgb:3c/38/36\a\x1b\\"
 		echo -ne "\x1bPtmux;\x1b\x1b]4;239;rgb:50/49/45\a\x1b\\"
