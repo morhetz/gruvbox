@@ -28,7 +28,7 @@ Features
 --------
 
 * Distraction-free HTML highlighting
-* Closure filetype highlighting
+* Clojure detailed support
 * [Airline][4] theme mapping
 * Hand-tuned plugin-specific highlighting for [EasyMotion][5], [Better Rainbow Parentheses][6], [Indent Guides][7], [Syntastic][8] and [Git Gutter][9]
 
@@ -60,14 +60,28 @@ Just setting background to an appropriate value would work as well:
 	set bg=dark    " Setting dark mode
 	set bg=light   " Setting light mode
 
-Inverted cursor (...).
+Since gruvbox inverts cursor color, when the search is highlighted, it could be awkward to determine current position. To get single cursor color while searching map gruvbox functions same way:
+
+	map <silent> <F4> :call gruvbox#hls_toggle()<CR>
+	imap <silent> <F4> <ESC>:call gruvbox#hls_toggle()<CR>a
+	vmap <silent> <F4> <ESC>:call gruvbox#hls_toggle()<CR>gv
+ 
+	nnoremap <silent> <CR> :call gruvbox#hls_hide()<CR><CR>
+  
+	nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
+	nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
+	nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
+
+So you'll get `g:gruvbox_hls_cursor` (orange by default) cursor color when highlight search is on and inverted one otherwise. With such mappings you could also toggle search highlight on and off with F4 and hide it with Enter.
+
+[10]: https://gist.github.com/morhetz/6795169
 
 Terminal-specific
 -----------------
 
-TBD.
+(...).
 
-* (Recommended) 256-color pallette with gruvbox-palette shell-script
+* (Recommended) 256-color palette with gruvbox-palette shell script
 * 16 colors palette mode with gruvbox terminal colorscheme
 
 Troubleshooting
@@ -75,76 +89,80 @@ Troubleshooting
 
 ### Italics gets inverted (terminal)
 
-(...).
+Most terminals doesn't allow italics so the text that must be italicized goes inverted. To prevent that disable `g:gruvbox_italic` option.
 
 ### Effect of gruvbox_256palette.sh gets reset on Alt-Tab
 
-That's known issue with Ubuntu GTK-themes. Refer [†][10] for more details. Known affected terms are Gnome Terminal, Terminator and Lilyterm (though with Lilyterm option 'Dim text when inactive' set off everything is fine).
+That's known issue with Ubuntu GTK-themes. Refer [†][10] for more details. Known affected terms are Gnome Terminal, Terminator and Lilyterm and probably more VTE-based. Though with Lilyterm option 'Dim text when inactive' set off everything works fine.
 
-   [10]: https://github.com/morhetz/gruvbox/issues/13#issuecomment-30063099
+   [11]: https://github.com/morhetz/gruvbox/issues/13#issuecomment-30063099
 
 ### Lighter colors with iTerm2
 
 (...). Refer [†][11] and [‡][12] for more details.
 
-   [11]: https://github.com/morhetz/gruvbox/issues/8#issuecomment-26782758
-   [12]: https://github.com/morhetz/gruvbox/issues/8#issuecomment-27627656
+   [12]: https://github.com/morhetz/gruvbox/issues/8#issuecomment-26782758
+   [13]: https://github.com/morhetz/gruvbox/issues/8#issuecomment-27627656
 
 Configuration
 -------------
 
 ### g:gruvbox_bold
-(...).
+Enables bold text.  
 default: `1`
 
 ### g:gruvbox_italic
-(...).
+Enables italic text.  
 default: `1`
 
 ### g:gruvbox_underline
-(...).
+Enables underlined text.  
 default: `1`
 
 ### g:gruvbox_undercurl
-(...).
+Enables undercurled text.  
 default: `1`
 
 ### g:gruvbox_termcolors
-(...).
+Uses 256-color palette (suitable to pair with gruvbox-palette shell script). If you're dissatisfied with that set option value to `16` to fallback base colors to your terminal palette. Refer [†][14] for details.  
 default: `256`
 
+[14]: https://github.com/morhetz/gruvbox/issues/4
+
 ### g:gruvbox_hls_cursor
-(...).
+Changes cursor background while search is highlighted. Possible values are any of gruvbox palette.  
 default: `orange`
 
 ### g:gruvbox_sign_column
-(...).
+Changes sign column background color. Possible values are any of gruvbox palette.  
 default: `dark1`
 
 ### g:gruvbox_italicize_comments
-(...).
+Enables italic for comments.  
 default: `1`
 
 ### g:gruvbox_italicize_strings
-(...).
+Enables italic for strings.  
 default: `0`
 
 ### g:gruvbox_invert_selection
-(...).
+Inverts selected text.  
 default: `1`
 
 ### g:gruvbox_invert_signs
-(...).
+Inverts GitGutter and Syntastic signs. Useful to rapidly focus on.  
 default: `0`
 
 ### g:gruvbox_invert_indent_guides
-(...).
+Inverts indent guides. Could be nice paired with `set list` so it would highlight only tab symbols instead of it's background.  
 default: `0`
 
 Contributions
 -------------
 
-(...).
+See [gruvbox-generalized][15] repo for contributions, ports and extras.
+
+[15]: https://github.com/morhetz/gruvbox-generalized
 
 ToDo
 ----
