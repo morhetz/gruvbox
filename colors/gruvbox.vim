@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 9 Dec 2013
+" Last Modified: 12 Dec 2013
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -366,7 +366,7 @@ call s:HL('Label',       'red')
 " try, catch, throw
 call s:HL('Exception',   'red')
 " sizeof, "+", "*", etc.
-hi! def link Operator Normal
+hi! link Operator Normal
 " Any other keyword
 call s:HL('Keyword',     'red')
 
@@ -457,8 +457,8 @@ endif
 " Plugin specific -------------------------------------------------------------
 " EasyMotion: {{{
 
-hi! def link EasyMotionTarget Search
-hi! def link EasyMotionShade Comment
+hi! link EasyMotionTarget Search
+hi! link EasyMotionShade Comment
 
 " }}}
 " Indent Guides: {{{
@@ -474,26 +474,32 @@ else
 endif
 
 " }}}
-" Better Rainbow Parentheses: {{{
+" Rainbow Parentheses: {{{
 
 let g:rbpt_colorpairs = [
-	\ ['brown',       '#458588'],
-	\ ['Darkblue',    '#b16286'],
-	\ ['darkgray',    '#cc241d'],
-	\ ['darkgreen',   '#d65d0e'],
-	\ ['darkcyan',    '#458588'],
-	\ ['darkred',     '#b16286'],
-	\ ['darkmagenta', '#cc241d'],
-	\ ['brown',       '#d65d0e'],
-	\ ['gray',        '#458588'],
-	\ ['black',       '#b16286'],
-	\ ['darkmagenta', '#cc241d'],
-	\ ['Darkblue',    '#d65d0e'],
-	\ ['darkgreen',   '#458588'],
-	\ ['darkcyan',    '#b16286'],
-	\ ['darkred',     '#cc241d'],
-	\ ['red',         '#d65d0e'],
+	\ ['brown',       '#458588'], ['Darkblue',    '#b16286'],
+	\ ['darkgray',    '#cc241d'], ['darkgreen',   '#d65d0e'],
+	\ ['darkcyan',    '#458588'], ['darkred',     '#b16286'],
+	\ ['darkmagenta', '#cc241d'], ['brown',       '#d65d0e'],
+	\ ['gray',        '#458588'], ['black',       '#b16286'],
+	\ ['darkmagenta', '#cc241d'], ['Darkblue',    '#d65d0e'],
+	\ ['darkgreen',   '#458588'], ['darkcyan',    '#b16286'],
+	\ ['darkred',     '#cc241d'], ['red',         '#d65d0e'],
 	\ ]
+
+let g:rainbow_guifgs = [
+        \ '#458588', '#b16286', '#cc241d', '#d65d0e',
+        \ '#458588', '#b16286', '#cc241d', '#d65d0e',
+        \ '#458588', '#b16286', '#cc241d', '#d65d0e',
+        \ '#458588', '#b16286', '#cc241d', '#d65d0e',
+        \ ]
+
+let g:rainbow_ctermfgs = [
+            \ 'brown', 'Darkblue', 'darkgray', 'darkgreen',
+            \ 'darkcyan', 'darkred', 'darkmagenta', 'brown',
+            \ 'gray', 'black', 'darkmagenta', 'Darkblue',
+            \ 'darkgreen', 'darkcyan', 'darkred', 'red',
+            \ ]
 
 "}}}
 " Airline: {{{
@@ -519,6 +525,18 @@ else
 	call s:HL('GitGutterChangeDelete', 'aqua', g:gruvbox_sign_column, 'inverse')
 endif
 
+" }}}
+" Signify: {{{
+
+if g:gruvbox_invert_signs == 0
+	call s:HL('SignifySignAdd', 'green', g:gruvbox_sign_column)
+	call s:HL('SignifySignChange ', 'aqua', g:gruvbox_sign_column)
+	call s:HL('SignifySignDelete', 'red', g:gruvbox_sign_column)
+else
+	call s:HL('SignifySignAdd', 'green', g:gruvbox_sign_column, 'inverse')
+	call s:HL('SignifySignChange ', 'aqua', g:gruvbox_sign_column, 'inverse')
+	call s:HL('SignifySignDelete', 'red', g:gruvbox_sign_column, 'inverse')
+endif
 
 " }}}
 " Syntastic: {{{
@@ -532,6 +550,35 @@ if g:gruvbox_invert_signs == 0
 else
 	call s:HL('SyntasticErrorSign', 'red', g:gruvbox_sign_column, 'inverse')
 	call s:HL('SyntasticWarningSign', 'yellow', g:gruvbox_sign_column, 'inverse')
+endif
+
+" }}}
+" Signature {{{
+
+if g:gruvbox_invert_signs == 0
+	call s:HL('SignatureMarkerText', 'purple', g:gruvbox_sign_column)
+	call s:HL('SignatureMarkText', 'blue', g:gruvbox_sign_column)
+else
+	call s:HL('SignatureMarkerText', 'purple', g:gruvbox_sign_column, 'inverse')
+	call s:HL('SignatureMarkText', 'blue', g:gruvbox_sign_column, 'inverse')
+endif
+
+let g:SignatureMarkerTextHL='SignatureMarkerText'
+let g:SignatureMarkTextHL='SignatureMarkText'
+
+" }}}
+" ShowMarks: {{{
+
+if g:gruvbox_invert_signs == 0
+	call s:HL('ShowMarksHLl', 'blue', g:gruvbox_sign_column)
+	call s:HL('ShowMarksHLu', 'blue', g:gruvbox_sign_column)
+	call s:HL('ShowMarksHLo', 'blue', g:gruvbox_sign_column)
+	call s:HL('ShowMarksHLm', 'blue', g:gruvbox_sign_column)
+else
+	call s:HL('ShowMarksHLl', 'blue', g:gruvbox_sign_column, 'inverse')
+	call s:HL('ShowMarksHLu', 'blue', g:gruvbox_sign_column, 'inverse')
+	call s:HL('ShowMarksHLo', 'blue', g:gruvbox_sign_column, 'inverse')
+	call s:HL('ShowMarksHLm', 'blue', g:gruvbox_sign_column, 'inverse')
 endif
 
 " }}}
@@ -574,9 +621,9 @@ else
 	call s:HL('vimCommentTitle', 'light4_256', 'none', 'bold,italic')
 endif
 
-"hi! def link vimVar Identifier
-"hi! def link vimFunc Function
-"hi! def link vimUserFunc Function
+"hi! link vimVar Identifier
+"hi! link vimFunc Function
+"hi! link vimUserFunc Function
 
 
 "call s:HL('vimUserFunc', 'green', 'none', 'bold')
@@ -596,8 +643,8 @@ endif
 "call s:HL('vimUserFunc', 'purple')
 "call s:HL('vimUserFunc', 'purple')
 
-"hi! def link vimFunc Function
-"hi! def link vimUserFunc Function
+"hi! link vimFunc Function
+"hi! link vimUserFunc Function
 
 " }}}
 " Clojure: {{{
