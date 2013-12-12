@@ -60,7 +60,7 @@ Just setting background to an appropriate value would work as well:
 	set bg=dark    " Setting dark mode
 	set bg=light   " Setting light mode
 
-Since gruvbox inverts cursor color, when the search is highlighted, it could be awkward to determine current position. To get single cursor color while searching map gruvbox functions same way:
+Since gruvbox inverts cursor color, it could be awkward to determine current position, when the search is highlighted. To get single cursor color while searching map these gruvbox functions same way:
 
 	map <silent> <F4> :call gruvbox#hls_toggle()<CR>
 	imap <silent> <F4> <ESC>:call gruvbox#hls_toggle()<CR>a
@@ -124,7 +124,7 @@ Enables undercurled text.
 default: `1`
 
 ### g:gruvbox_termcolors
-Uses 256-color palette (suitable to pair with gruvbox-palette shell script). If you're dissatisfied with that set option value to `16` to fallback base colors to your terminal palette. Refer [†][14] for details.  
+Uses 256-color palette (suitable to pair with gruvbox-palette shell script). If you're dissatisfied with that, set option value to `16` to fallback base colors to your terminal palette. Refer [†][14] for details.  
 default: `256`
 
 [14]: https://github.com/morhetz/gruvbox/issues/4

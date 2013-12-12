@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 11 Oct 2013
+" Last Modified: 9 Dec 2013
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -69,18 +69,14 @@ if !exists('g:gruvbox_invert_selection')
 	let g:gruvbox_invert_selection=1
 endif
 
-if &background == 'light'
-	let s:gruvbox_background='light'
-else
-	let s:gruvbox_background='dark'
-endif
+let s:is_dark=(&background == 'dark')
 
 " }}}
 " Palette: {{{
 
 let s:gb = {}
 
-if &background == 'dark'
+if s:is_dark
 	let s:gb.dark0  = ['282828', 235]     " 40-40-40
 	let s:gb.dark1  = ['3c3836', 237]     " 60-56-54
 	let s:gb.dark2  = ['504945', 239]     " 80-73-69
@@ -245,10 +241,10 @@ call s:HL('Normal', 'light1', 'dark0')
 " Correct background (see issue #7):
 " --- Problem with changing between dark and light on 256 color terminal
 " --- https://github.com/morhetz/gruvbox/issues/7
-if s:gruvbox_background == 'light'
-	set background=light
-else
+if s:is_dark
 	set background=dark
+else
+	set background=light
 endif
 
 if version >= 700
@@ -515,10 +511,12 @@ if g:gruvbox_invert_signs == 0
 	call s:HL('GitGutterAdd', 'green', g:gruvbox_sign_column)
 	call s:HL('GitGutterChange', 'aqua', g:gruvbox_sign_column)
 	call s:HL('GitGutterDelete', 'red', g:gruvbox_sign_column)
+	call s:HL('GitGutterChangeDelete', 'aqua', g:gruvbox_sign_column)
 else
 	call s:HL('GitGutterAdd', 'green', g:gruvbox_sign_column, 'inverse')
 	call s:HL('GitGutterChange', 'aqua', g:gruvbox_sign_column, 'inverse')
 	call s:HL('GitGutterDelete', 'red', g:gruvbox_sign_column, 'inverse')
+	call s:HL('GitGutterChangeDelete', 'aqua', g:gruvbox_sign_column, 'inverse')
 endif
 
 
@@ -603,6 +601,7 @@ endif
 
 " }}}
 " Clojure: {{{
+
 call s:HL('clojureKeyword', 'blue')
 call s:HL('clojureCond', 'orange')
 call s:HL('clojureSpecial', 'orange')
@@ -629,18 +628,11 @@ call s:HL('clojureMeta', 'yellow')
 call s:HL('clojureDeref', 'yellow')
 call s:HL('clojureQuote', 'yellow')
 call s:HL('clojureUnquote', 'yellow')
+
 " }}}
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting {{{
-
-"function! gruvbox#bg_toggle()
-"	if &background == 'dark'
-"		set bg=light
-"	else
-"		set bg=dark
-"	endif
-"endfunction
 
 function! gruvbox#hls_show()
 	set hlsearch
