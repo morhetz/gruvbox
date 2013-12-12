@@ -2,6 +2,9 @@
 
 if [ "${TERM%%-*}" = "screen" ]; then
 	if [ -n "$TMUX" ]; then
+		echo -ne "\x1bPtmux;\x1b\x1b]4;236;rgb:32/30/2f\a\x1b\\"
+		echo -ne "\x1bPtmux;\x1b\x1b]4;234;rgb:1d/20/21\a\x1b\\"
+
 		echo -ne "\x1bPtmux;\x1b\x1b]4;235;rgb:28/28/28\a\x1b\\"
 		echo -ne "\x1bPtmux;\x1b\x1b]4;237;rgb:3c/38/36\a\x1b\\"
 		echo -ne "\x1bPtmux;\x1b\x1b]4;239;rgb:50/49/45\a\x1b\\"
@@ -10,6 +13,9 @@ if [ "${TERM%%-*}" = "screen" ]; then
 
 		echo -ne "\x1bPtmux;\x1b\x1b]4;244;rgb:92/83/74\a\x1b\\"
 		echo -ne "\x1bPtmux;\x1b\x1b]4;245;rgb:92/83/74\a\x1b\\"
+
+		echo -ne "\x1bPtmux;\x1b\x1b]4;228;rgb:f4/e8/ba\a\x1b\\"
+		echo -ne "\x1bPtmux;\x1b\x1b]4;230;rgb:ff/ff/c8\a\x1b\\"
 
 		echo -ne "\x1bPtmux;\x1b\x1b]4;229;rgb:fd/f4/c1\a\x1b\\"
 		echo -ne "\x1bPtmux;\x1b\x1b]4;223;rgb:eb/db/b2\a\x1b\\"
@@ -33,6 +39,9 @@ if [ "${TERM%%-*}" = "screen" ]; then
 		echo -ne "\x1bPtmux;\x1b\x1b]4;66;rgb:42/7b/58\a\x1b\\"
 		echo -ne "\x1bPtmux;\x1b\x1b]4;130;rgb:af/3a/03\a\x1b\\"
 	else
+		echo -ne "\x1bP\x1b]4;236;rgb:32/30/2f\a\x1b\\"
+		echo -ne "\x1bP\x1b]4;234;rgb:1d/20/21\a\x1b\\"
+
 		echo -ne "\x1bP\x1b]4;235;rgb:28/28/28\a\x1b\\"
 		echo -ne "\x1bP\x1b]4;237;rgb:3c/38/36\a\x1b\\"
 		echo -ne "\x1bP\x1b]4;239;rgb:50/49/45\a\x1b\\"
@@ -41,6 +50,9 @@ if [ "${TERM%%-*}" = "screen" ]; then
 
 		echo -ne "\x1bP\x1b]4;244;rgb:92/83/74\a\x1b\\"
 		echo -ne "\x1bP\x1b]4;245;rgb:92/83/74\a\x1b\\"
+
+		echo -ne "\x1bP\x1b]4;228;rgb:f4/e8/ba\a\x1b\\"
+		echo -ne "\x1bP\x1b]4;230;rgb:ff/ff/c8\a\x1b\\"
 
 		echo -ne "\x1bP\x1b]4;229;rgb:fd/f4/c1\a\x1b\\"
 		echo -ne "\x1bP\x1b]4;223;rgb:eb/db/b2\a\x1b\\"
@@ -65,6 +77,9 @@ if [ "${TERM%%-*}" = "screen" ]; then
 		echo -ne "\x1bP\x1b]4;130;rgb:af/3a/03\a\x1b\\"
 	fi
 else
+	echo -ne "\x1b]4;236;rgb:32/30/2f\x1b\\"
+	echo -ne "\x1b]4;234;rgb:1d/20/21\x1b\\"
+
 	echo -ne "\x1b]4;235;rgb:28/28/28\x1b\\"
 	echo -ne "\x1b]4;237;rgb:3c/38/36\x1b\\"
 	echo -ne "\x1b]4;239;rgb:50/49/45\x1b\\"
@@ -73,6 +88,9 @@ else
 
 	echo -ne "\x1b]4;244;rgb:92/83/74\x1b\\"
 	echo -ne "\x1b]4;245;rgb:92/83/74\x1b\\"
+
+	echo -ne "\x1b]4;228;rgb:f4/e8/ba\x1b\\"
+	echo -ne "\x1b]4;230;rgb:ff/ff/c8\x1b\\"
 
 	echo -ne "\x1b]4;229;rgb:fd/f4/c1\x1b\\"
 	echo -ne "\x1b]4;223;rgb:eb/db/b2\x1b\\"

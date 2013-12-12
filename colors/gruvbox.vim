@@ -69,6 +69,10 @@ if !exists('g:gruvbox_invert_selection')
 	let g:gruvbox_invert_selection=1
 endif
 
+if !exists('g:gruvbox_contrast')
+	let g:gruvbox_contrast='medium'
+endif
+
 let s:is_dark=(&background == 'dark')
 
 " }}}
@@ -113,6 +117,14 @@ if s:is_dark
 		let s:gb.aqua   = ['8ec07c', 14]
 		let s:gb.light1 = ['ebdbb2', 15]
 	endif
+
+	if g:gruvbox_contrast == 'soft'
+		let s:gb.dark0  = ['32302f', 236]     " 50-48-47
+	endif
+
+	if g:gruvbox_contrast == 'hard'
+		let s:gb.dark0  = ['1d2021', 234]     " 29-32-33
+	endif
 else
 	let s:gb.dark0  = ['fdf4c1', 229]     " 253-244-193
 	let s:gb.dark1  = ['ebdbb2', 223]     " 235-219-178
@@ -149,6 +161,14 @@ else
 		let s:gb.purple = ['8f3f71', 13]
 		let s:gb.aqua   = ['427b58', 14]
 		let s:gb.light1 = ['3c3836', 15]
+	endif
+
+	if g:gruvbox_contrast == 'soft'
+		let s:gb.dark0  = ['f4e8ba', 228]     " 244-232-186
+	endif
+
+	if g:gruvbox_contrast == 'hard'
+		let s:gb.dark0  = ['ffffc8', 230]     " 255-255-200
 	endif
 endif
 

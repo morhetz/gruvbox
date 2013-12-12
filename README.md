@@ -25,6 +25,7 @@ Screenshots
 Features
 --------
 
+* Lots of style-customization options (contrast, color invertion, italics usage etc.)
 * Extended filetype highlighting: Html, Vim, Clojure
 * Supported plugins: [EasyMotion][], [Indent Guides][], [Rainbow Parentheses][], [Airline][], [GitGutter][], [Signify][], [ShowMarks][], [Signature][], [Syntastic][]
 
@@ -125,6 +126,10 @@ Uses 256-color palette (suitable to pair with gruvbox-palette shell script). If 
 default: `256`
 
 [4]: https://github.com/morhetz/gruvbox/issues/4
+
+### g:gruvbox_contrast
+Possible values is `soft`, `medium` and `hard`.
+default: `medium`
 
 ### g:gruvbox_hls_cursor
 Changes cursor background while search is highlighted. Possible values are any of gruvbox palette.  
