@@ -26,7 +26,7 @@ Features
 --------
 
 * Extended filetype highlighting: Html, Vim, Clojure
-* Supported plugins: [EasyMotion][4], [Indent Guides][5], [Rainbow Parentheses][6], [Airline][7], [GitGutter][8], [Signify][9], [ShowMarks][10], [Signature][11], [Syntastic][12]
+* Supported plugins: [EasyMotion][], [Indent Guides][], [Rainbow Parentheses][], [Airline][], [GitGutter][], [Signify][], [ShowMarks][], [Signature][], [Syntastic][]
 
    [EasyMotion]: https://github.com/Lokaltog/vim-easymotion
    [Indent Guides]: https://github.com/nathanaelkane/vim-indent-guides
