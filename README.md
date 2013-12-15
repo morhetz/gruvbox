@@ -128,7 +128,7 @@ default: `256`
 [4]: https://github.com/morhetz/gruvbox/issues/4
 
 ### g:gruvbox_contrast
-Possible values is `soft`, `medium` and `hard`.
+Possible values are `soft`, `medium` and `hard`.  
 default: `medium`
 
 ### g:gruvbox_hls_cursor
