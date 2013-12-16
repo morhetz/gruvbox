@@ -44,16 +44,9 @@ Usage
 
 gruvbox comes in two modes, dark and light. To toggle between them with F5 you can add these to your .vimrc:
 
-	map <F5> :call ToggleBg()<CR>
-	function! ToggleBg()
-		if &background == 'dark'
-			set bg=light
-		else
-			set bg=dark
-		endif
-
-		colo gruvbox
-	endfunc
+	map <silent> <F5> :call gruvbox#bg_toggle()<CR>
+	imap <silent> <F5> <ESC>:call gruvbox#bg_toggle()<CR>a
+	vmap <silent> <F5> <ESC>:call gruvbox#bg_toggle()<CR>gv
 
 Just setting background to an appropriate value would work as well:
 
@@ -158,6 +151,29 @@ default: `0`
 ### g:gruvbox_invert_indent_guides
 Inverts indent guides. Could be nice paired with `set list` so it would highlight only tab symbols instead of it's background.  
 default: `0`
+
+Functions
+---------
+
+### gruvbox#bg_toggle()
+
+(...)
+
+### gruvbox#invert_signs_toggle()
+
+(...)
+
+### gruvbox#hls_show()
+
+(...)
+
+### gruvbox#hls_hide()
+
+(...)
+
+### gruvbox#hls_toggle()
+
+(...)
 
 Contributions
 -------------
