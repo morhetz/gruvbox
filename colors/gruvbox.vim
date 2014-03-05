@@ -494,6 +494,12 @@ else
 endif
 
 " }}}
+" IndentLine: {{{
+
+let g:indentLine_color_term = s:gb.dark2[1]
+let g:indentLine_color_gui = '#' . s:gb.dark2[0]
+
+" }}}
 " Rainbow Parentheses: {{{
 
 let g:rbpt_colorpairs = [
@@ -641,31 +647,6 @@ else
 	call s:HL('vimCommentTitle', 'light4_256', 'none', 'bold,italic')
 endif
 
-"hi! link vimVar Identifier
-"hi! link vimFunc Function
-"hi! link vimUserFunc Function
-
-
-"call s:HL('vimUserFunc', 'green', 'none', 'bold')
-"call s:HL('vimFunction', 'green', 'none', 'bold')
-
-"call s:HL('vimFunc', 'blue')
-"call s:HL('vimFuncName', 'blue')
-
-"call s:HL('vimVar', 'purple')
-"call s:HL('vimIsCommand', 'purple')
-
-
-"call s:HL('vimMapMod', 'purple', 'none', 'bold,italic')
-"call s:HL('vimMapModKey', 'purple', 'none', 'bold,italic')
-
-"call s:HL('vimFunction', 'purple')
-"call s:HL('vimUserFunc', 'purple')
-"call s:HL('vimUserFunc', 'purple')
-
-"hi! link vimFunc Function
-"hi! link vimUserFunc Function
-
 " }}}
 " Clojure: {{{
 
@@ -695,6 +676,79 @@ call s:HL('clojureMeta', 'yellow')
 call s:HL('clojureDeref', 'yellow')
 call s:HL('clojureQuote', 'yellow')
 call s:HL('clojureUnquote', 'yellow')
+
+" }}}
+" C: {{{
+
+"call s:HL('cOperator', 'purple')
+"call s:HL('cStatement', 'orange')
+
+" }}}
+" Python: {{{
+
+call s:HL('pythonBuiltin', 'orange')
+call s:HL('pythonBuiltinObj', 'orange')
+call s:HL('pythonBuiltinFunc', 'orange')
+call s:HL('pythonFunction', 'aqua')
+call s:HL('pythonDecorator', 'red')
+call s:HL('pythonInclude', 'blue')
+call s:HL('pythonImport', 'blue')
+call s:HL('pythonRun', 'blue')
+call s:HL('pythonCoding', 'blue')
+call s:HL('pythonOperator', 'red')
+call s:HL('pythonExceptions', 'purple')
+call s:HL('pythonBoolean', 'purple')
+call s:HL('pythonDot', 'orange')
+
+" }}}
+" CSS: {{{
+
+call s:HL('cssBraces', 'blue')
+call s:HL('cssFunctionName', 'yellow')
+call s:HL('cssIdentifier', 'orange')
+call s:HL('cssClassName', 'green')
+call s:HL('cssColor', 'blue')
+call s:HL('cssSelectorOp', 'blue')
+call s:HL('cssSelectorOp2', 'blue')
+call s:HL('cssImportant', 'green')
+
+call s:HL('cssTextProp', 'aqua')
+call s:HL('cssAnimationProp', 'aqua')
+call s:HL('cssUIProp', 'yellow')
+call s:HL('cssTransformProp', 'aqua')
+call s:HL('cssTransitionProp', 'aqua')
+call s:HL('cssPrintProp', 'aqua')
+call s:HL('cssPositioningProp', 'yellow')
+call s:HL('cssBoxProp', 'aqua')
+call s:HL('cssFontDescriptorProp', 'aqua')
+call s:HL('cssFlexibleBoxProp', 'aqua')
+call s:HL('cssBorderOutlineProp', 'aqua')
+call s:HL('cssBackgroundProp', 'aqua')
+call s:HL('cssMarginProp', 'aqua')
+call s:HL('cssListProp', 'aqua')
+call s:HL('cssTableProp', 'aqua')
+call s:HL('cssFontProp', 'aqua')
+call s:HL('cssPaddingProp', 'aqua')
+call s:HL('cssDimensionProp', 'aqua')
+call s:HL('cssRenderProp', 'aqua')
+call s:HL('cssColorProp', 'aqua')
+call s:HL('cssGeneratedContentProp', 'aqua')
+
+" }}}
+" JavaScript: {{{
+
+call s:HL('javaScriptBraces', 'orange')
+call s:HL('javaScriptFunction', 'aqua')
+call s:HL('javaScriptIdentifier', 'red')
+call s:HL('javaScriptMember', 'blue')
+call s:HL('javaScriptNumber', 'purple')
+call s:HL('javaScriptNull', 'purple')
+
+" }}}
+" Ruby: {{{
+
+call s:HL('rubyStringDelimiter', 'green')
+"call s:HL('rubyInterpolationDelimiter', 'aqua')
 
 " }}}
 
