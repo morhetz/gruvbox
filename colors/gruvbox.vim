@@ -481,6 +481,14 @@ hi! link EasyMotionTarget Search
 hi! link EasyMotionShade Comment
 
 " }}}
+" Sneak: {{{
+
+hi! link SneakPluginTarget Search
+hi! link SneakStreakTarget Search
+call s:HL('SneakStreakMask', 'yellow', 'yellow')
+hi! link SneakStreakStatusLine Search
+
+" }}}
 " Indent Guides: {{{
 
 let g:indent_guides_auto_colors = 0
@@ -579,7 +587,7 @@ else
 endif
 
 " }}}
-" Signature {{{
+" Signature: {{{
 
 if g:gruvbox_invert_signs == 0
 	call s:HL('SignatureMarkerText', 'purple', g:gruvbox_sign_column)
@@ -680,8 +688,8 @@ call s:HL('clojureUnquote', 'yellow')
 " }}}
 " C: {{{
 
-"call s:HL('cOperator', 'purple')
-"call s:HL('cStatement', 'orange')
+call s:HL('cOperator', 'purple')
+call s:HL('cStructure', 'orange')
 
 " }}}
 " Python: {{{
@@ -748,7 +756,13 @@ call s:HL('javaScriptNull', 'purple')
 " Ruby: {{{
 
 call s:HL('rubyStringDelimiter', 'green')
-"call s:HL('rubyInterpolationDelimiter', 'aqua')
+call s:HL('rubyInterpolationDelimiter', 'aqua')
+
+" }}}
+" ObjectiveC: {{{
+
+call s:HL('objcTypeModifier', 'red')
+call s:HL('objcDirective', 'blue')
 
 " }}}
 
@@ -757,6 +771,10 @@ call s:HL('rubyStringDelimiter', 'green')
 
 function! gruvbox#hls_show()
 	set hlsearch
+	call gruvbox#hls_show_cursor()
+endfunction
+
+function! gruvbox#hls_show_cursor()
 	call s:HL('Cursor', 'dark0', g:gruvbox_hls_cursor)
 	call s:HL('vCursor', 'dark0', g:gruvbox_hls_cursor)
 	call s:HL('iCursor', 'dark0', g:gruvbox_hls_cursor)
@@ -765,6 +783,10 @@ endfunction
 
 function! gruvbox#hls_hide()
 	set nohlsearch
+	call gruvbox#hls_hide_cursor()
+endfunction
+
+function! gruvbox#hls_hide_cursor()
 	call s:HL('Cursor', 'none', 'none', 'inverse')
 	call s:HL('vCursor', 'none', 'none', 'inverse')
 	call s:HL('iCursor', 'none', 'none', 'inverse')
