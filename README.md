@@ -14,6 +14,10 @@ Designed as a bright theme with pastel 'retro groove' colors and light/dark mode
 Screenshots
 -----------
 
+Refer [Gallery][] for more syntax-specific screenshots.
+
+   [Gallery]: https://github.com/morhetz/gruvbox/wiki/Gallery
+
 ### Dark mode
 
 ![Screenshot](http://i.imgur.com/2870c.png)
@@ -167,7 +171,15 @@ Functions
 
 (...)
 
+### gruvbox#hls_show_cursor()
+
+(...)
+
 ### gruvbox#hls_hide()
+
+(...)
+
+### gruvbox#hls_hide_cursor()
 
 (...)
 
@@ -185,7 +197,6 @@ See [gruvbox-generalized][] repo for contributions, ports and extras.
 ToDo
 ----
 
-* More fyletype specific highlighting (ruby, python, javascript)
 * Plugin support (Ctrl-P, MiniBufExplorer, Startify, Tagbar)
 * Airline theme
 
