@@ -765,6 +765,15 @@ call s:HL('objcTypeModifier', 'red')
 call s:HL('objcDirective', 'blue')
 
 " }}}
+" Go: {{{
+
+call s:HL('goDirective', 'aqua')
+call s:HL('goConstants', 'purple')
+call s:HL('goDeclaration', 'red')
+call s:HL('goDeclType', 'blue')
+call s:HL('goBuiltins', 'orange')
+
+" }}}
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting {{{
