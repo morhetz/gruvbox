@@ -197,6 +197,7 @@ See [gruvbox-generalized][] repo for contributions, ports and extras.
 ToDo
 ----
 
+* Filetype syntax highlighting (R, TeX and I'm still dissatisfied with CSS)
 * Plugin support (Ctrl-P, MiniBufExplorer, Startify, Tagbar)
 * Airline theme
 
