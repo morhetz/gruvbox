@@ -31,10 +31,12 @@ Features
 
 * Lots of style-customization options (contrast, color invertion, italics usage etc.)
 * Extended filetype highlighting: Html, Vim, Clojure
-* Supported plugins: [EasyMotion][], [Indent Guides][], [Rainbow Parentheses][], [Airline][], [GitGutter][], [Signify][], [ShowMarks][], [Signature][], [Syntastic][]
+* Supported plugins: [EasyMotion][], [vim-sneak][], [Indent Guides][], [indentLine][], [Rainbow Parentheses][], [Airline][], [GitGutter][], [Signify][], [ShowMarks][], [Signature][], [Syntastic][], [CtrlP][], [Startify][]
 
    [EasyMotion]: https://github.com/Lokaltog/vim-easymotion
+   [vim-sneak]: https://github.com/justinmk/vim-sneak
    [Indent Guides]: https://github.com/nathanaelkane/vim-indent-guides
+   [indentLine]: https://github.com/Yggdroot/indentLine
    [Rainbow Parentheses]: https://github.com/kien/rainbow_parentheses.vim
    [Airline]: https://github.com/bling/vim-airline
    [GitGutter]: https://github.com/airblade/vim-gitgutter
@@ -42,6 +44,8 @@ Features
    [ShowMarks]: http://www.vim.org/scripts/script.php?script_id=152
    [Signature]: https://github.com/kshenoy/vim-signature
    [Syntastic]: https://github.com/scrooloose/syntastic
+   [CtrlP]: https://github.com/kien/ctrlp.vim
+   [Startify]: https://github.com/mhinz/vim-startify
 
 Usage
 -----
@@ -198,7 +202,7 @@ ToDo
 ----
 
 * Filetype syntax highlighting (R, TeX and I'm still dissatisfied with CSS)
-* Plugin support (Ctrl-P, MiniBufExplorer, Startify, Tagbar)
+* Plugin support (MiniBufExplorer, Tagbar)
 * Airline theme
 
 License
