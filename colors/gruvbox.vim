@@ -621,13 +621,14 @@ endif
 " }}}
 " CtrlP: {{{
 
-call s:HL('CtrlPMatch', 'blue')
+call s:HL('CtrlPMatch', 'yellow')
 call s:HL('CtrlPNoEntries', 'red')
 call s:HL('CtrlPPrtBase', 'dark2')
+call s:HL('CtrlPPrtCursor', 'blue')
 call s:HL('CtrlPLinePre', 'dark2')
 
-call s:HL('CtrlPMode1', 'purple', 'dark2', 'bold')
-call s:HL('CtrlPMode2', 'dark0', 'purple', 'bold')
+call s:HL('CtrlPMode1', 'blue', 'dark2', 'bold')
+call s:HL('CtrlPMode2', 'dark0', 'blue', 'bold')
 call s:HL('CtrlPStats', 'light4', 'dark2', 'bold')
 
 " }}}
