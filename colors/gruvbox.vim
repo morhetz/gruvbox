@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 16 Dec 2013
+" Last Modified: 11 Mar 2014
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -510,30 +510,33 @@ let g:indentLine_color_gui = '#' . s:gb.dark2[0]
 " }}}
 " Rainbow Parentheses: {{{
 
-let g:rbpt_colorpairs = [
-	\ ['brown',       '#458588'], ['Darkblue',    '#b16286'],
-	\ ['darkgray',    '#cc241d'], ['darkgreen',   '#d65d0e'],
-	\ ['darkcyan',    '#458588'], ['darkred',     '#b16286'],
-	\ ['darkmagenta', '#cc241d'], ['brown',       '#d65d0e'],
-	\ ['gray',        '#458588'], ['black',       '#b16286'],
-	\ ['darkmagenta', '#cc241d'], ['Darkblue',    '#d65d0e'],
-	\ ['darkgreen',   '#458588'], ['darkcyan',    '#b16286'],
-	\ ['darkred',     '#cc241d'], ['red',         '#d65d0e'],
+let g:rbpt_colorpairs = 
+	\ [
+		\ ['brown',       '#458588'], ['Darkblue',    '#b16286'],
+		\ ['darkgray',    '#cc241d'], ['darkgreen',   '#d65d0e'],
+		\ ['darkcyan',    '#458588'], ['darkred',     '#b16286'],
+		\ ['darkmagenta', '#cc241d'], ['brown',       '#d65d0e'],
+		\ ['gray',        '#458588'], ['black',       '#b16286'],
+		\ ['darkmagenta', '#cc241d'], ['Darkblue',    '#d65d0e'],
+		\ ['darkgreen',   '#458588'], ['darkcyan',    '#b16286'],
+		\ ['darkred',     '#cc241d'], ['red',         '#d65d0e'],
 	\ ]
 
-let g:rainbow_guifgs = [
-        \ '#458588', '#b16286', '#cc241d', '#d65d0e',
-        \ '#458588', '#b16286', '#cc241d', '#d65d0e',
-        \ '#458588', '#b16286', '#cc241d', '#d65d0e',
-        \ '#458588', '#b16286', '#cc241d', '#d65d0e',
-        \ ]
+let g:rainbow_guifgs = 
+	\ [
+		\ '#458588', '#b16286', '#cc241d', '#d65d0e',
+		\ '#458588', '#b16286', '#cc241d', '#d65d0e',
+		\ '#458588', '#b16286', '#cc241d', '#d65d0e',
+		\ '#458588', '#b16286', '#cc241d', '#d65d0e'
+	\ ]
 
-let g:rainbow_ctermfgs = [
-            \ 'brown', 'Darkblue', 'darkgray', 'darkgreen',
-            \ 'darkcyan', 'darkred', 'darkmagenta', 'brown',
-            \ 'gray', 'black', 'darkmagenta', 'Darkblue',
-            \ 'darkgreen', 'darkcyan', 'darkred', 'red',
-            \ ]
+let g:rainbow_ctermfgs = 
+	\ [
+		\ 'brown', 'Darkblue', 'darkgray', 'darkgreen',
+		\ 'darkcyan', 'darkred', 'darkmagenta', 'brown',
+		\ 'gray', 'black', 'darkmagenta', 'Darkblue',
+		\ 'darkgreen', 'darkcyan', 'darkred', 'red',
+	\ ]
 
 "}}}
 " Airline: {{{
@@ -616,6 +619,31 @@ else
 endif
 
 " }}}
+" CtrlP: {{{
+
+call s:HL('CtrlPMatch', 'blue')
+call s:HL('CtrlPNoEntries', 'red')
+call s:HL('CtrlPPrtBase', 'dark2')
+call s:HL('CtrlPLinePre', 'dark2')
+
+call s:HL('CtrlPMode1', 'purple', 'dark2', 'bold')
+call s:HL('CtrlPMode2', 'dark0', 'purple', 'bold')
+call s:HL('CtrlPStats', 'light4', 'dark2', 'bold')
+
+" }}}
+" Startify: {{{
+
+call s:HL('StartifyBracket', 'light3')
+call s:HL('StartifyFile', 'light0')
+call s:HL('StartifyNumber', 'blue')
+call s:HL('StartifyPath', 'medium')
+call s:HL('StartifySlash', 'medium')
+call s:HL('StartifySection', 'yellow')
+call s:HL('StartifySpecial', 'dark2')
+call s:HL('StartifyHeader', 'orange')
+call s:HL('StartifyFooter', 'dark2')
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
@@ -646,6 +674,30 @@ call s:HL('htmlLink', 'light4', 'none', 'underline')
 
 call s:HL('htmlSpecialChar', 'orange')
 
+" }}}
+" Xml: {{{
+
+call s:HL('xmlTag', 'blue')
+call s:HL('xmlEndTag', 'blue')
+call s:HL('xmlTagName', 'blue')
+call s:HL('xmlEqual', 'blue')
+call s:HL('docbkKeyword', 'aqua', 'none', 'bold')
+
+call s:HL('xmlDocTypeDecl', 'medium')
+call s:HL('xmlDocTypeKeyword', 'purple')
+call s:HL('xmlCdataStart', 'medium')
+call s:HL('xmlCdataCdata', 'purple')
+call s:HL('dtdFunction', 'medium')
+call s:HL('dtdTagName', 'purple')
+
+call s:HL('xmlAttrib', 'aqua')
+call s:HL('xmlProcessingDelim', 'medium')
+call s:HL('dtdParamEntityPunct', 'medium')
+call s:HL('dtdParamEntityDPunct', 'medium')
+call s:HL('xmlAttribPunct', 'medium')
+
+call s:HL('xmlEntity', 'orange')
+call s:HL('xmlEntityPunct', 'orange')
 " }}}
 " Vim: {{{
 
@@ -706,7 +758,7 @@ call s:HL('pythonCoding', 'blue')
 call s:HL('pythonOperator', 'red')
 call s:HL('pythonExceptions', 'purple')
 call s:HL('pythonBoolean', 'purple')
-call s:HL('pythonDot', 'orange')
+call s:HL('pythonDot', 'light3')
 
 " }}}
 " CSS: {{{
@@ -719,6 +771,7 @@ call s:HL('cssColor', 'blue')
 call s:HL('cssSelectorOp', 'blue')
 call s:HL('cssSelectorOp2', 'blue')
 call s:HL('cssImportant', 'green')
+call s:HL('cssVendor', 'light1')
 
 call s:HL('cssTextProp', 'aqua')
 call s:HL('cssAnimationProp', 'aqua')
@@ -751,6 +804,16 @@ call s:HL('javaScriptIdentifier', 'red')
 call s:HL('javaScriptMember', 'blue')
 call s:HL('javaScriptNumber', 'purple')
 call s:HL('javaScriptNull', 'purple')
+call s:HL('javaScriptParens', 'light3')
+
+" }}}
+" CoffeeScript: {{{
+
+call s:HL('coffeeExtendedOp', 'light3')
+call s:HL('coffeeSpecialOp', 'light3')
+call s:HL('coffeeCurly', 'orange')
+call s:HL('coffeeParen', 'light3')
+call s:HL('coffeeBracket', 'orange')
 
 " }}}
 " Ruby: {{{
@@ -774,40 +837,39 @@ call s:HL('goDeclType', 'blue')
 call s:HL('goBuiltins', 'orange')
 
 " }}}
+" Lua: {{{
+
+call s:HL('luaIn', 'red')
+call s:HL('luaFunction', 'aqua')
+call s:HL('luaTable', 'orange')
+
+" }}}
+" MoonScript: {{{
+
+call s:HL('moonSpecialOp', 'light3')
+call s:HL('moonExtendedOp', 'light3')
+call s:HL('moonFunction', 'light3')
+call s:HL('moonObject', 'yellow')
+
+" }}}
 
 " Functions -------------------------------------------------------------------
-" Search Highlighting {{{
+" Search Highlighting Cursor {{{
 
-function! gruvbox#hls_show()
-	set hlsearch
-	call gruvbox#hls_show_cursor()
-endfunction
-
-function! gruvbox#hls_show_cursor()
+function! GruvboxHlsShowCursor()
 	call s:HL('Cursor', 'dark0', g:gruvbox_hls_cursor)
 	call s:HL('vCursor', 'dark0', g:gruvbox_hls_cursor)
 	call s:HL('iCursor', 'dark0', g:gruvbox_hls_cursor)
 	call s:HL('lCursor', 'dark0', g:gruvbox_hls_cursor)
 endfunction
 
-function! gruvbox#hls_hide()
-	set nohlsearch
-	call gruvbox#hls_hide_cursor()
-endfunction
-
-function! gruvbox#hls_hide_cursor()
+function! GruvboxHlsHideCursor()
 	call s:HL('Cursor', 'none', 'none', 'inverse')
 	call s:HL('vCursor', 'none', 'none', 'inverse')
 	call s:HL('iCursor', 'none', 'none', 'inverse')
 	call s:HL('lCursor', 'none', 'none', 'inverse')
 endfunction
 
-function! gruvbox#hls_toggle()
-	if &hlsearch
-		call gruvbox#hls_hide()
-	else
-		call gruvbox#hls_show()
-	endif
-endfunction
-
 " }}}
+
+" vim: set sw=3 ts=3 sts=3 noet tw=80 ft=vim fdm=marker:
