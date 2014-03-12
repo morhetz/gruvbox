@@ -23,7 +23,7 @@ if !has('gui_running') && &t_Co != 256
 endif
 
 " }}}
-" Global settings: {{{
+" Global Settings: {{{
 
 if !exists('g:gruvbox_bold')
 	let g:gruvbox_bold=1
@@ -707,6 +707,13 @@ if g:gruvbox_italicize_comments == 0
 else
 	call s:HL('vimCommentTitle', 'light4_256', 'none', 'bold,italic')
 endif
+call s:HL('vimNotation', 'orange')
+call s:HL('vimBracket', 'orange')
+call s:HL('vimMapModKey', 'orange')
+call s:HL('vimFuncSID', 'light3')
+call s:HL('vimSetSep', 'light3')
+call s:HL('vimSep', 'light3')
+call s:HL('vimContinue', 'light3')
 
 " }}}
 " Clojure: {{{
