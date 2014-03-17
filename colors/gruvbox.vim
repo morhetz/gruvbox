@@ -860,6 +860,22 @@ call s:HL('moonFunction', 'light3')
 call s:HL('moonObject', 'yellow')
 
 " }}}
+" Java: {{{
+
+call s:HL('javaAnnotation', 'blue')
+call s:HL('javaDocTags', 'aqua')
+hi! link javaCommentTitle vimCommentTitle
+call s:HL('javaParen', 'light3')
+call s:HL('javaParen1', 'light3')
+call s:HL('javaParen2', 'light3')
+call s:HL('javaParen3', 'light3')
+call s:HL('javaParen4', 'light3')
+call s:HL('javaParen5', 'light3')
+call s:HL('javaOperator', 'orange')
+
+call s:HL('javaVarArg', 'green')
+
+" }}}
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
