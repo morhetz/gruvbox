@@ -63,9 +63,9 @@ Just setting background to an appropriate value would work as well:
 
 Since gruvbox inverts cursor color, it could be awkward to determine current position, when the search is highlighted. To get single cursor color while searching, map these gruvbox functions same way:
 
-	map <silent> <F4> :call gruvbox#hls_toggle()<CR>
-	imap <silent> <F4> <ESC>:call gruvbox#hls_toggle()<CR>a
-	vmap <silent> <F4> <ESC>:call gruvbox#hls_toggle()<CR>gv
+	nnoremap <silent> <Leader><Space> :call gruvbox#hls_toggle()<CR>
+	inoremap <silent> <Leader><Space> <ESC>:call gruvbox#hls_toggle()<CR>a
+	vnoremap <silent> <Leader><Space> <ESC>:call gruvbox#hls_toggle()<CR>gv
  
 	nnoremap <silent> <CR> :call gruvbox#hls_hide()<CR><CR>
   
@@ -73,7 +73,7 @@ Since gruvbox inverts cursor color, it could be awkward to determine current pos
 	nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
 	nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
 
-So you'll get `g:gruvbox_hls_cursor` (orange by default) cursor color when highlight search is on and inverted one otherwise. With such mappings you could also toggle search highlight on and off with F4 and hide it with Enter.
+So you'll get `g:gruvbox_hls_cursor` (orange by default) cursor color when highlight search is on and inverted one otherwise. With such mappings you could also toggle search highlight on and off with <Leader><Space> and hide it with Enter.
 
 Terminal-specific
 -----------------
