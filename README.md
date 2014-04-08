@@ -29,11 +29,9 @@ Refer [Gallery][] for more syntax-specific screenshots.
 Documentation
 -------------
 
-Please check [wiki][].
+Please check [wiki][] for installation details, terminal-specific setup, troubleshooting, configuration options and others.
 
    [wiki]: https://github.com/morhetz/gruvbox/wiki
-
-I'm currently trying to update documentation and make it more usable for newcomers. If you want to help with e.g. OS X installation guide or something else feel free to contact me.
 
 Features
 --------
