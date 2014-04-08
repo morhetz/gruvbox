@@ -645,6 +645,14 @@ call s:HL('StartifyHeader', 'orange')
 call s:HL('StartifyFooter', 'dark2')
 
 " }}}
+" Vimshell: {{{
+
+let g:vimshell_escape_colors = map(split(
+		  \ 'dark4 red green yellow blue purple aqua light4 ' .
+		  \ 'dark0 red green orange blue purple aqua light0'
+		  \ ), '"#" . s:gb[v:val][0]')
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
