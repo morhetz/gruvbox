@@ -208,6 +208,8 @@ function! s:HL(group, fg, ...)
 		let histring .= 'guibg=NONE ctermbg=NONE '
 	endif
 
+	" Hotfixing #24;
+	" TODO: get rid of this spaghetti
 	if a:0 >= 2 && strlen(a:2)
 		if a:2 == 'none'
 			let histring .= 'gui=NONE cterm=NONE '
@@ -228,6 +230,36 @@ function! s:HL(group, fg, ...)
 				let histring .= 'gui=bold cterm=bold '
 			elseif g:gruvbox_bold == 0
 				let histring .= 'gui=italic cterm=italic '
+			else
+				let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
+			endif
+		elseif a:2 == 'bold,underline'
+			if g:gruvbox_underline == 0 && g:gruvbox_bold == 0
+				let histring .= 'gui=NONE cterm=NONE '
+			elseif g:gruvbox_underline == 0
+				let histring .= 'gui=bold cterm=bold '
+			elseif g:gruvbox_bold == 0
+				let histring .= 'gui=underline cterm=underline '
+			else
+				let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
+			endif
+		elseif a:2 == 'underline,italic'
+			if g:gruvbox_underline == 0 && g:gruvbox_italic == 0
+				let histring .= 'gui=NONE cterm=NONE '
+			elseif g:gruvbox_underline == 0
+				let histring .= 'gui=italic cterm=italic '
+			elseif g:gruvbox_italic == 0
+				let histring .= 'gui=underline cterm=underline '
+			else
+				let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
+			endif
+		elseif a:2 == 'bold,underline,italic'
+			if g:gruvbox_italic == 0 && g:gruvbox_bold == 0
+				let histring .= 'gui=underline cterm=underline '
+			elseif g:gruvbox_italic == 0
+				let histring .= 'gui=bold,underline cterm=bold,underline '
+			elseif g:gruvbox_bold == 0
+				let histring .= 'gui=italic,underline cterm=italic,underline '
 			else
 				let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
 			endif
@@ -682,6 +714,15 @@ call s:HL('htmlSpecialTagName', 'aqua', 'none', 'bold')
 call s:HL('htmlLink', 'light4', 'none', 'underline')
 
 call s:HL('htmlSpecialChar', 'orange')
+
+call s:HL('htmlBold', 'fg', 'bg', 'bold')
+call s:HL('htmlBoldUnderline', 'fg', 'bg', 'bold,underline')
+call s:HL('htmlBoldItalic', 'fg', 'bg', 'bold,italic')
+call s:HL('htmlBoldUnderlineItalic', 'fg', 'bg', 'bold,underline,italic')
+
+call s:HL('htmlUnderline', 'fg', 'bg', 'underline')
+call s:HL('htmlUnderlineItalic', 'fg', 'bg', 'underline,italic')
+call s:HL('htmlItalic', 'fg', 'bg', 'italic')
 
 " }}}
 " Xml: {{{
