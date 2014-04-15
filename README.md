@@ -68,6 +68,13 @@ ToDo
 * Plugin support (MiniBufExplorer, Tagbar)
 * Airline theme
 
+Self-Promotion
+--------------
+
+If you like gruvbox follow the repository on
+[GitHub](https://github.com/morhetz/gruvbox) and vote for it on
+[vim.org](http://www.vim.org/scripts/script.php?script_id=4349).
+
 License
 -------
 [MIT/X11][]
