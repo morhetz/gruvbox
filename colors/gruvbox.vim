@@ -61,6 +61,10 @@ if !exists('g:gruvbox_sign_column')
 	let g:gruvbox_sign_column='dark1'
 endif
 
+if !exists('g:gruvbox_vert_split')
+	let g:gruvbox_vert_split='dark2'
+endif
+
 if !exists('g:gruvbox_invert_signs')
 	let g:gruvbox_invert_signs=0
 endif
@@ -347,7 +351,7 @@ call s:HL('StatusLine',   'dark4', 'dark0', 'bold,inverse')
 call s:HL('StatusLineNC', 'dark2', 'light4', 'bold,inverse')
 
 " The column separating vertically split windows
-call s:HL('VertSplit', 'light4', 'dark2')
+call s:HL('VertSplit', 'light4', g:gruvbox_vert_split)
 
 " Current match in wildmenu completion
 call s:HL('WildMenu', 'blue', 'dark2', 'bold')
