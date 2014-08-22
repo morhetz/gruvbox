@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 11 Mar 2014
+" Last Modified: 22 Aug 2014
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -546,7 +546,7 @@ let g:indentLine_color_gui = '#' . s:gb.dark2[0]
 " }}}
 " Rainbow Parentheses: {{{
 
-let g:rbpt_colorpairs = 
+let g:rbpt_colorpairs =
 	\ [
 		\ ['brown',       '#458588'], ['Darkblue',    '#b16286'],
 		\ ['darkgray',    '#cc241d'], ['darkgreen',   '#d65d0e'],
@@ -558,7 +558,7 @@ let g:rbpt_colorpairs =
 		\ ['darkred',     '#cc241d'], ['red',         '#d65d0e'],
 	\ ]
 
-let g:rainbow_guifgs = 
+let g:rainbow_guifgs =
 	\ [
 		\ '#458588', '#b16286', '#cc241d', '#d65d0e',
 		\ '#458588', '#b16286', '#cc241d', '#d65d0e',
@@ -566,7 +566,7 @@ let g:rainbow_guifgs =
 		\ '#458588', '#b16286', '#cc241d', '#d65d0e'
 	\ ]
 
-let g:rainbow_ctermfgs = 
+let g:rainbow_ctermfgs =
 	\ [
 		\ 'brown', 'Darkblue', 'darkgray', 'darkgreen',
 		\ 'darkcyan', 'darkred', 'darkmagenta', 'brown',
@@ -575,15 +575,6 @@ let g:rainbow_ctermfgs =
 	\ ]
 
 "}}}
-" Airline: {{{
-
-if !exists('g:airline_theme_map')
-	let g:airline_theme_map = { 'gruvbox.*': 'tomorrow' }
-else
-	let g:airline_theme_map['gruvbox.*'] = 'tomorrow'
-endif
-
-" }}}
 " GitGutter: {{{
 
 if g:gruvbox_invert_signs == 0
@@ -684,9 +675,9 @@ call s:HL('StartifyFooter', 'dark2')
 " Vimshell: {{{
 
 let g:vimshell_escape_colors = map(split(
-		  \ 'dark4 red green yellow blue purple aqua light4 ' .
-		  \ 'dark0 red green orange blue purple aqua light0'
-		  \ ), '"#" . s:gb[v:val][0]')
+	\ 'dark4 red green yellow blue purple aqua light4 ' .
+	\ 'dark0 red green orange blue purple aqua light0'
+	\ ), '"#" . s:gb[v:val][0]')
 
 " }}}
 
