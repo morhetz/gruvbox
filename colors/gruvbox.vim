@@ -77,6 +77,10 @@ if !exists('g:gruvbox_contrast')
 	let g:gruvbox_contrast='medium'
 endif
 
+if !exists('g:gruvbox_invert_tabline')
+	let g:gruvbox_invert_tabline=0
+endif
+
 let s:is_dark=(&background == 'dark')
 
 " }}}
@@ -309,12 +313,18 @@ if version >= 700
 	" Screen column that the cursor is
 	call s:HL('CursorColumn', 'none', 'dark1')
 
+if g:gruvbox_invert_tabline == 0
 	" Tab pages line filler
 	call s:HL('TabLineFill', 'dark4', 'bg')
 	" Active tab page label
 	call s:HL('TabLineSel', 'bg', 'dark4', 'bold')
 	" Not active tab page label
 	call s:HL('TabLine', 'dark4', 'bg')
+else
+	call s:HL('TabLineFill', 'bg', 'dark4')
+	call s:HL('TabLineSel', 'dark4', 'bg', 'bold')
+	call s:HL('TabLine', 'bg', 'dark4')
+endif
 
 	" Match paired bracket under the cursor
 	call s:HL('MatchParen', 'none', 'dark3', 'bold')
