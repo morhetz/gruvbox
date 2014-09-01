@@ -77,6 +77,14 @@ if !exists('g:gruvbox_contrast')
 	let g:gruvbox_contrast='medium'
 endif
 
+if !exists('g:gruvbox_contrast_dark')
+	let g:gruvbox_contrast_dark='medium'
+endif
+
+if !exists('g:gruvbox_contrast_light')
+	let g:gruvbox_contrast_light='medium'
+endif
+
 if !exists('g:gruvbox_invert_tabline')
 	let g:gruvbox_invert_tabline=0
 endif
@@ -133,6 +141,14 @@ if s:is_dark
 	if g:gruvbox_contrast == 'hard'
 		let s:gb.dark0  = ['1d2021', 234]     " 29-32-33
 	endif
+
+	if g:gruvbox_contrast_dark == 'soft'
+		let s:gb.dark0  = ['32302f', 236]     " 50-48-47
+	endif
+
+	if g:gruvbox_contrast_dark == 'hard'
+		let s:gb.dark0  = ['1d2021', 234]     " 29-32-33
+	endif
 else
 	let s:gb.dark0  = ['fdf4c1', 229]     " 253-244-193
 	let s:gb.dark1  = ['ebdbb2', 223]     " 235-219-178
@@ -176,6 +192,14 @@ else
 	endif
 
 	if g:gruvbox_contrast == 'hard'
+		let s:gb.dark0  = ['fdf5d2', 230]     " 253-245-210
+	endif
+
+	if g:gruvbox_contrast_light == 'soft'
+		let s:gb.dark0  = ['f4e4b2', 228]     " 244-228-178
+	endif
+
+	if g:gruvbox_contrast_light == 'hard'
 		let s:gb.dark0  = ['fdf5d2', 230]     " 253-245-210
 	endif
 endif
