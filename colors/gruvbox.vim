@@ -192,7 +192,7 @@ else
 	endif
 
 	if g:gruvbox_contrast == 'hard'
-		let s:gb.dark0  = ['fdf7cf', 230]     " 253-247-207
+		let s:gb.dark0  = ['f9f5d7', 230]     " 249-245-215
 	endif
 
 	if g:gruvbox_contrast_light == 'soft'
@@ -200,7 +200,7 @@ else
 	endif
 
 	if g:gruvbox_contrast_light == 'hard'
-		let s:gb.dark0  = ['fdf4c1', 230]     " 253-247-207
+		let s:gb.dark0  = ['f9f5d7', 230]     " 249-245-215
 	endif
 endif
 
