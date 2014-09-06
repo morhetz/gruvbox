@@ -150,7 +150,7 @@ if s:is_dark
 		let s:gb.dark0  = ['1d2021', 234]     " 29-32-33
 	endif
 else
-	let s:gb.dark0  = ['fdf4c1', 229]     " 253-244-193
+	let s:gb.dark0  = ['fbf1c7', 229]     " 251-241-199
 	let s:gb.dark1  = ['ebdbb2', 223]     " 235-219-178
 	let s:gb.dark2  = ['d5c4a1', 250]     " 213-196-161
 	let s:gb.dark3  = ['bdae93', 248]     " 189-174-147
@@ -175,7 +175,7 @@ else
 	let s:gb.orange = ['af3a03', 130]     " 175-58-3
 
 	if g:gruvbox_termcolors == 16
-		let s:gb.dark0  = ['fdf4c1', 0]
+		let s:gb.dark0  = ['fbf1c7', 0]
 		let s:gb.light4 = ['7c6f64', 7]
 		let s:gb.medium = ['928374', 8]
 		let s:gb.red    = ['9d0006', 9]
@@ -188,19 +188,19 @@ else
 	endif
 
 	if g:gruvbox_contrast == 'soft'
-		let s:gb.dark0  = ['f4e4b2', 228]     " 244-228-178
+		let s:gb.dark0  = ['f2e5bc', 228]     " 242-229-188
 	endif
 
 	if g:gruvbox_contrast == 'hard'
-		let s:gb.dark0  = ['fdf5d2', 230]     " 253-245-210
+		let s:gb.dark0  = ['fdf7cf', 230]     " 253-247-207
 	endif
 
 	if g:gruvbox_contrast_light == 'soft'
-		let s:gb.dark0  = ['f4e4b2', 228]     " 244-228-178
+		let s:gb.dark0  = ['f2e5bc', 228]     " 242-229-188
 	endif
 
 	if g:gruvbox_contrast_light == 'hard'
-		let s:gb.dark0  = ['fdf5d2', 230]     " 253-245-210
+		let s:gb.dark0  = ['fdf4c1', 230]     " 253-247-207
 	endif
 endif
 
