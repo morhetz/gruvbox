@@ -580,7 +580,7 @@ let g:indentLine_color_gui = '#' . s:gb.dark2[0]
 " }}}
 " Rainbow Parentheses: {{{
 
-if !exists('g:rbpt_colorpairs ')
+if !exists('g:rbpt_colorpairs')
 	let g:rbpt_colorpairs =
 		\ [
 			\ ['blue', '#458588'], ['magenta', '#b16286'],
@@ -955,6 +955,14 @@ call s:HL('javaParen5', 'light3')
 call s:HL('javaOperator', 'orange')
 
 call s:HL('javaVarArg', 'green')
+
+" }}}
+" Elixir: {{{
+
+hi! link elixirDocString Comment
+
+call s:HL('elixirStringDelimiter', 'green')
+call s:HL('elixirInterpolationDelimiter', 'aqua')
 
 " }}}
 
