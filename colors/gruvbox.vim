@@ -588,7 +588,7 @@ if !exists('g:rbpt_colorpairs')
 		\ ]
 endif
 
-let g:rainbow_guifgs = [ '#d65d0e', '#cc241d', '#b16286', '#458588',  ]
+let g:rainbow_guifgs = [ '#d65d0e', '#cc241d', '#b16286', '#458588' ]
 let g:rainbow_ctermfgs = [ '166', 'red', 'magenta', 'blue' ]
 
 if !exists('g:rainbow_conf')
@@ -601,15 +601,8 @@ if !has_key(g:rainbow_conf, 'ctermfgs')
    let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
 endif
 
-let g:niji_dark_colours =
-	\ [
-		\ ['166',     '#d65d0e'],
-		\ ['red',     '#cc241d'],
-		\ ['magenta', '#b16286'],
-		\ ['blue',    '#458588']
-	\ ]
-
-let g:niji_light_colours = g:niji_dark_colours
+let g:niji_dark_colours = g:rbpt_colorpairs
+let g:niji_light_colours = g:rbpt_colorpairs
 
 "}}}
 " GitGutter: {{{
