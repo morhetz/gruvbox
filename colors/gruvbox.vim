@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 22 Aug 2014
+" Last Modified: 10 Nov 2014
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -580,33 +580,36 @@ let g:indentLine_color_gui = '#' . s:gb.dark2[0]
 " }}}
 " Rainbow Parentheses: {{{
 
-let g:rbpt_colorpairs =
+if !exists('g:rbpt_colorpairs ')
+	let g:rbpt_colorpairs =
+		\ [
+			\ ['blue', '#458588'], ['magenta', '#b16286'],
+			\ ['red',  '#cc241d'], ['166',     '#d65d0e']
+		\ ]
+endif
+
+let g:rainbow_guifgs = [ '#d65d0e', '#cc241d', '#b16286', '#458588',  ]
+let g:rainbow_ctermfgs = [ '166', 'red', 'magenta', 'blue' ]
+
+if !exists('g:rainbow_conf')
+   let g:rainbow_conf = {}
+endif
+if !has_key(g:rainbow_conf, 'guifgs')
+   let g:rainbow_conf['guifgs'] = g:rainbow_guifgs
+endif
+if !has_key(g:rainbow_conf, 'ctermfgs')
+   let g:rainbow_conf['ctermfgs'] = g:rainbow_ctermfgs
+endif
+
+let g:niji_dark_colours =
 	\ [
-		\ ['brown',       '#458588'], ['Darkblue',    '#b16286'],
-		\ ['darkgray',    '#cc241d'], ['darkgreen',   '#d65d0e'],
-		\ ['darkcyan',    '#458588'], ['darkred',     '#b16286'],
-		\ ['darkmagenta', '#cc241d'], ['brown',       '#d65d0e'],
-		\ ['gray',        '#458588'], ['black',       '#b16286'],
-		\ ['darkmagenta', '#cc241d'], ['Darkblue',    '#d65d0e'],
-		\ ['darkgreen',   '#458588'], ['darkcyan',    '#b16286'],
-		\ ['darkred',     '#cc241d'], ['red',         '#d65d0e'],
+		\ ['166',     '#d65d0e'],
+		\ ['red',     '#cc241d'],
+		\ ['magenta', '#b16286'],
+		\ ['blue',    '#458588']
 	\ ]
 
-let g:rainbow_guifgs =
-	\ [
-		\ '#458588', '#b16286', '#cc241d', '#d65d0e',
-		\ '#458588', '#b16286', '#cc241d', '#d65d0e',
-		\ '#458588', '#b16286', '#cc241d', '#d65d0e',
-		\ '#458588', '#b16286', '#cc241d', '#d65d0e'
-	\ ]
-
-let g:rainbow_ctermfgs =
-	\ [
-		\ 'brown', 'Darkblue', 'darkgray', 'darkgreen',
-		\ 'darkcyan', 'darkred', 'darkmagenta', 'brown',
-		\ 'gray', 'black', 'darkmagenta', 'Darkblue',
-		\ 'darkgreen', 'darkcyan', 'darkred', 'red',
-	\ ]
+let g:niji_light_colours = g:niji_dark_colours
 
 "}}}
 " GitGutter: {{{
