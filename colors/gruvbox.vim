@@ -958,6 +958,27 @@ call s:HL('elixirStringDelimiter', 'green')
 call s:HL('elixirInterpolationDelimiter', 'aqua')
 
 " }}}
+" Scala: {{{
+
+" NB: scala vim syntax file is kinda horrible
+call s:HL('scalaNameDefinition', 'light1')
+call s:HL('scalaCaseFollowing', 'light1')
+call s:HL('scalaCapitalWord', 'light1')
+call s:HL('scalaTypeExtension', 'light1')
+
+call s:HL('scalaKeyword', 'red')
+call s:HL('scalaKeywordModifier', 'red')
+
+call s:HL('scalaSpecial', 'aqua')
+call s:HL('scalaOperator', 'light1')
+
+call s:HL('scalaTypeDeclaration', 'yellow')
+call s:HL('scalaTypeTypePostDeclaration', 'yellow')
+
+call s:HL('scalaInstanceDeclaration', 'light1')
+call s:HL('scalaInterpolation', 'aqua')
+
+" }}}
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
