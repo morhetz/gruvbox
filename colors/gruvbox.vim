@@ -61,6 +61,10 @@ if !exists('g:gruvbox_sign_column')
 	let g:gruvbox_sign_column='dark1'
 endif
 
+if !exists('g:gruvbox_color_column')
+	let g:gruvbox_color_column='dark1'
+endif
+
 if !exists('g:gruvbox_vert_split')
 	let g:gruvbox_vert_split='dark2'
 endif
@@ -356,7 +360,7 @@ endif
 
 if version >= 703
 	" Highlighted screen columns
-	call s:HL('ColorColumn',  'none', 'dark1')
+	call s:HL('ColorColumn',  'none', g:gruvbox_color_column)
 
 	" Concealed element: \lambda → λ
 	call s:HL('Conceal', 'blue', 'none')
