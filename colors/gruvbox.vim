@@ -661,8 +661,8 @@ else
 	call s:HL('SignatureMarkText', 'blue', g:gruvbox_sign_column, 'inverse')
 endif
 
-let g:SignatureMarkerTextHL='SignatureMarkerText'
-let g:SignatureMarkTextHL='SignatureMarkText'
+let g:SignatureMarkerTextHL='"SignatureMarkerText"'
+let g:SignatureMarkTextHL='"SignatureMarkText"'
 
 " }}}
 " ShowMarks: {{{
