@@ -460,7 +460,7 @@ call s:HL('Label',       'red')
 " try, catch, throw
 call s:HL('Exception',   'red')
 " sizeof, "+", "*", etc.
-hi! link Operator Normal
+hi! link Operator Structure
 " Any other keyword
 call s:HL('Keyword',     'red')
 
