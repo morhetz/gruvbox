@@ -45,6 +45,10 @@ if !exists('g:gruvbox_italicize_strings')
 	let g:gruvbox_italicize_strings=0
 endif
 
+if !exists('g:gruvbox_improved_strings')
+	let g:gruvbox_improved_strings=0
+endif
+
 if !exists('g:gruvbox_termcolors')
 	let g:gruvbox_termcolors=256
 endif
@@ -440,7 +444,12 @@ call s:HL('lCursor', 'none', 'none', 'inverse')
 " }}}
 " Syntax Highlighting: {{{
 
-call s:HL('Special', 'orange')
+if g:gruvbox_improved_strings == 0
+	call s:HL('Special', 'orange')
+else
+	call s:HL('Special', 'dark1', 'orange', 'italic')
+endif
+
 if g:gruvbox_italicize_comments == 0
 	call s:HL('Comment', 'medium', 'none')
 else
@@ -488,7 +497,11 @@ call s:HL('Character', 'purple')
 if g:gruvbox_italicize_strings == 0
 	call s:HL('String',  'green')
 else
-	call s:HL('String',  'green', 'none', 'italic')
+	if g:gruvbox_improved_strings == 0
+		call s:HL('String',  'green', 'none', 'italic')
+	else
+		call s:HL('String',  'dark1', 'light1', 'italic')
+	endif
 endif
 " Boolean constant: TRUE, false
 call s:HL('Boolean',   'purple')
