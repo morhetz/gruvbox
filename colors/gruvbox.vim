@@ -49,6 +49,10 @@ if !exists('g:gruvbox_improved_strings')
 	let g:gruvbox_improved_strings=0
 endif
 
+if !exists('g:gruvbox_improved_warnings')
+	let g:gruvbox_improved_warnings=0
+endif
+
 if !exists('g:gruvbox_termcolors')
 	let g:gruvbox_termcolors=256
 endif
@@ -549,8 +553,12 @@ call s:HL('DiffText',   'dark0', 'yellow')
 " Spelling: {{{
 
 if has("spell")
-	" Not capitalised word
-	call s:HL('SpellCap',   'none', 'none', 'undercurl', 'red')
+	" Not capitalised word, or compile warnings
+	if g:gruvbox_improved_warnings == 0
+		call s:HL('SpellCap',   'none', 'none', 'undercurl', 'red')
+	else
+		call s:HL('SpellCap',   'green', 'none', 'italic,bold')
+	endif
 	" Not recognized word
 	call s:HL('SpellBad',   'none', 'none', 'undercurl', 'blue')
 	" Wrong spelling for selected region
