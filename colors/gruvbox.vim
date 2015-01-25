@@ -74,7 +74,7 @@ if !exists('g:gruvbox_color_column')
 endif
 
 if !exists('g:gruvbox_vert_split')
-	let g:gruvbox_vert_split='dark2'
+	let g:gruvbox_vert_split='dark4'
 endif
 
 if !exists('g:gruvbox_invert_signs')
