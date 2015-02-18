@@ -22,6 +22,10 @@ if !has('gui_running') && &t_Co != 256
 	finish
 endif
 
+if !has("gui_running")
+	let g:gruvbox_italic=0
+endif
+
 " }}}
 " Global Settings: {{{
 
