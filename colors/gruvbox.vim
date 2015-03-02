@@ -649,6 +649,12 @@ else
 endif
 
 " }}}
+" gitcommit highlighting "{{{
+
+call s:HL('gitcommitSelectedFile', 'green')
+call s:HL('gitcommitDiscardedFile', 'red')
+
+" }}}
 " Signify: {{{
 
 if g:gruvbox_invert_signs == 0
