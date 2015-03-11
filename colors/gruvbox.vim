@@ -29,7 +29,7 @@ if !exists('g:gruvbox_bold')
 	let g:gruvbox_bold=1
 endif
 if !exists('g:gruvbox_italic')
-	if has("gui_running")
+	if has('gui_running') || $TERM_ITALICS == 'true'
 		let g:gruvbox_italic=1
 	else
 		let g:gruvbox_italic=0
