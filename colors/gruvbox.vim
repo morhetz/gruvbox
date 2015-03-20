@@ -1014,6 +1014,13 @@ call s:HL('scalaInstanceDeclaration', 'light1')
 call s:HL('scalaInterpolation', 'aqua')
 
 " }}}
+" Markdown: {{{
+call s:HL('markdownItalic', 'yellow')
+call s:HL('markdownBold', 'red')
+call s:HL('markdownCode', 'blue')
+call s:HL('markdownCodeBlock', 'blue')
+call s:HL('markdownCodeDelimiter', 'blue')
+" }}}
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
