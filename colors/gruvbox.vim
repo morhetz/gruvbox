@@ -1014,6 +1014,39 @@ call s:HL('scalaInstanceDeclaration', 'light1')
 call s:HL('scalaInterpolation', 'aqua')
 
 " }}}
+" Markdown: {{{
+
+call s:HL('markdownItalic', 'light3', 'none', 'italic')
+
+call s:HL('markdownH1', 'green', 'none', 'bold')
+call s:HL('markdownH2', 'green', 'none', 'bold')
+call s:HL('markdownH3', 'yellow', 'none', 'bold')
+call s:HL('markdownH4', 'yellow', 'none', 'bold')
+call s:HL('markdownH5', 'yellow')
+call s:HL('markdownH6', 'yellow')
+
+call s:HL('markdownCode', 'aqua')
+call s:HL('markdownCodeBlock', 'aqua')
+call s:HL('markdownCodeDelimiter', 'aqua')
+
+call s:HL('markdownBlockquote', 'medium')
+call s:HL('markdownListMarker', 'medium')
+call s:HL('markdownOrderedListMarker', 'medium')
+call s:HL('markdownRule', 'medium')
+call s:HL('markdownHeadingRule', 'medium')
+
+call s:HL('markdownUrlDelimiter', 'light3')
+call s:HL('markdownLinkDelimiter', 'light3')
+call s:HL('markdownLinkTextDelimiter', 'light3')
+
+call s:HL('markdownHeadingDelimiter', 'orange')
+call s:HL('markdownUrl', 'purple')
+call s:HL('markdownUrlTitleDelimiter', 'green')
+
+call s:HL('markdownLinkText', 'medium', 'none', 'underline')
+call s:HL('markdownIdDeclaration', 'medium', 'none', 'underline')
+
+" }}}
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
