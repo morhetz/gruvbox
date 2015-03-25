@@ -37,7 +37,7 @@ Features
 --------
 
 * Lots of style-customization options (contrast, color invertion, italics usage etc.)
-* Extended filetype highlighting: Html, Xml, Vim, Clojure, C, Python, JavaScript, CoffeeScript, Ruby, Objective-C, Go, Lua, MoonScript, Java
+* Extended filetype highlighting: Html, Xml, Vim, Clojure, C, Python, JavaScript, CoffeeScript, Ruby, Objective-C, Go, Lua, MoonScript, Java, Markdown
 * Supported plugins: [EasyMotion][], [vim-sneak][], [Indent Guides][], [indentLine][], [Rainbow Parentheses][], [Airline][], [GitGutter][], [Signify][], [ShowMarks][], [Signature][], [Syntastic][], [CtrlP][], [Startify][]
 
    [EasyMotion]: https://github.com/Lokaltog/vim-easymotion
@@ -64,7 +64,7 @@ See [gruvbox-generalized][] repo for contributions, ports and extras.
 ToDo
 ----
 
-* Filetype syntax highlighting (R, TeX, Swift, Haskell and I'm still dissatisfied with CSS)
+* Filetype syntax highlighting (R, TeX, Swift, Haskell, Erlang, ES6 and I'm still dissatisfied with CSS)
 * Plugin support (MiniBufExplorer, Tagbar, Netrw, VimPLug)
 * Lightline theme
 
