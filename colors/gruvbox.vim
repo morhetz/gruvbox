@@ -592,7 +592,9 @@ hi! link SneakStreakStatusLine Search
 
 if !exists('g:indent_guides_auto_colors')
 	let g:indent_guides_auto_colors = 0
+endif
 
+if g:indent_guides_auto_colors == 0
 	if g:gruvbox_invert_indent_guides == 0
 		call s:HL('IndentGuidesOdd', 'bg', 'dark2')
 		call s:HL('IndentGuidesEven', 'bg', 'dark1')
