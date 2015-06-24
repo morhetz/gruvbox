@@ -607,8 +607,12 @@ endif
 " }}}
 " IndentLine: {{{
 
-let g:indentLine_color_term = s:gb.dark2[1]
-let g:indentLine_color_gui = '#' . s:gb.dark2[0]
+if !exists('g:indentLine_color_term')
+	let g:indentLine_color_term = s:gb.dark2[1]
+endif
+if !exists('g:indentLine_color_gui')
+	let g:indentLine_color_gui = '#' . s:gb.dark2[0]
+endif
 
 " }}}
 " Rainbow Parentheses: {{{
