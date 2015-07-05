@@ -41,6 +41,9 @@ endif
 if !exists('g:gruvbox_underline')
 	let g:gruvbox_underline=1
 endif
+if !exists('g:gruvbox_guisp_fallback') || index(['fg', 'bg'], g:gruvbox_guisp_fallback) == -1
+	let g:gruvbox_guisp_fallback='none'
+endif
 
 if !exists('g:gruvbox_italicize_comments')
 	let g:gruvbox_italicize_comments=1
@@ -228,7 +231,11 @@ function! s:HL(group, fg, ...)
 
 	let histring = 'hi ' . a:group . ' '
 
-	if strlen(a:fg)
+	" if (Foreground override enabled) && (    We were passed a guisp value     )
+	if g:gruvbox_guisp_fallback == 'fg' && a:0 >= 3 && strlen(a:3) && a:3 != 'none'
+		let c = get(s:gb, a:3)
+		let histring .= 'guifg=#' . c[0] . ' ctermfg=' . c[1] . ' '
+	elseif strlen(a:fg)
 		if a:fg == 'fg'
 			let histring .= 'guifg=fg ctermfg=fg '
 		elseif a:fg == 'bg'
@@ -241,7 +248,11 @@ function! s:HL(group, fg, ...)
 		endif
 	endif
 
-	if a:0 >= 1 && strlen(a:1)
+	" if (Background override enabled) && (    We were passed a guisp value     )
+	if g:gruvbox_guisp_fallback == 'bg' && a:0 >= 3 && strlen(a:3) && a:3 != 'none'
+		let c = get(s:gb, a:3)
+		let histring .= 'guibg=#' . c[0] . ' ctermbg=' . c[1] . ' '
+	elseif a:0 >= 1 && strlen(a:1)
 		if a:1 == 'bg'
 			let histring .= 'guibg=bg ctermbg=bg '
 		elseif a:fg == 'fg'
