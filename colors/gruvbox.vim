@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 10 Nov 2014
+" Last Modified: 20 Aug 2015
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -934,13 +934,69 @@ call s:HL('cssGeneratedContentProp', 'aqua')
 " }}}
 " JavaScript: {{{
 
-call s:HL('javaScriptBraces', 'orange')
+call s:HL('javaScriptBraces', 'light1')
 call s:HL('javaScriptFunction', 'aqua')
 call s:HL('javaScriptIdentifier', 'red')
 call s:HL('javaScriptMember', 'blue')
 call s:HL('javaScriptNumber', 'purple')
 call s:HL('javaScriptNull', 'purple')
 call s:HL('javaScriptParens', 'light3')
+
+" }}}
+" YAJS: {{{
+
+call s:HL('javascriptImport', 'aqua')
+call s:HL('javascriptExport', 'aqua')
+call s:HL('javascriptClassKeyword', 'aqua')
+call s:HL('javascriptClassExtends', 'aqua')
+call s:HL('javascriptDefault', 'aqua')
+
+call s:HL('javascriptClassName', 'yellow')
+call s:HL('javascriptClassSuperName', 'yellow')
+call s:HL('javascriptGlobal', 'yellow')
+
+call s:HL('javascriptEndColons', 'light1')
+call s:HL('javascriptFuncArg', 'light1')
+call s:HL('javascriptGlobalMethod', 'light1')
+call s:HL('javascriptNodeGlobal', 'light1')
+
+" call s:HL('javascriptVariable', 'orange')
+call s:HL('javascriptVariable', 'red')
+" call s:HL('javascriptIdentifier', 'orange')
+" call s:HL('javascriptClassSuper', 'orange')
+call s:HL('javascriptIdentifier', 'orange')
+call s:HL('javascriptClassSuper', 'orange')
+
+" call s:HL('javascriptFuncKeyword', 'orange')
+" call s:HL('javascriptAsyncFunc', 'orange')
+call s:HL('javascriptFuncKeyword', 'aqua')
+call s:HL('javascriptAsyncFunc', 'aqua')
+call s:HL('javascriptClassStatic', 'orange')
+
+call s:HL('javascriptOperator', 'red')
+call s:HL('javascriptForOperator', 'red')
+call s:HL('javascriptYield', 'red')
+call s:HL('javascriptExceptions', 'red')
+call s:HL('javascriptMessage', 'red')
+
+call s:HL('javascriptTemplateSB', 'aqua')
+call s:HL('javascriptTemplateSubstitution', 'light1')
+
+" call s:HL('javascriptLabel', 'blue')
+" call s:HL('javascriptObjectLabel', 'blue')
+" call s:HL('javascriptPropertyName', 'blue')
+call s:HL('javascriptLabel', 'light1')
+call s:HL('javascriptObjectLabel', 'light1')
+call s:HL('javascriptPropertyName', 'light1')
+
+call s:HL('javascriptLogicSymbols', 'light1')
+call s:HL('javascriptArrowFunc', 'light1')
+
+call s:HL('javascriptDocParamName', 'light4')
+call s:HL('javascriptDocTags', 'light4')
+call s:HL('javascriptDocNotation', 'light4')
+call s:HL('javascriptDocParamType', 'light4')
+call s:HL('javascriptDocNamedParamType', 'light4')
 
 " }}}
 " CoffeeScript: {{{
@@ -1066,6 +1122,21 @@ call s:HL('markdownLinkText', 'medium', 'none', 'underline')
 call s:HL('markdownIdDeclaration', 'medium', 'none', 'underline')
 
 " }}}
+" Haskell: {{{
+
+" call s:HL('haskellOperators', 'red')
+" call s:HL('haskellImportKeywords', 'purple')
+
+" }}}
+" Json: {{{
+
+call s:HL('jsonKeyword', 'green')
+call s:HL('jsonQuote', 'green')
+call s:HL('jsonBraces', 'light1')
+call s:HL('jsonString', 'light1')
+
+" }}}
+
 
 " Functions -------------------------------------------------------------------
 " Search Highlighting Cursor {{{
