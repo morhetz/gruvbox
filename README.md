@@ -64,7 +64,7 @@ See [gruvbox-generalized][] repo for contributions, ports and extras.
 ToDo
 ----
 
-* Filetype syntax highlighting (R, TeX, Swift, Haskell, Erlang and I'm still dissatisfied with CSS)
+* Filetype syntax highlighting (R, TeX, Swift, Erlang and I'm still dissatisfied with CSS)
 * Plugin support (MiniBufExplorer, Tagbar, Netrw, VimPLug)
 * Lightline theme
 
