@@ -1124,8 +1124,36 @@ call s:HL('markdownIdDeclaration', 'medium', 'none', 'underline')
 " }}}
 " Haskell: {{{
 
-" call s:HL('haskellOperators', 'red')
-" call s:HL('haskellImportKeywords', 'purple')
+" call s:HL('haskellType', 'yellow')
+" call s:HL('haskellOperators', 'orange')
+" call s:HL('haskellConditional', 'aqua')
+" call s:HL('haskellLet', 'orange')
+"
+call s:HL('haskellType', 'light1')
+call s:HL('haskellIdentifier', 'light1')
+call s:HL('haskellSeparator', 'light1')
+call s:HL('haskellDelimiter', 'light4')
+call s:HL('haskellOperators', 'blue')
+"
+call s:HL('haskellBacktick', 'orange')
+call s:HL('haskellStatement', 'orange')
+call s:HL('haskellConditional', 'orange')
+
+call s:HL('haskellLet', 'aqua')
+call s:HL('haskellDefault', 'aqua')
+call s:HL('haskellWhere', 'aqua')
+call s:HL('haskellBottom', 'aqua')
+call s:HL('haskellBlockKeywords', 'aqua')
+call s:HL('haskellImportKeywords', 'aqua')
+call s:HL('haskellDeclKeyword', 'aqua')
+call s:HL('haskellDeriving', 'aqua')
+call s:HL('haskellAssocType', 'aqua')
+
+call s:HL('haskellNumber', 'purple')
+call s:HL('haskellPragma', 'purple')
+
+call s:HL('haskellString', 'green')
+call s:HL('haskellChar', 'green')
 
 " }}}
 " Json: {{{
