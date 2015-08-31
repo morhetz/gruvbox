@@ -11,6 +11,13 @@ Designed as a bright theme with pastel 'retro groove' colors and light/dark mode
    [jellybeans]: https://github.com/nanotech/jellybeans.vim
    [solarized]: http://ethanschoonover.com/solarized
 
+Attention
+---------
+
+1. [Read this first](https://github.com/morhetz/gruvbox/wiki/Terminal-specific)
+2. Typeface from gallery is [Fantasque Sans Mono](https://github.com/belluzj/fantasque-sans)
+3. Typeface from screenshots below is [DejaVu Sans Mono](http://dejavu-fonts.org/wiki/Main_Page)
+
 Screenshots
 -----------
 
