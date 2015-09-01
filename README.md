@@ -41,7 +41,7 @@ Features
 --------
 
 * Lots of style-customization options (contrast, color invertion, italics usage etc.)
-* Extended filetype highlighting: Html, Xml, Vim, Clojure, C, Python, JavaScript, CoffeeScript, Ruby, Objective-C, Go, Lua, MoonScript, Java, Markdown
+* Extended filetype highlighting: Html, Xml, Vim (and ES6 with [yajs.vim](https://github.com/othree/yajs.vim)), Clojure, C, Python, JavaScript, CoffeeScript, Ruby, Objective-C, Go, Lua, MoonScript, Java, Markdown, Haskell
 * Supported plugins: [EasyMotion][], [vim-sneak][], [Indent Guides][], [indentLine][], [Rainbow Parentheses][], [Airline][], [GitGutter][], [Signify][], [ShowMarks][], [Signature][], [Syntastic][], [CtrlP][], [Startify][]
 
    [EasyMotion]: https://github.com/Lokaltog/vim-easymotion
