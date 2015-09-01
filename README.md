@@ -1,7 +1,4 @@
-gruvbox
-=======
-
-Retro groove color scheme for Vim.
+<p align="center"><img src="https://imgrush.com/kwCe9219whAO.svg"></p>
 
 Gruvbox is heavily inspired by [badwolf][], [jellybeans][] and [solarized][].
 
