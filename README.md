@@ -1,8 +1,8 @@
 <p align="center"><img src="https://imgrush.com/h0EfiWAdb4Ke.svg"></p>
 
-Gruvbox is heavily inspired by [badwolf][], [jellybeans][] and [solarized][].
+gruvbox is heavily inspired by [badwolf][], [jellybeans][] and [solarized][].
 
-Designed as a bright theme with pastel 'retro groove' colors and light/dark mode switching in the way of [solarized][]. The main focus when developing Gruvbox is to keep colors easily distinguishable, contrast enough and still pleasant for the eyes.
+Designed as a bright theme with pastel 'retro groove' colors and light/dark mode switching in the way of [solarized][]. The main focus when developing gruvbox is to keep colors easily distinguishable, contrast enough and still pleasant for the eyes.
 
    [badwolf]: https://github.com/sjl/badwolf
    [jellybeans]: https://github.com/nanotech/jellybeans.vim
@@ -61,9 +61,9 @@ Features
 Contributions
 -------------
 
-See [gruvbox-generalized][] repo for contributions, ports and extras.
+See [gruvbox-contrib][] repo for contributions, ports and extras.
 
-[gruvbox-generalized]: https://github.com/morhetz/gruvbox-generalized
+[gruvbox-contrib]: https://github.com/morhetz/gruvbox-contrib
 
 ToDo
 ----
