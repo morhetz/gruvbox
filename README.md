@@ -24,11 +24,11 @@ Refer [Gallery][] for more syntax-specific screenshots.
 
 ### Dark mode
 
-![Screenshot](http://i.imgur.com/2870c.png)
+![Screenshot Dark](http://i.imgur.com/BzhUtZj.png)
 
 ### Light mode
 
-![Screenshot](http://i.imgur.com/oS9I3.png)
+![Screenshot Light](http://i.imgur.com/QN2FY0A.png)
 
 Documentation
 -------------
