@@ -41,6 +41,11 @@ Palette
 
 ![Palette Light](http://i.imgur.com/49qKyYW.png)
 
+Contrast options
+----------------
+
+![Contrast Options](http://i.imgur.com/5MSbe6T.png)
+
 Documentation
 -------------
 
