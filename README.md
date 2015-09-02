@@ -30,6 +30,17 @@ Refer [Gallery][] for more syntax-specific screenshots.
 
 ![Screenshot Light](http://i.imgur.com/X75niEa.png)
 
+Palette
+-------
+
+### Dark mode
+
+![Palette Dark](http://i.imgur.com/ofOAObj.png)
+
+### Light mode
+
+![Palette Light](http://i.imgur.com/y3bGiwk.pngg)
+
 Documentation
 -------------
 
