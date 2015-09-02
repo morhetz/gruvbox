@@ -44,6 +44,10 @@ Palette
 Contrast options
 ----------------
 
+Refer [wiki section][] for contrast configuration and other options.
+
+   [wiki section]: https://github.com/morhetz/gruvbox/wiki/Configuration#ggruvbox_contrast_dark
+
 ![Contrast Options](http://i.imgur.com/5MSbe6T.png)
 
 Documentation
