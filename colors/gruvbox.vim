@@ -108,21 +108,21 @@ if g:gruvbox_inverse == 0
 endif
 
 if s:is_dark
-  let s:dark0  = ['#282828', 235]     " 40-40-40
-  let s:dark1  = ['#3c3836', 237]     " 60-56-54
-  let s:dark2  = ['#504945', 239]     " 80-73-69
-  let s:dark3  = ['#665c54', 241]     " 102-92-84
-  let s:dark4  = ['#7c6f64', 243]     " 124-111-100
+  let s:bg0  = ['#282828', 235]     " 40-40-40
+  let s:bg1  = ['#3c3836', 237]     " 60-56-54
+  let s:bg2  = ['#504945', 239]     " 80-73-69
+  let s:bg3  = ['#665c54', 241]     " 102-92-84
+  let s:bg4  = ['#7c6f64', 243]     " 124-111-100
 
-  let s:medium = ['#928374', 245]     " 146-131-116
+  let s:gray = ['#928374', 245]     " 146-131-116
 
-  let s:light0 = ['#fbf1c7', 229]     " 251-241-199
-  let s:light1 = ['#ebdbb2', 223]     " 235-219-178
-  let s:light2 = ['#d5c4a1', 250]     " 213-196-161
-  let s:light3 = ['#bdae93', 248]     " 189-174-147
-  let s:light4 = ['#a89984', 246]     " 168-153-132
+  let s:fg0 = ['#fbf1c7', 229]     " 251-241-199
+  let s:fg1 = ['#ebdbb2', 223]     " 235-219-178
+  let s:fg2 = ['#d5c4a1', 250]     " 213-196-161
+  let s:fg3 = ['#bdae93', 248]     " 189-174-147
+  let s:fg4 = ['#a89984', 246]     " 168-153-132
 
-  let s:light4_256 = ['#a89984', 246] " 168-153-132
+  let s:fg4_256 = ['#a89984', 246] " 168-153-132
 
   let s:red    = ['#fb4934', 167]     " 251-73-52
   let s:green  = ['#b8bb26', 142]     " 184-187-38
@@ -133,45 +133,45 @@ if s:is_dark
   let s:orange = ['#fe8019', 208]     " 254-128-25
 
   if g:gruvbox_termcolors == 16
-    let s:dark0  = ['#282828', 0]
-    let s:light4 = ['#a89984', 7]
-    let s:medium = ['#928374', 8]
+    let s:bg0  = ['#282828', 0]
+    let s:fg4 = ['#a89984', 7]
+    let s:gray = ['#928374', 8]
     let s:red    = ['#fb4934', 9]
     let s:green  = ['#b8bb26', 10]
     let s:yellow = ['#fabd2f', 11]
     let s:blue   = ['#83a598', 12]
     let s:purple = ['#d3869b', 13]
     let s:aqua   = ['#8ec07c', 14]
-    let s:light1 = ['#ebdbb2', 15]
+    let s:fg1 = ['#ebdbb2', 15]
   endif
 
   if g:gruvbox_contrast == 'soft'
-    let s:dark0  = ['#32302f', 236]     " 50-48-47
+    let s:bg0  = ['#32302f', 236]     " 50-48-47
   elseif g:gruvbox_contrast == 'hard'
-    let s:dark0  = ['#1d2021', 234]     " 29-32-33
+    let s:bg0  = ['#1d2021', 234]     " 29-32-33
   endif
 
   if g:gruvbox_contrast_dark == 'soft'
-    let s:dark0  = ['#32302f', 236]     " 50-48-47
+    let s:bg0  = ['#32302f', 236]     " 50-48-47
   elseif g:gruvbox_contrast_dark == 'hard'
-    let s:dark0  = ['#1d2021', 234]     " 29-32-33
+    let s:bg0  = ['#1d2021', 234]     " 29-32-33
   endif
 else
-  let s:dark0  = ['#fbf1c7', 229]     " 251-241-199
-  let s:dark1  = ['#ebdbb2', 223]     " 235-219-178
-  let s:dark2  = ['#d5c4a1', 250]     " 213-196-161
-  let s:dark3  = ['#bdae93', 248]     " 189-174-147
-  let s:dark4  = ['#a89984', 246]     " 168-153-132
+  let s:bg0  = ['#fbf1c7', 229]     " 251-241-199
+  let s:bg1  = ['#ebdbb2', 223]     " 235-219-178
+  let s:bg2  = ['#d5c4a1', 250]     " 213-196-161
+  let s:bg3  = ['#bdae93', 248]     " 189-174-147
+  let s:bg4  = ['#a89984', 246]     " 168-153-132
 
-  let s:medium = ['#928374', 244]     " 146-131-116
+  let s:gray = ['#928374', 244]     " 146-131-116
 
-  let s:light0 = ['#282828', 235]     " 40-40-40
-  let s:light1 = ['#3c3836', 237]     " 60-56-54
-  let s:light2 = ['#504945', 239]     " 80-73-69
-  let s:light3 = ['#665c54', 241]     " 102-92-84
-  let s:light4 = ['#7c6f64', 243]     " 124-111-100
+  let s:fg0 = ['#282828', 235]     " 40-40-40
+  let s:fg1 = ['#3c3836', 237]     " 60-56-54
+  let s:fg2 = ['#504945', 239]     " 80-73-69
+  let s:fg3 = ['#665c54', 241]     " 102-92-84
+  let s:fg4 = ['#7c6f64', 243]     " 124-111-100
 
-  let s:light4_256 = ['#7c6f64', 243] " 124-111-100
+  let s:fg4_256 = ['#7c6f64', 243] " 124-111-100
 
   let s:red    = ['#9d0006', 88]      " 157-0-6
   let s:green  = ['#79740e', 100]     " 121-116-14
@@ -182,28 +182,28 @@ else
   let s:orange = ['#af3a03', 130]     " 175-58-3
 
   if g:gruvbox_termcolors == 16
-    let s:dark0  = ['#fbf1c7', 0]
-    let s:light4 = ['#7c6f64', 7]
-    let s:medium = ['#928374', 8]
+    let s:bg0  = ['#fbf1c7', 0]
+    let s:fg4 = ['#7c6f64', 7]
+    let s:gray = ['#928374', 8]
     let s:red    = ['#9d0006', 9]
     let s:green  = ['#79740e', 10]
     let s:yellow = ['#b57614', 11]
     let s:blue   = ['#076678', 12]
     let s:purple = ['#8f3f71', 13]
     let s:aqua   = ['#427b58', 14]
-    let s:light1 = ['#3c3836', 15]
+    let s:fg1 = ['#3c3836', 15]
   endif
 
   if g:gruvbox_contrast == 'soft'
-    let s:dark0  = ['#f2e5bc', 228]     " 242-229-188
+    let s:bg0  = ['#f2e5bc', 228]     " 242-229-188
   elseif g:gruvbox_contrast == 'hard'
-    let s:dark0  = ['#f9f5d7', 230]     " 249-245-215
+    let s:bg0  = ['#f9f5d7', 230]     " 249-245-215
   endif
 
   if g:gruvbox_contrast_light == 'soft'
-    let s:dark0  = ['#f2e5bc', 228]     " 242-229-188
+    let s:bg0  = ['#f2e5bc', 228]     " 242-229-188
   elseif g:gruvbox_contrast_light == 'hard'
-    let s:dark0  = ['#f9f5d7', 230]     " 249-245-215
+    let s:bg0  = ['#f9f5d7', 230]     " 249-245-215
   endif
 endif
 
@@ -215,8 +215,8 @@ if exists('g:gruvbox_hls_cursor')
   let s:hls_cursor = g:gruvbox_hls_cursor
 endif
 
-let s:number_column = s:dark4
-let s:sign_column = s:dark1
+let s:number_column = s:bg4
+let s:sign_column = s:bg1
 
 if exists('g:gitgutter_override_sign_column_highlight') &&
       \ g:gitgutter_override_sign_column_highlight == 1
@@ -229,12 +229,12 @@ else
   endif
 endif
 
-let s:color_column = s:dark1
+let s:color_column = s:bg1
 if exists('g:gruvbox_color_column')
   let s:color_column = g:gruvbox_color_column
 endif
 
-let s:vert_split = s:dark2
+let s:vert_split = s:bg2
 if exists('g:gruvbox_vert_split')
   let s:vert_split = g:gruvbox_vert_split
 endif
@@ -339,7 +339,7 @@ endfunction
 " General UI: {{{
 
 " Normal text
-call s:HL('Normal', s:light1, s:dark0)
+call s:HL('Normal', s:fg1, s:bg0)
 
 " Correct background (see issue #7):
 " --- Problem with changing between dark and light on 256 color terminal
@@ -352,19 +352,19 @@ endif
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   'NONE', s:dark1)
+  call s:HL('CursorLine',   'NONE', s:bg1)
   " Screen column that the cursor is
-  call s:HL('CursorColumn', 'NONE', s:dark1)
+  call s:HL('CursorColumn', 'NONE', s:bg1)
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:dark4, 'bg', s:invert_tabline)
+  call s:HL('TabLineFill', s:bg4, 'bg', s:invert_tabline)
   " Active tab page label
-  call s:HL('TabLineSel', 'bg', s:dark4, s:bold . s:invert_tabline)
+  call s:HL('TabLineSel', 'bg', s:bg4, s:bold . s:invert_tabline)
   " Not active tab page label
-  call s:HL('TabLine', s:dark4, 'bg', s:invert_tabline)
+  call s:HL('TabLine', s:bg4, 'bg', s:invert_tabline)
 
   " Match paired bracket under the cursor
-  call s:HL('MatchParen', 'NONE', s:dark3, s:bold)
+  call s:HL('MatchParen', 'NONE', s:bg3, s:bold)
 endif
 
 if version >= 703
@@ -375,28 +375,28 @@ if version >= 703
   call s:HL('Conceal', s:blue, 'NONE')
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:yellow, s:dark1)
+  call s:HL('CursorLineNr', s:yellow, s:bg1)
 endif
 
-call s:HL('NonText',    s:dark2)
-call s:HL('SpecialKey', s:dark2)
+call s:HL('NonText',    s:bg2)
+call s:HL('SpecialKey', s:bg2)
 
-call s:HL('Visual',    'NONE',  s:dark3, s:invert_selection)
-call s:HL('VisualNOS', 'NONE',  s:dark3, s:invert_selection)
+call s:HL('Visual',    'NONE',  s:bg3, s:invert_selection)
+call s:HL('VisualNOS', 'NONE',  s:bg3, s:invert_selection)
 
-call s:HL('Search',    s:dark0, s:yellow)
-call s:HL('IncSearch', s:dark0, s:hls_cursor)
+call s:HL('Search',    s:bg0, s:yellow)
+call s:HL('IncSearch', s:bg0, s:hls_cursor)
 
 call s:HL('Underlined', s:blue, 'NONE', s:underline)
 
-call s:HL('StatusLine',   s:dark4, s:dark0, s:bold . s:inverse)
-call s:HL('StatusLineNC', s:dark2, s:light4, s:bold . s:inverse)
+call s:HL('StatusLine',   s:bg4, s:bg0, s:bold . s:inverse)
+call s:HL('StatusLineNC', s:bg2, s:fg4, s:bold . s:inverse)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:light4, s:vert_split)
+call s:HL('VertSplit', s:fg4, s:vert_split)
 
 " Current match in wildmenu completion
-call s:HL('WildMenu', s:blue, s:dark2, s:bold)
+call s:HL('WildMenu', s:blue, s:bg2, s:bold)
 
 " Directory names, special names in listing
 call s:HL('Directory', s:green, 'NONE', s:bold)
@@ -425,9 +425,9 @@ call s:HL('LineNr', s:number_column)
 call s:HL('SignColumn', 'NONE', s:sign_column)
 
 " Line used for closed folds
-call s:HL('Folded', s:medium, s:dark1, s:italic)
+call s:HL('Folded', s:gray, s:bg1, s:italic)
 " Column where folds are displayed
-call s:HL('FoldColumn', s:medium, s:dark1)
+call s:HL('FoldColumn', s:gray, s:bg1)
 
 " }}}
 " Cursor: {{{
@@ -447,10 +447,10 @@ call s:HL('lCursor', 'NONE', 'NONE', s:inverse)
 if g:gruvbox_improved_strings == 0
   call s:HL('Special', s:orange)
 else
-  call s:HL('Special', s:dark1, s:orange, s:italic)
+  call s:HL('Special', s:bg1, s:orange, s:italic)
 endif
 
-call s:HL('Comment', s:medium, 'NONE', s:italicize_comments)
+call s:HL('Comment', s:gray, 'NONE', s:italicize_comments)
 call s:HL('Todo', 'fg', 'bg', s:bold)
 call s:HL('Error', s:red, 'bg', s:bold . s:inverse)
 
@@ -493,7 +493,7 @@ call s:HL('Character', s:purple)
 if g:gruvbox_improved_strings == 0
   call s:HL('String',  s:green, 'NONE', s:italicize_strings)
 else
-  call s:HL('String',  s:dark1, s:light1, s:italicize_strings)
+  call s:HL('String',  s:bg1, s:fg1, s:italicize_strings)
 endif
 " Boolean constant: TRUE, false
 call s:HL('Boolean',   s:purple)
@@ -516,26 +516,26 @@ call s:HL('Typedef', s:yellow)
 
 if version >= 700
   " Popup menu: normal item
-  call s:HL('Pmenu', s:light1, s:dark2)
+  call s:HL('Pmenu', s:fg1, s:bg2)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:dark2, s:blue, s:bold)
+  call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
   " Popup menu: scrollbar
-  call s:HL('PmenuSbar', 'NONE', s:dark2)
+  call s:HL('PmenuSbar', 'NONE', s:bg2)
   " Popup menu: scrollbar thumb
-  call s:HL('PmenuThumb', 'NONE', s:dark4)
+  call s:HL('PmenuThumb', 'NONE', s:bg4)
 endif
 
 " }}}
 " Diffs: {{{
 
-call s:HL('DiffDelete', s:red, s:dark0, s:inverse)
-call s:HL('DiffAdd',    s:green, s:dark0, s:inverse)
-"call s:HL('DiffChange', s:dark0, s:blue)
-"call s:HL('DiffText',   s:dark0, s:yellow)
+call s:HL('DiffDelete', s:red, s:bg0, s:inverse)
+call s:HL('DiffAdd',    s:green, s:bg0, s:inverse)
+"call s:HL('DiffChange', s:bg0, s:blue)
+"call s:HL('DiffText',   s:bg0, s:yellow)
 
 " Alternative setting
-call s:HL('DiffChange', s:aqua, s:dark0, s:inverse)
-call s:HL('DiffText',   s:yellow, s:dark0, s:inverse)
+call s:HL('DiffChange', s:aqua, s:bg0, s:inverse)
+call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
 
 " }}}
 " Spelling: {{{
@@ -580,11 +580,11 @@ endif
 
 if g:indent_guides_auto_colors == 0
   if g:gruvbox_invert_indent_guides == 0
-    call s:HL('IndentGuidesOdd', 'bg', s:dark2)
-    call s:HL('IndentGuidesEven', 'bg', s:dark1)
+    call s:HL('IndentGuidesOdd', 'bg', s:bg2)
+    call s:HL('IndentGuidesEven', 'bg', s:bg1)
   else
-    call s:HL('IndentGuidesOdd', 'bg', s:dark2, s:inverse)
-    call s:HL('IndentGuidesEven', 'bg', s:dark3, s:inverse)
+    call s:HL('IndentGuidesOdd', 'bg', s:bg2, s:inverse)
+    call s:HL('IndentGuidesEven', 'bg', s:bg3, s:inverse)
   endif
 endif
 
@@ -592,10 +592,10 @@ endif
 " IndentLine: {{{
 
 if !exists('g:indentLine_color_term')
-  let g:indentLine_color_term = s:dark2[1]
+  let g:indentLine_color_term = s:bg2[1]
 endif
 if !exists('g:indentLine_color_gui')
-  let g:indentLine_color_gui = s:dark2[0]
+  let g:indentLine_color_gui = s:bg2[0]
 endif
 
 " }}}
@@ -677,35 +677,35 @@ call s:HL('ShowMarksHLm', s:blue, s:sign_column, s:invert_signs)
 
 call s:HL('CtrlPMatch', s:yellow)
 call s:HL('CtrlPNoEntries', s:red)
-call s:HL('CtrlPPrtBase', s:dark2)
+call s:HL('CtrlPPrtBase', s:bg2)
 call s:HL('CtrlPPrtCursor', s:blue)
-call s:HL('CtrlPLinePre', s:dark2)
+call s:HL('CtrlPLinePre', s:bg2)
 
-call s:HL('CtrlPMode1', s:blue, s:dark2, s:bold)
-call s:HL('CtrlPMode2', s:dark0, s:blue, s:bold)
-call s:HL('CtrlPStats', s:light4, s:dark2, s:bold)
+call s:HL('CtrlPMode1', s:blue, s:bg2, s:bold)
+call s:HL('CtrlPMode2', s:bg0, s:blue, s:bold)
+call s:HL('CtrlPStats', s:fg4, s:bg2, s:bold)
 
 " }}}
 " Startify: {{{
 
-call s:HL('StartifyBracket', s:light3)
-call s:HL('StartifyFile', s:light0)
+call s:HL('StartifyBracket', s:fg3)
+call s:HL('StartifyFile', s:fg0)
 call s:HL('StartifyNumber', s:blue)
-call s:HL('StartifyPath', s:medium)
-call s:HL('StartifySlash', s:medium)
+call s:HL('StartifyPath', s:gray)
+call s:HL('StartifySlash', s:gray)
 call s:HL('StartifySection', s:yellow)
-call s:HL('StartifySpecial', s:dark2)
+call s:HL('StartifySpecial', s:bg2)
 call s:HL('StartifyHeader', s:orange)
-call s:HL('StartifyFooter', s:dark2)
+call s:HL('StartifyFooter', s:bg2)
 
 " }}}
 " Vimshell: {{{
 
 let g:vimshell_escape_colors = [
-  \ s:dark4[0], s:red[0], s:green[0], s:yellow[0],
-  \ s:blue[0], s:purple[0], s:aqua[0], s:light4[0],
-  \ s:dark0[0], s:red[0], s:green[0], s:orange[0],
-  \ s:blue[0], s:purple[0], s:aqua[0], s:light0[0]
+  \ s:bg4[0], s:red[0], s:green[0], s:yellow[0],
+  \ s:blue[0], s:purple[0], s:aqua[0], s:fg4[0],
+  \ s:bg0[0], s:red[0], s:green[0], s:orange[0],
+  \ s:blue[0], s:purple[0], s:aqua[0], s:fg0[0]
   \ ]
 
 " }}}
@@ -732,10 +732,10 @@ call s:HL('htmlTagName', s:aqua, 'NONE', s:bold)
 call s:HL('htmlArg', s:aqua)
 
 call s:HL('htmlScriptTag', s:purple)
-call s:HL('htmlTagN', s:light1)
+call s:HL('htmlTagN', s:fg1)
 call s:HL('htmlSpecialTagName', s:aqua, 'NONE', s:bold)
 
-call s:HL('htmlLink', s:light4, 'NONE', s:underline)
+call s:HL('htmlLink', s:fg4, 'NONE', s:underline)
 
 call s:HL('htmlSpecialChar', s:orange)
 
@@ -757,33 +757,33 @@ call s:HL('xmlTagName', s:blue)
 call s:HL('xmlEqual', s:blue)
 call s:HL('docbkKeyword', s:aqua, 'NONE', s:bold)
 
-call s:HL('xmlDocTypeDecl', s:medium)
+call s:HL('xmlDocTypeDecl', s:gray)
 call s:HL('xmlDocTypeKeyword', s:purple)
-call s:HL('xmlCdataStart', s:medium)
+call s:HL('xmlCdataStart', s:gray)
 call s:HL('xmlCdataCdata', s:purple)
-call s:HL('dtdFunction', s:medium)
+call s:HL('dtdFunction', s:gray)
 call s:HL('dtdTagName', s:purple)
 
 call s:HL('xmlAttrib', s:aqua)
-call s:HL('xmlProcessingDelim', s:medium)
-call s:HL('dtdParamEntityPunct', s:medium)
-call s:HL('dtdParamEntityDPunct', s:medium)
-call s:HL('xmlAttribPunct', s:medium)
+call s:HL('xmlProcessingDelim', s:gray)
+call s:HL('dtdParamEntityPunct', s:gray)
+call s:HL('dtdParamEntityDPunct', s:gray)
+call s:HL('xmlAttribPunct', s:gray)
 
 call s:HL('xmlEntity', s:orange)
 call s:HL('xmlEntityPunct', s:orange)
 " }}}
 " Vim: {{{
 
-call s:HL('vimCommentTitle', s:light4_256, 'NONE', s:bold . s:italicize_comments)
+call s:HL('vimCommentTitle', s:fg4_256, 'NONE', s:bold . s:italicize_comments)
 
 call s:HL('vimNotation', s:orange)
 call s:HL('vimBracket', s:orange)
 call s:HL('vimMapModKey', s:orange)
-call s:HL('vimFuncSID', s:light3)
-call s:HL('vimSetSep', s:light3)
-call s:HL('vimSep', s:light3)
-call s:HL('vimContinue', s:light3)
+call s:HL('vimFuncSID', s:fg3)
+call s:HL('vimSetSep', s:fg3)
+call s:HL('vimSep', s:fg3)
+call s:HL('vimContinue', s:fg3)
 
 " }}}
 " Clojure: {{{
@@ -801,11 +801,11 @@ call s:HL('clojureException', s:red)
 
 call s:HL('clojureRegexp', s:aqua)
 call s:HL('clojureRegexpEscape', s:aqua)
-call s:HL('clojureRegexpCharClass', s:light3, 'NONE', s:bold)
-call s:HL('clojureRegexpMod', s:light3, 'NONE', s:bold)
-call s:HL('clojureRegexpQuantifier', s:light3, 'NONE', s:bold)
+call s:HL('clojureRegexpCharClass', s:fg3, 'NONE', s:bold)
+call s:HL('clojureRegexpMod', s:fg3, 'NONE', s:bold)
+call s:HL('clojureRegexpQuantifier', s:fg3, 'NONE', s:bold)
 
-call s:HL('clojureParen', s:light3)
+call s:HL('clojureParen', s:fg3)
 call s:HL('clojureAnonArg', s:yellow)
 call s:HL('clojureVariable', s:blue)
 call s:HL('clojureMacro', s:orange)
@@ -836,7 +836,7 @@ call s:HL('pythonCoding', s:blue)
 call s:HL('pythonOperator', s:red)
 call s:HL('pythonExceptions', s:purple)
 call s:HL('pythonBoolean', s:purple)
-call s:HL('pythonDot', s:light3)
+call s:HL('pythonDot', s:fg3)
 
 " }}}
 " CSS: {{{
@@ -849,7 +849,7 @@ call s:HL('cssColor', s:blue)
 call s:HL('cssSelectorOp', s:blue)
 call s:HL('cssSelectorOp2', s:blue)
 call s:HL('cssImportant', s:green)
-call s:HL('cssVendor', s:light1)
+call s:HL('cssVendor', s:fg1)
 
 call s:HL('cssTextProp', s:aqua)
 call s:HL('cssAnimationProp', s:aqua)
@@ -876,13 +876,13 @@ call s:HL('cssGeneratedContentProp', s:aqua)
 " }}}
 " JavaScript: {{{
 
-call s:HL('javaScriptBraces', s:light1)
+call s:HL('javaScriptBraces', s:fg1)
 call s:HL('javaScriptFunction', s:aqua)
 call s:HL('javaScriptIdentifier', s:red)
 call s:HL('javaScriptMember', s:blue)
 call s:HL('javaScriptNumber', s:purple)
 call s:HL('javaScriptNull', s:purple)
-call s:HL('javaScriptParens', s:light3)
+call s:HL('javaScriptParens', s:fg3)
 
 " }}}
 " YAJS: {{{
@@ -897,10 +897,10 @@ call s:HL('javascriptClassName', s:yellow)
 call s:HL('javascriptClassSuperName', s:yellow)
 call s:HL('javascriptGlobal', s:yellow)
 
-call s:HL('javascriptEndColons', s:light1)
-call s:HL('javascriptFuncArg', s:light1)
-call s:HL('javascriptGlobalMethod', s:light1)
-call s:HL('javascriptNodeGlobal', s:light1)
+call s:HL('javascriptEndColons', s:fg1)
+call s:HL('javascriptFuncArg', s:fg1)
+call s:HL('javascriptGlobalMethod', s:fg1)
+call s:HL('javascriptNodeGlobal', s:fg1)
 
 " call s:HL('javascriptVariable', s:orange)
 call s:HL('javascriptVariable', s:red)
@@ -922,31 +922,31 @@ call s:HL('javascriptExceptions', s:red)
 call s:HL('javascriptMessage', s:red)
 
 call s:HL('javascriptTemplateSB', s:aqua)
-call s:HL('javascriptTemplateSubstitution', s:light1)
+call s:HL('javascriptTemplateSubstitution', s:fg1)
 
 " call s:HL('javascriptLabel', s:blue)
 " call s:HL('javascriptObjectLabel', s:blue)
 " call s:HL('javascriptPropertyName', s:blue)
-call s:HL('javascriptLabel', s:light1)
-call s:HL('javascriptObjectLabel', s:light1)
-call s:HL('javascriptPropertyName', s:light1)
+call s:HL('javascriptLabel', s:fg1)
+call s:HL('javascriptObjectLabel', s:fg1)
+call s:HL('javascriptPropertyName', s:fg1)
 
-call s:HL('javascriptLogicSymbols', s:light1)
-call s:HL('javascriptArrowFunc', s:light1)
+call s:HL('javascriptLogicSymbols', s:fg1)
+call s:HL('javascriptArrowFunc', s:fg1)
 
-call s:HL('javascriptDocParamName', s:light4)
-call s:HL('javascriptDocTags', s:light4)
-call s:HL('javascriptDocNotation', s:light4)
-call s:HL('javascriptDocParamType', s:light4)
-call s:HL('javascriptDocNamedParamType', s:light4)
+call s:HL('javascriptDocParamName', s:fg4)
+call s:HL('javascriptDocTags', s:fg4)
+call s:HL('javascriptDocNotation', s:fg4)
+call s:HL('javascriptDocParamType', s:fg4)
+call s:HL('javascriptDocNamedParamType', s:fg4)
 
 " }}}
 " CoffeeScript: {{{
 
-call s:HL('coffeeExtendedOp', s:light3)
-call s:HL('coffeeSpecialOp', s:light3)
+call s:HL('coffeeExtendedOp', s:fg3)
+call s:HL('coffeeSpecialOp', s:fg3)
 call s:HL('coffeeCurly', s:orange)
-call s:HL('coffeeParen', s:light3)
+call s:HL('coffeeParen', s:fg3)
 call s:HL('coffeeBracket', s:orange)
 
 " }}}
@@ -980,9 +980,9 @@ call s:HL('luaTable', s:orange)
 " }}}
 " MoonScript: {{{
 
-call s:HL('moonSpecialOp', s:light3)
-call s:HL('moonExtendedOp', s:light3)
-call s:HL('moonFunction', s:light3)
+call s:HL('moonSpecialOp', s:fg3)
+call s:HL('moonExtendedOp', s:fg3)
+call s:HL('moonFunction', s:fg3)
 call s:HL('moonObject', s:yellow)
 
 " }}}
@@ -991,12 +991,12 @@ call s:HL('moonObject', s:yellow)
 call s:HL('javaAnnotation', s:blue)
 call s:HL('javaDocTags', s:aqua)
 hi! link javaCommentTitle vimCommentTitle
-call s:HL('javaParen', s:light3)
-call s:HL('javaParen1', s:light3)
-call s:HL('javaParen2', s:light3)
-call s:HL('javaParen3', s:light3)
-call s:HL('javaParen4', s:light3)
-call s:HL('javaParen5', s:light3)
+call s:HL('javaParen', s:fg3)
+call s:HL('javaParen1', s:fg3)
+call s:HL('javaParen2', s:fg3)
+call s:HL('javaParen3', s:fg3)
+call s:HL('javaParen4', s:fg3)
+call s:HL('javaParen5', s:fg3)
 call s:HL('javaOperator', s:orange)
 
 call s:HL('javaVarArg', s:green)
@@ -1013,27 +1013,27 @@ call s:HL('elixirInterpolationDelimiter', s:aqua)
 " Scala: {{{
 
 " NB: scala vim syntax file is kinda horrible
-call s:HL('scalaNameDefinition', s:light1)
-call s:HL('scalaCaseFollowing', s:light1)
-call s:HL('scalaCapitalWord', s:light1)
-call s:HL('scalaTypeExtension', s:light1)
+call s:HL('scalaNameDefinition', s:fg1)
+call s:HL('scalaCaseFollowing', s:fg1)
+call s:HL('scalaCapitalWord', s:fg1)
+call s:HL('scalaTypeExtension', s:fg1)
 
 call s:HL('scalaKeyword', s:red)
 call s:HL('scalaKeywordModifier', s:red)
 
 call s:HL('scalaSpecial', s:aqua)
-call s:HL('scalaOperator', s:light1)
+call s:HL('scalaOperator', s:fg1)
 
 call s:HL('scalaTypeDeclaration', s:yellow)
 call s:HL('scalaTypeTypePostDeclaration', s:yellow)
 
-call s:HL('scalaInstanceDeclaration', s:light1)
+call s:HL('scalaInstanceDeclaration', s:fg1)
 call s:HL('scalaInterpolation', s:aqua)
 
 " }}}
 " Markdown: {{{
 
-call s:HL('markdownItalic', s:light3, 'NONE', s:italic)
+call s:HL('markdownItalic', s:fg3, 'NONE', s:italic)
 
 call s:HL('markdownH1', s:green, 'NONE', s:bold)
 call s:HL('markdownH2', s:green, 'NONE', s:bold)
@@ -1046,22 +1046,22 @@ call s:HL('markdownCode', s:aqua)
 call s:HL('markdownCodeBlock', s:aqua)
 call s:HL('markdownCodeDelimiter', s:aqua)
 
-call s:HL('markdownBlockquote', s:medium)
-call s:HL('markdownListMarker', s:medium)
-call s:HL('markdownOrderedListMarker', s:medium)
-call s:HL('markdownRule', s:medium)
-call s:HL('markdownHeadingRule', s:medium)
+call s:HL('markdownBlockquote', s:gray)
+call s:HL('markdownListMarker', s:gray)
+call s:HL('markdownOrderedListMarker', s:gray)
+call s:HL('markdownRule', s:gray)
+call s:HL('markdownHeadingRule', s:gray)
 
-call s:HL('markdownUrlDelimiter', s:light3)
-call s:HL('markdownLinkDelimiter', s:light3)
-call s:HL('markdownLinkTextDelimiter', s:light3)
+call s:HL('markdownUrlDelimiter', s:fg3)
+call s:HL('markdownLinkDelimiter', s:fg3)
+call s:HL('markdownLinkTextDelimiter', s:fg3)
 
 call s:HL('markdownHeadingDelimiter', s:orange)
 call s:HL('markdownUrl', s:purple)
 call s:HL('markdownUrlTitleDelimiter', s:green)
 
-call s:HL('markdownLinkText', s:medium, 'NONE', s:underline)
-call s:HL('markdownIdDeclaration', s:medium, 'NONE', s:underline)
+call s:HL('markdownLinkText', s:gray, 'NONE', s:underline)
+call s:HL('markdownIdDeclaration', s:gray, 'NONE', s:underline)
 
 " }}}
 " Haskell: {{{
@@ -1071,10 +1071,10 @@ call s:HL('markdownIdDeclaration', s:medium, 'NONE', s:underline)
 " call s:HL('haskellConditional', s:aqua)
 " call s:HL('haskellLet', s:orange)
 "
-call s:HL('haskellType', s:light1)
-call s:HL('haskellIdentifier', s:light1)
-call s:HL('haskellSeparator', s:light1)
-call s:HL('haskellDelimiter', s:light4)
+call s:HL('haskellType', s:fg1)
+call s:HL('haskellIdentifier', s:fg1)
+call s:HL('haskellSeparator', s:fg1)
+call s:HL('haskellDelimiter', s:fg4)
 call s:HL('haskellOperators', s:blue)
 "
 call s:HL('haskellBacktick', s:orange)
@@ -1102,8 +1102,8 @@ call s:HL('haskellChar', s:green)
 
 call s:HL('jsonKeyword', s:green)
 call s:HL('jsonQuote', s:green)
-call s:HL('jsonBraces', s:light1)
-call s:HL('jsonString', s:light1)
+call s:HL('jsonBraces', s:fg1)
+call s:HL('jsonString', s:fg1)
 
 " }}}
 
@@ -1112,10 +1112,10 @@ call s:HL('jsonString', s:light1)
 " Search Highlighting Cursor {{{
 
 function! GruvboxHlsShowCursor()
-  call s:HL('Cursor', s:dark0, s:hls_cursor)
-  call s:HL('vCursor', s:dark0, s:hls_cursor)
-  call s:HL('iCursor', s:dark0, s:hls_cursor)
-  call s:HL('lCursor', s:dark0, s:hls_cursor)
+  call s:HL('Cursor', s:bg0, s:hls_cursor)
+  call s:HL('vCursor', s:bg0, s:hls_cursor)
+  call s:HL('iCursor', s:bg0, s:hls_cursor)
+  call s:HL('lCursor', s:bg0, s:hls_cursor)
 endfunction
 
 function! GruvboxHlsHideCursor()
