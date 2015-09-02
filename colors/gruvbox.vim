@@ -45,9 +45,9 @@ if !exists('g:gruvbox_inverse')
   let g:gruvbox_inverse=1
 endif
 
-" if !exists('g:gruvbox_guisp_fallback') || index(['fg', 'bg'], g:gruvbox_guisp_fallback) == -1
-"   let g:gruvbox_guisp_fallback='NONE'
-" endif
+if !exists('g:gruvbox_guisp_fallback') || index(['fg', 'bg'], g:gruvbox_guisp_fallback) == -1
+  let g:gruvbox_guisp_fallback='fg'
+endif
 
 if !exists('g:gruvbox_improved_strings')
   let g:gruvbox_improved_strings=0
@@ -342,7 +342,7 @@ function! s:HL(group, fg, ...)
 
   if type(a:fg) == 3
     let fg = a:fg
-  elseif type(a:fg) == 1
+  elseif type(a:fg) == 1 && strlen(a:fg)
     let fg = [a:fg, a:fg]
   else
     let fg = ['NONE', 'NONE']
@@ -350,7 +350,7 @@ function! s:HL(group, fg, ...)
 
   if a:0 >= 1 && type(a:1) == 3
     let bg = a:1
-  elseif a:0 >= 1 && type(a:1) == 1
+  elseif a:0 >= 1 && type(a:1) == 1 && strlen(a:1)
     let bg = [a:1, a:1]
   else
     let bg = ['NONE', 'NONE']
@@ -362,6 +362,14 @@ function! s:HL(group, fg, ...)
     let emstr  = 'NONE'
   endif
 
+  if a:0 >= 3
+    if g:gruvbox_guisp_fallback == 'fg' && type(a:3) == 3
+      let fg = a:3
+    elseif g:gruvbox_guisp_fallback == 'bg' && type(a:3) == 3
+      let bg = a:3
+    endif
+  endif
+
   let histring = ['hi', a:group,
         \ 'guifg=' . fg[0], 'ctermfg=' . fg[1],
         \ 'guibg=' . bg[0], 'ctermbg=' . bg[1],
@@ -371,7 +379,7 @@ function! s:HL(group, fg, ...)
   if a:0 >= 3
     if type(a:3) == 3
       let specl = a:3[0]
-    elseif type(a:3) == 1
+    elseif type(a:3) == 1 && strlen(a:3)
       let specl = a:3
     else
       let specl = 'NONE'
@@ -379,16 +387,6 @@ function! s:HL(group, fg, ...)
 
     call add(histring, 'guisp=' . specl)
   endif
-
-  " if (Foreground override enabled) && (    We were passed a guisp value     )
-  " if g:gruvbox_guisp_fallback == 'fg' && a:0 >= 3 && strlen(a:3) && a:3 != 'NONE'
-  "   let c = get(s:gb, a:3)
-  "   let histring .= 'guifg=#' . c[0] . ' ctermfg=' . c[1] . ' '
-
-  " if (Background override enabled) && (    We were passed a guisp value     )
-  " if g:gruvbox_guisp_fallback == 'bg' && a:0 >= 3 && strlen(a:3) && a:3 != 'NONE'
-  "   let c = get(s:gb, a:3)
-  "   let histring .= 'guibg=#' . c[0] . ' ctermbg=' . c[1] . ' '
 
   execute join(histring, ' ')
 endfunction
