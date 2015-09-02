@@ -30,6 +30,10 @@ Refer [Gallery][] for more syntax-specific screenshots.
 
 ![Screenshot Light](http://i.imgur.com/X75niEa.png)
 
+### Airline theme
+
+![Screenshot Airline](http://i.imgur.com/wRQceUR.png)
+
 Palette
 -------
 
