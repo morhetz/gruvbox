@@ -474,7 +474,7 @@ if g:gruvbox_italicize_comments == 0
 else
 	call s:HL('Comment', 'medium', 'none', 'italic')
 endif
-call s:HL('Todo', 'fg', 'bg', 'bold')
+call s:HL('Todo', 'fg', 'bg', 'bold,italic')
 call s:HL('Error', 'bg', 'red', 'bold')
 
 " Generic statement
