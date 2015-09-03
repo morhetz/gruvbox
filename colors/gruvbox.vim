@@ -537,7 +537,7 @@ else
 endif
 
 call s:HL('Comment', s:gray, 'NONE', s:italicize_comments)
-call s:HL('Todo', 'fg', 'bg', s:bold)
+call s:HL('Todo', 'fg', 'bg', s:bold . s:italic)
 call s:HL('Error', s:red, 'bg', s:bold . s:inverse)
 
 " Generic statement
