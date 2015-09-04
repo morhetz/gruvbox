@@ -46,7 +46,7 @@ if !exists('g:gruvbox_inverse')
 endif
 
 if !exists('g:gruvbox_guisp_fallback') || index(['fg', 'bg'], g:gruvbox_guisp_fallback) == -1
-  let g:gruvbox_guisp_fallback='fg'
+  let g:gruvbox_guisp_fallback='NONE'
 endif
 
 if !exists('g:gruvbox_improved_strings')
@@ -340,6 +340,7 @@ endif
 function! s:HL(group, fg, ...)
   " Arguments: group, guifg, guibg, gui, guisp
 
+  " foreground
   if type(a:fg) == 3
     let fg = a:fg
   elseif type(a:fg) == 1 && strlen(a:fg)
@@ -348,6 +349,7 @@ function! s:HL(group, fg, ...)
     let fg = ['NONE', 'NONE']
   endif
 
+  " background
   if a:0 >= 1 && type(a:1) == 3
     let bg = a:1
   elseif a:0 >= 1 && type(a:1) == 1 && strlen(a:1)
@@ -356,17 +358,26 @@ function! s:HL(group, fg, ...)
     let bg = ['NONE', 'NONE']
   endif
 
+  " emphasis
   if a:0 >= 2 && strlen(a:2)
     let emstr = a:2[:-2]
   else
     let emstr  = 'NONE'
   endif
 
-  if a:0 >= 3
-    if g:gruvbox_guisp_fallback == 'fg' && type(a:3) == 3
+  " special fallback
+  if a:0 >= 3 && type(a:3) == 3
+    if g:gruvbox_guisp_fallback != 'NONE'
       let fg = a:3
-    elseif g:gruvbox_guisp_fallback == 'bg' && type(a:3) == 3
-      let bg = a:3
+    endif
+
+    if g:gruvbox_guisp_fallback == 'bg'
+      " bg fallback mode should invert higlighting
+      if emstr == 'NONE'
+        let emstr = 'inverse'
+      else
+        let emstr .= ',inverse'
+      endif
     endif
   endif
 
@@ -376,6 +387,7 @@ function! s:HL(group, fg, ...)
         \ 'gui=' . emstr, 'cterm=' . emstr
         \ ]
 
+  " special
   if a:0 >= 3
     if type(a:3) == 3
       let specl = a:3[0]
