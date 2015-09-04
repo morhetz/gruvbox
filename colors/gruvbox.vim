@@ -45,8 +45,8 @@ if !exists('g:gruvbox_inverse')
   let g:gruvbox_inverse=1
 endif
 
-if !exists('g:gruvbox_guisp_fallback')
-  let g:gruvbox_guisp_fallback='NONE'
+if !exists('g:gruvbox_guisp_fallback') || index(['fg', 'bg'], g:gruvbox_guisp_fallback) == -1
+  let g:gruvbox_guisp_fallback='fg'
 endif
 
 if !exists('g:gruvbox_improved_strings')
@@ -195,14 +195,6 @@ if s:is_dark
   let s:purple = s:gb.bright_purple
   let s:aqua   = s:gb.bright_aqua
   let s:orange = s:gb.bright_orange
-
-  let s:red_bg    = s:gb.faded_red
-  let s:green_bg  = s:gb.faded_green
-  let s:yellow_bg = s:gb.faded_yellow
-  let s:blue_bg   = s:gb.faded_blue
-  let s:purple_bg = s:gb.faded_purple
-  let s:aqua_bg   = s:gb.faded_aqua
-  let s:orange_bg = s:gb.faded_orange
 else
   let s:bg0  = s:gb.light0
   if g:gruvbox_contrast_light == 'soft'
@@ -233,14 +225,6 @@ else
   let s:purple = s:gb.faded_purple
   let s:aqua   = s:gb.faded_aqua
   let s:orange = s:gb.faded_orange
-
-  let s:red_bg    = s:gb.bright_red
-  let s:green_bg  = s:gb.bright_green
-  let s:yellow_bg = s:gb.bright_yellow
-  let s:blue_bg   = s:gb.bright_blue
-  let s:purple_bg = s:gb.bright_purple
-  let s:aqua_bg   = s:gb.bright_aqua
-  let s:orange_bg = s:gb.bright_orange
 endif
 
 " reset to 16 colors fallback
@@ -281,14 +265,6 @@ let s:gb.blue   = s:blue
 let s:gb.purple = s:purple
 let s:gb.aqua   = s:aqua
 let s:gb.orange = s:orange
-
-let s:gb.red_bg    = s:red_bg
-let s:gb.green_bg  = s:green_bg
-let s:gb.yellow_bg = s:yellow_bg
-let s:gb.blue_bg   = s:blue_bg
-let s:gb.purple_bg = s:purple_bg
-let s:gb.aqua_bg   = s:aqua_bg
-let s:gb.orange_bg = s:orange_bg
 
 " }}}
 
@@ -362,7 +338,7 @@ endif
 " Highlighting Function: {{{
 
 function! s:HL(group, fg, ...)
-  " Arguments: group, guifg, guibg, gui, guisp, guisp_bg
+  " Arguments: group, guifg, guibg, gui, guisp
 
   if type(a:fg) == 3
     let fg = a:fg
@@ -386,15 +362,11 @@ function! s:HL(group, fg, ...)
     let emstr  = 'NONE'
   endif
 
-  if a:0 >= 3 && type(a:3) == 3
-    if g:gruvbox_guisp_fallback == 'fg'
+  if a:0 >= 3
+    if g:gruvbox_guisp_fallback == 'fg' && type(a:3) == 3
       let fg = a:3
-    elseif g:gruvbox_guisp_fallback == 'bg'
-      if a:0 >= 4 && type(a:4) == 3
-        let bg = a:4
-      else
-        let bg = a:3
-      endif
+    elseif g:gruvbox_guisp_fallback == 'bg' && type(a:3) == 3
+      let bg = a:3
     endif
   endif
 
@@ -629,16 +601,16 @@ call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
 if has("spell")
   " Not capitalised word, or compile warnings
   if g:gruvbox_improved_warnings == 0
-    call s:HL('SpellCap',   'NONE', 'NONE', s:undercurl, s:red, s:red_bg)
+    call s:HL('SpellCap',   'NONE', 'NONE', s:undercurl, s:red)
   else
     call s:HL('SpellCap',   s:green, 'NONE', s:bold . s:italic)
   endif
   " Not recognized word
-  call s:HL('SpellBad',   'NONE', 'NONE', s:undercurl, s:blue, s:blue_bg)
+  call s:HL('SpellBad',   'NONE', 'NONE', s:undercurl, s:blue)
   " Wrong spelling for selected region
-  call s:HL('SpellLocal', 'NONE', 'NONE', s:undercurl, s:aqua, s:aqua_bg)
+  call s:HL('SpellLocal', 'NONE', 'NONE', s:undercurl, s:aqua)
   " Rare word
-  call s:HL('SpellRare',  'NONE', 'NONE', s:undercurl, s:purple, s:purple_bg)
+  call s:HL('SpellRare',  'NONE', 'NONE', s:undercurl, s:purple)
 endif
 
 " }}}
@@ -735,8 +707,8 @@ call s:HL('SignifySignDelete', s:red, s:sign_column, s:invert_signs)
 " }}}
 " Syntastic: {{{
 
-call s:HL('SyntasticError', 'NONE', 'NONE', s:undercurl, s:red, s:red_bg)
-call s:HL('SyntasticWarning', 'NONE', 'NONE', s:undercurl, s:yellow, s:yellow_bg)
+call s:HL('SyntasticError', 'NONE', 'NONE', s:undercurl, s:red)
+call s:HL('SyntasticWarning', 'NONE', 'NONE', s:undercurl, s:yellow)
 
 call s:HL('SyntasticErrorSign', s:red, s:sign_column, s:invert_signs)
 call s:HL('SyntasticWarningSign', s:yellow, s:sign_column, s:invert_signs)
