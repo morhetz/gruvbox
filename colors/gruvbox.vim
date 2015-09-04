@@ -1182,11 +1182,17 @@ call s:HL('jsonString', s:fg1)
 " Search Highlighting Cursor {{{
 
 function! GruvboxHlsShowCursor()
-  echo 'GruvboxHlsShowCursor is deprecated'
+  call s:HL('Cursor', s:bg0, s:hls_cursor)
+  call s:HL('vCursor', s:bg0, s:hls_cursor)
+  call s:HL('iCursor', s:bg0, s:hls_cursor)
+  call s:HL('lCursor', s:bg0, s:hls_cursor)
 endfunction
 
 function! GruvboxHlsHideCursor()
-  echo 'GruvboxHlsHideCursor is deprecated'
+  call s:HL('Cursor', 'NONE', 'NONE', s:inverse)
+  call s:HL('vCursor', 'NONE', 'NONE', s:inverse)
+  call s:HL('iCursor', 'NONE', 'NONE', s:inverse)
+  call s:HL('lCursor', 'NONE', 'NONE', s:inverse)
 endfunction
 
 " }}}
