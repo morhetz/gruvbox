@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 01 Sep 2015
+" Last Modified: 04 Sep 2015
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -1120,7 +1120,6 @@ hi! link scalaInterpolation GruvboxAqua
 
 call s:HL('markdownItalic', s:fg3, s:none, s:italic)
 
-
 hi! link markdownH1 GruvboxGreenBold
 hi! link markdownH2 GruvboxGreenBold
 hi! link markdownH3 GruvboxYellowBold
@@ -1147,7 +1146,7 @@ hi! link markdownUrl GruvboxPurple
 hi! link markdownUrlTitleDelimiter GruvboxGreen
 
 call s:HL('markdownLinkText', s:gray, s:none, s:underline)
-call s:HL('markdownIdDeclaration', s:gray, s:none, s:underline)
+hi! link markdownIdDeclaration markdownLinkText
 
 " }}}
 " Haskell: {{{
