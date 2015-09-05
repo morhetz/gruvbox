@@ -162,6 +162,10 @@ endif
 " }}}
 " Setup Colors: {{{
 
+let s:vim_bg = ['bg', 'bg']
+let s:vim_fg = ['fg', 'fg']
+let s:none = ['NONE', 'NONE']
+
 " determine relative colors
 if s:is_dark
   let s:bg0  = s:gb.dark0
@@ -339,63 +343,43 @@ function! s:HL(group, fg, ...)
   " Arguments: group, guifg, guibg, gui, guisp
 
   " foreground
-  if type(a:fg) == 3
-    let fg = a:fg
-  elseif type(a:fg) == 1 && strlen(a:fg)
-    let fg = [a:fg, a:fg]
-  else
-    let fg = ['NONE', 'NONE']
-  endif
+  let fg = a:fg
 
   " background
-  if a:0 >= 1 && type(a:1) == 3
+  if a:0 >= 1
     let bg = a:1
-  elseif a:0 >= 1 && type(a:1) == 1 && strlen(a:1)
-    let bg = [a:1, a:1]
   else
-    let bg = ['NONE', 'NONE']
+    let bg = s:none
   endif
 
   " emphasis
   if a:0 >= 2 && strlen(a:2)
-    let emstr = a:2[:-2]
+    let emstr = a:2
   else
-    let emstr  = 'NONE'
+    let emstr = 'NONE,'
   endif
 
   " special fallback
-  if a:0 >= 3 && type(a:3) == 3
+  if a:0 >= 3
     if g:gruvbox_guisp_fallback != 'NONE'
       let fg = a:3
     endif
 
+    " bg fallback mode should invert higlighting
     if g:gruvbox_guisp_fallback == 'bg'
-      " bg fallback mode should invert higlighting
-      if emstr == 'NONE'
-        let emstr = 'inverse'
-      else
-        let emstr .= ',inverse'
-      endif
+      let emstr .= 'inverse,'
     endif
   endif
 
-  let histring = ['hi', a:group,
+  let histring = [ 'hi', a:group,
         \ 'guifg=' . fg[0], 'ctermfg=' . fg[1],
         \ 'guibg=' . bg[0], 'ctermbg=' . bg[1],
-        \ 'gui=' . emstr, 'cterm=' . emstr
+        \ 'gui=' . emstr[:-2], 'cterm=' . emstr[:-2]
         \ ]
 
   " special
   if a:0 >= 3
-    if type(a:3) == 3
-      let specl = a:3[0]
-    elseif type(a:3) == 1 && strlen(a:3)
-      let specl = a:3
-    else
-      let specl = 'NONE'
-    endif
-
-    call add(histring, 'guisp=' . specl)
+    call add(histring, 'guisp=' . a:3[0])
   endif
 
   execute join(histring, ' ')
@@ -420,27 +404,27 @@ endif
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   'NONE', s:bg1)
+  call s:HL('CursorLine',   s:none, s:bg1)
   " Screen column that the cursor is
-  call s:HL('CursorColumn', 'NONE', s:bg1)
+  call s:HL('CursorColumn', s:none, s:bg1)
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:bg4, 'bg', s:invert_tabline)
+  call s:HL('TabLineFill', s:bg4, s:vim_bg, s:invert_tabline)
   " Active tab page label
-  call s:HL('TabLineSel', 'bg', s:bg4, s:bold . s:invert_tabline)
+  call s:HL('TabLineSel', s:vim_bg, s:bg4, s:bold . s:invert_tabline)
   " Not active tab page label
-  call s:HL('TabLine', s:bg4, 'bg', s:invert_tabline)
+  call s:HL('TabLine', s:bg4, s:vim_bg, s:invert_tabline)
 
   " Match paired bracket under the cursor
-  call s:HL('MatchParen', 'NONE', s:bg3, s:bold)
+  call s:HL('MatchParen', s:none, s:bg3, s:bold)
 endif
 
 if version >= 703
   " Highlighted screen columns
-  call s:HL('ColorColumn',  'NONE', s:color_column)
+  call s:HL('ColorColumn',  s:none, s:color_column)
 
   " Concealed element: \lambda → λ
-  call s:HL('Conceal', s:blue, 'NONE')
+  call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
   call s:HL('CursorLineNr', s:yellow, s:bg1)
@@ -449,13 +433,13 @@ endif
 call s:HL('NonText',    s:bg2)
 call s:HL('SpecialKey', s:bg2)
 
-call s:HL('Visual',    'NONE',  s:bg3, s:invert_selection)
-call s:HL('VisualNOS', 'NONE',  s:bg3, s:invert_selection)
+call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)
+call s:HL('VisualNOS', s:none,  s:bg3, s:invert_selection)
 
 call s:HL('Search',    s:bg0, s:yellow)
 call s:HL('IncSearch', s:bg0, s:hls_cursor)
 
-call s:HL('Underlined', s:blue, 'NONE', s:underline)
+call s:HL('Underlined', s:blue, s:none, s:underline)
 
 call s:HL('StatusLine',   s:bg4, s:bg0, s:bold . s:inverse)
 call s:HL('StatusLineNC', s:bg2, s:fg4, s:bold . s:inverse)
@@ -467,21 +451,21 @@ call s:HL('VertSplit', s:fg4, s:vert_split)
 call s:HL('WildMenu', s:blue, s:bg2, s:bold)
 
 " Directory names, special names in listing
-call s:HL('Directory', s:green, 'NONE', s:bold)
+call s:HL('Directory', s:green, s:none, s:bold)
 
 " Titles for output from :set all, :autocmd, etc.
-call s:HL('Title', s:green, 'NONE', s:bold)
+call s:HL('Title', s:green, s:none, s:bold)
 
 " Error messages on the command line
-call s:HL('ErrorMsg',   'bg', s:red, s:bold)
+call s:HL('ErrorMsg',   s:vim_bg, s:red, s:bold)
 " More prompt: -- More --
-call s:HL('MoreMsg',    s:yellow, 'NONE', s:bold)
+call s:HL('MoreMsg',    s:yellow, s:none, s:bold)
 " Current mode message: -- INSERT --
-call s:HL('ModeMsg',    s:yellow, 'NONE', s:bold)
+call s:HL('ModeMsg',    s:yellow, s:none, s:bold)
 " 'Press enter' prompt and yes/no questions
-call s:HL('Question',   s:orange, 'NONE', s:bold)
+call s:HL('Question',   s:orange, s:none, s:bold)
 " Warning messages
-call s:HL('WarningMsg', s:red, 'NONE', s:bold)
+call s:HL('WarningMsg', s:red, s:none, s:bold)
 
 " }}}
 " Gutter: {{{
@@ -490,7 +474,7 @@ call s:HL('WarningMsg', s:red, 'NONE', s:bold)
 call s:HL('LineNr', s:number_column)
 
 " Column where signs are displayed
-call s:HL('SignColumn', 'NONE', s:sign_column)
+call s:HL('SignColumn', s:none, s:sign_column)
 
 " Line used for closed folds
 call s:HL('Folded', s:gray, s:bg1, s:italic)
@@ -501,13 +485,13 @@ call s:HL('FoldColumn', s:gray, s:bg1)
 " Cursor: {{{
 
 " Character under cursor
-call s:HL('Cursor', 'NONE', 'NONE', s:inverse)
+call s:HL('Cursor', s:none, s:none, s:inverse)
 " Visual mode cursor, selection
-call s:HL('vCursor', 'NONE', 'NONE', s:inverse)
+call s:HL('vCursor', s:none, s:none, s:inverse)
 " Input moder cursor
-call s:HL('iCursor', 'NONE', 'NONE', s:inverse)
+call s:HL('iCursor', s:none, s:none, s:inverse)
 " Language mapping cursor
-call s:HL('lCursor', 'NONE', 'NONE', s:inverse)
+call s:HL('lCursor', s:none, s:none, s:inverse)
 
 " }}}
 " Syntax Highlighting: {{{
@@ -518,9 +502,9 @@ else
   call s:HL('Special', s:bg1, s:orange, s:italic)
 endif
 
-call s:HL('Comment', s:gray, 'NONE', s:italicize_comments)
-call s:HL('Todo', 'fg', 'bg', s:bold . s:italic)
-call s:HL('Error', s:red, 'bg', s:bold . s:inverse)
+call s:HL('Comment', s:gray, s:none, s:italicize_comments)
+call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
+call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
 
 " Generic statement
 call s:HL('Statement',   s:red)
@@ -540,7 +524,7 @@ call s:HL('Keyword',     s:red)
 " Variable name
 call s:HL('Identifier', s:blue)
 " Function name
-call s:HL('Function',   s:green, 'NONE', s:bold)
+call s:HL('Function',   s:green, s:none, s:bold)
 
 " Generic preprocessor
 call s:HL('PreProc',   s:aqua)
@@ -559,7 +543,7 @@ call s:HL('Constant',  s:purple)
 call s:HL('Character', s:purple)
 " String constant: "this is a string"
 if g:gruvbox_improved_strings == 0
-  call s:HL('String',  s:green, 'NONE', s:italicize_strings)
+  call s:HL('String',  s:green, s:none, s:italicize_strings)
 else
   call s:HL('String',  s:bg1, s:fg1, s:italicize_strings)
 endif
@@ -588,9 +572,9 @@ if version >= 700
   " Popup menu: selected item
   call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
   " Popup menu: scrollbar
-  call s:HL('PmenuSbar', 'NONE', s:bg2)
+  call s:HL('PmenuSbar', s:none, s:bg2)
   " Popup menu: scrollbar thumb
-  call s:HL('PmenuThumb', 'NONE', s:bg4)
+  call s:HL('PmenuThumb', s:none, s:bg4)
 endif
 
 " }}}
@@ -611,16 +595,16 @@ call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
 if has("spell")
   " Not capitalised word, or compile warnings
   if g:gruvbox_improved_warnings == 0
-    call s:HL('SpellCap',   'NONE', 'NONE', s:undercurl, s:red)
+    call s:HL('SpellCap',   s:none, s:none, s:undercurl, s:red)
   else
-    call s:HL('SpellCap',   s:green, 'NONE', s:bold . s:italic)
+    call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
   endif
   " Not recognized word
-  call s:HL('SpellBad',   'NONE', 'NONE', s:undercurl, s:blue)
+  call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
   " Wrong spelling for selected region
-  call s:HL('SpellLocal', 'NONE', 'NONE', s:undercurl, s:aqua)
+  call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:aqua)
   " Rare word
-  call s:HL('SpellRare',  'NONE', 'NONE', s:undercurl, s:purple)
+  call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:purple)
 endif
 
 " }}}
@@ -648,11 +632,11 @@ endif
 
 if g:indent_guides_auto_colors == 0
   if g:gruvbox_invert_indent_guides == 0
-    call s:HL('IndentGuidesOdd', 'bg', s:bg2)
-    call s:HL('IndentGuidesEven', 'bg', s:bg1)
+    call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2)
+    call s:HL('IndentGuidesEven', s:vim_bg, s:bg1)
   else
-    call s:HL('IndentGuidesOdd', 'bg', s:bg2, s:inverse)
-    call s:HL('IndentGuidesEven', 'bg', s:bg3, s:inverse)
+    call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2, s:inverse)
+    call s:HL('IndentGuidesEven', s:vim_bg, s:bg3, s:inverse)
   endif
 endif
 
@@ -717,8 +701,8 @@ call s:HL('SignifySignDelete', s:red, s:sign_column, s:invert_signs)
 " }}}
 " Syntastic: {{{
 
-call s:HL('SyntasticError', 'NONE', 'NONE', s:undercurl, s:red)
-call s:HL('SyntasticWarning', 'NONE', 'NONE', s:undercurl, s:yellow)
+call s:HL('SyntasticError', s:none, s:none, s:undercurl, s:red)
+call s:HL('SyntasticWarning', s:none, s:none, s:undercurl, s:yellow)
 
 call s:HL('SyntasticErrorSign', s:red, s:sign_column, s:invert_signs)
 call s:HL('SyntasticWarningSign', s:yellow, s:sign_column, s:invert_signs)
@@ -796,25 +780,25 @@ call s:HL('diffLine', s:blue)
 call s:HL('htmlTag', s:blue)
 call s:HL('htmlEndTag', s:blue)
 
-call s:HL('htmlTagName', s:aqua, 'NONE', s:bold)
+call s:HL('htmlTagName', s:aqua, s:none, s:bold)
 call s:HL('htmlArg', s:aqua)
 
 call s:HL('htmlScriptTag', s:purple)
 call s:HL('htmlTagN', s:fg1)
-call s:HL('htmlSpecialTagName', s:aqua, 'NONE', s:bold)
+call s:HL('htmlSpecialTagName', s:aqua, s:none, s:bold)
 
-call s:HL('htmlLink', s:fg4, 'NONE', s:underline)
+call s:HL('htmlLink', s:fg4, s:none, s:underline)
 
 call s:HL('htmlSpecialChar', s:orange)
 
-call s:HL('htmlBold', 'fg', 'bg', s:bold)
-call s:HL('htmlBoldUnderline', 'fg', 'bg', s:bold . s:underline)
-call s:HL('htmlBoldItalic', 'fg', 'bg', s:bold . s:italic)
-call s:HL('htmlBoldUnderlineItalic', 'fg', 'bg', s:bold . s:underline . s:italic)
+call s:HL('htmlBold', s:vim_fg, s:vim_bg, s:bold)
+call s:HL('htmlBoldUnderline', s:vim_fg, s:vim_bg, s:bold . s:underline)
+call s:HL('htmlBoldItalic', s:vim_fg, s:vim_bg, s:bold . s:italic)
+call s:HL('htmlBoldUnderlineItalic', s:vim_fg, s:vim_bg, s:bold . s:underline . s:italic)
 
-call s:HL('htmlUnderline', 'fg', 'bg', s:underline)
-call s:HL('htmlUnderlineItalic', 'fg', 'bg', s:underline . s:italic)
-call s:HL('htmlItalic', 'fg', 'bg', s:italic)
+call s:HL('htmlUnderline', s:vim_fg, s:vim_bg, s:underline)
+call s:HL('htmlUnderlineItalic', s:vim_fg, s:vim_bg, s:underline . s:italic)
+call s:HL('htmlItalic', s:vim_fg, s:vim_bg, s:italic)
 
 " }}}
 " Xml: {{{
@@ -823,7 +807,7 @@ call s:HL('xmlTag', s:blue)
 call s:HL('xmlEndTag', s:blue)
 call s:HL('xmlTagName', s:blue)
 call s:HL('xmlEqual', s:blue)
-call s:HL('docbkKeyword', s:aqua, 'NONE', s:bold)
+call s:HL('docbkKeyword', s:aqua, s:none, s:bold)
 
 call s:HL('xmlDocTypeDecl', s:gray)
 call s:HL('xmlDocTypeKeyword', s:purple)
@@ -843,7 +827,7 @@ call s:HL('xmlEntityPunct', s:orange)
 " }}}
 " Vim: {{{
 
-call s:HL('vimCommentTitle', s:fg4_256, 'NONE', s:bold . s:italicize_comments)
+call s:HL('vimCommentTitle', s:fg4_256, s:none, s:bold . s:italicize_comments)
 
 call s:HL('vimNotation', s:orange)
 call s:HL('vimBracket', s:orange)
@@ -869,9 +853,9 @@ call s:HL('clojureException', s:red)
 
 call s:HL('clojureRegexp', s:aqua)
 call s:HL('clojureRegexpEscape', s:aqua)
-call s:HL('clojureRegexpCharClass', s:fg3, 'NONE', s:bold)
-call s:HL('clojureRegexpMod', s:fg3, 'NONE', s:bold)
-call s:HL('clojureRegexpQuantifier', s:fg3, 'NONE', s:bold)
+call s:HL('clojureRegexpCharClass', s:fg3, s:none, s:bold)
+call s:HL('clojureRegexpMod', s:fg3, s:none, s:bold)
+call s:HL('clojureRegexpQuantifier', s:fg3, s:none, s:bold)
 
 call s:HL('clojureParen', s:fg3)
 call s:HL('clojureAnonArg', s:yellow)
@@ -1101,12 +1085,12 @@ call s:HL('scalaInterpolation', s:aqua)
 " }}}
 " Markdown: {{{
 
-call s:HL('markdownItalic', s:fg3, 'NONE', s:italic)
+call s:HL('markdownItalic', s:fg3, s:none, s:italic)
 
-call s:HL('markdownH1', s:green, 'NONE', s:bold)
-call s:HL('markdownH2', s:green, 'NONE', s:bold)
-call s:HL('markdownH3', s:yellow, 'NONE', s:bold)
-call s:HL('markdownH4', s:yellow, 'NONE', s:bold)
+call s:HL('markdownH1', s:green, s:none, s:bold)
+call s:HL('markdownH2', s:green, s:none, s:bold)
+call s:HL('markdownH3', s:yellow, s:none, s:bold)
+call s:HL('markdownH4', s:yellow, s:none, s:bold)
 call s:HL('markdownH5', s:yellow)
 call s:HL('markdownH6', s:yellow)
 
@@ -1128,8 +1112,8 @@ call s:HL('markdownHeadingDelimiter', s:orange)
 call s:HL('markdownUrl', s:purple)
 call s:HL('markdownUrlTitleDelimiter', s:green)
 
-call s:HL('markdownLinkText', s:gray, 'NONE', s:underline)
-call s:HL('markdownIdDeclaration', s:gray, 'NONE', s:underline)
+call s:HL('markdownLinkText', s:gray, s:none, s:underline)
+call s:HL('markdownIdDeclaration', s:gray, s:none, s:underline)
 
 " }}}
 " Haskell: {{{
@@ -1187,10 +1171,10 @@ function! GruvboxHlsShowCursor()
 endfunction
 
 function! GruvboxHlsHideCursor()
-  call s:HL('Cursor', 'NONE', 'NONE', s:inverse)
-  call s:HL('vCursor', 'NONE', 'NONE', s:inverse)
-  call s:HL('iCursor', 'NONE', 'NONE', s:inverse)
-  call s:HL('lCursor', 'NONE', 'NONE', s:inverse)
+  call s:HL('Cursor', s:none, s:none, s:inverse)
+  call s:HL('vCursor', s:none, s:none, s:inverse)
+  call s:HL('iCursor', s:none, s:none, s:inverse)
+  call s:HL('lCursor', s:none, s:none, s:inverse)
 endfunction
 
 " }}}
