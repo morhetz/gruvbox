@@ -118,7 +118,7 @@ elif [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ "$TERM" != "vt220" ];
 
 elif [ "$TERM" != "linux" ]
 
-  printf "\e]P0000000" # Background
+  printf "\e]P0282828" # Background
 
   printf "\e]P1ff0000" # Red
   printf "\e]P200ff00" # Green
