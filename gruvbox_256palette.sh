@@ -115,4 +115,28 @@ elif [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ "$TERM" != "vt220" ];
   printf "\033]4;96;rgb:8f/3f/71\033\\"
   printf "\033]4;66;rgb:42/7b/58\033\\"
   printf "\033]4;130;rgb:af/3a/03\033\\"
+
+elif [ "$TERM" != "linux" ]
+
+  printf "\e]P0000000" # Background
+
+  printf "\e]P1ff0000" # Red
+  printf "\e]P200ff00" # Green
+  printf "\e]P3bbbb00" # Yellow
+  printf "\e]P40000ff" # Blue
+  printf "\e]P5aa00bb" # Magenta
+  printf "\e]P600bbbb" # Cyan
+
+  printf "\e]P7aaaaaa" # Foreground
+
+  printf "\e]P8666666" # Bold Background
+
+  printf "\e]P9ff7777" # Bold Red
+  printf "\e]PA77ff77" # Bold Green
+  printf "\e]PBffff55" # Bold Yellow
+  printf "\e]PC7777ff" # Bold Blue
+  printf "\e]PDff55ff" # Bold Magenta
+  printf "\e]PE55ffff" # Bold Cyan
+
+  printf "\e]PFffffff" # Bold Foreground
 fi
