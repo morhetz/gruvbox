@@ -116,7 +116,7 @@ elif [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ "$TERM" != "vt220" ];
   printf "\033]4;66;rgb:42/7b/58\033\\"
   printf "\033]4;130;rgb:af/3a/03\033\\"
 
-elif [ "$TERM" != "linux" ]
+elif [ "$TERM" != "linux" ]; then
 
   printf "\e]P0282828" # Background
 
