@@ -116,7 +116,7 @@ elif [ "$TERM" != "linux" ] && [ "$TERM" != "vt100" ] && [ "$TERM" != "vt220" ];
   printf "\033]4;66;rgb:42/7b/58\033\\"
   printf "\033]4;130;rgb:af/3a/03\033\\"
 
-elif [ "$TERM" != "linux" ]; then
+elif [ "$TERM" = "linux" ]; then
 
   printf "\e]P0282828" # Background
 
@@ -129,14 +129,17 @@ elif [ "$TERM" != "linux" ]; then
 
   printf "\e]P7aaaaaa" # Foreground
 
-  printf "\e]P8666666" # Bold Background
+  # Bold colors that can be used as aditionnal foreground colors
+  printf "\e]P8666666" # Bold Black (grey, for comments)
 
   printf "\e]P9ff7777" # Bold Red
   printf "\e]PA77ff77" # Bold Green
-  printf "\e]PBffff55" # Bold Yellow
+  printf "\e]PBffff55" # Bold Yellow (could be orange)
   printf "\e]PC7777ff" # Bold Blue
   printf "\e]PDff55ff" # Bold Magenta
   printf "\e]PE55ffff" # Bold Cyan
 
   printf "\e]PFffffff" # Bold Foreground
+
+  clear # Actualisates the background
 fi
