@@ -66,7 +66,7 @@ Features
 
 * Lots of style-customization options (contrast, color invertion, italics usage etc.)
 * Extended filetype highlighting: Html, Xml, Vim (and ES6 with [yajs.vim](https://github.com/othree/yajs.vim)), Clojure, C, Python, JavaScript, CoffeeScript, Ruby, Objective-C, Go, Lua, MoonScript, Java, Markdown, Haskell
-* Supported plugins: [EasyMotion][], [vim-sneak][], [Indent Guides][], [indentLine][], [Rainbow Parentheses][], [Airline][], [GitGutter][], [Signify][], [ShowMarks][], [Signature][], [Syntastic][], [CtrlP][], [Startify][]
+* Supported plugins: [EasyMotion][], [vim-sneak][], [Indent Guides][], [indentLine][], [Rainbow Parentheses][], [Airline][], [Lightline][], [GitGutter][], [Signify][], [ShowMarks][], [Signature][], [Syntastic][], [CtrlP][], [Startify][]
 
    [EasyMotion]: https://github.com/Lokaltog/vim-easymotion
    [vim-sneak]: https://github.com/justinmk/vim-sneak
@@ -74,6 +74,7 @@ Features
    [indentLine]: https://github.com/Yggdroot/indentLine
    [Rainbow Parentheses]: https://github.com/kien/rainbow_parentheses.vim
    [Airline]: https://github.com/bling/vim-airline
+   [Lightline]: https://github.com/itchyny/lightline.vim
    [GitGutter]: https://github.com/airblade/vim-gitgutter
    [Signify]: https://github.com/mhinz/vim-signify
    [ShowMarks]: http://www.vim.org/scripts/script.php?script_id=152
@@ -94,7 +95,6 @@ ToDo
 
 * Filetype syntax highlighting (R, TeX, Swift, Erlang and I'm still dissatisfied with CSS)
 * Plugin support (MiniBufExplorer, Tagbar, Netrw, VimPLug)
-* Lightline theme
 
 Self-Promotion
 --------------
