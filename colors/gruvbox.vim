@@ -927,6 +927,9 @@ hi! link pythonOperator GruvboxRed
 hi! link pythonExceptions GruvboxPurple
 hi! link pythonBoolean GruvboxPurple
 hi! link pythonDot GruvboxFg3
+hi! link pythonConditional GruvboxRed
+hi! link pythonRepeat GruvboxRed
+hi! link pythonDottedName GruvboxGreenBold
 
 " }}}
 " CSS: {{{
