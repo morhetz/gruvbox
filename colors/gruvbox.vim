@@ -799,6 +799,14 @@ let g:vimshell_escape_colors = [
   \ ]
 
 " }}}
+" BufTabLine: {{{
+
+call s:HL('BufTabLineCurrent', s:bg0, s:fg4)
+call s:HL('BufTabLineActive', s:fg4, s:bg2)
+call s:HL('BufTabLineHidden', s:bg4, s:bg1)
+call s:HL('BufTabLineFill', s:bg0, s:bg0)
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
