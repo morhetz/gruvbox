@@ -747,12 +747,8 @@ hi! link SyntasticWarningSign GruvboxYellowSign
 
 " }}}
 " Signature: {{{
-
+hi! link SignatureMarkText   GruvboxBlueSign
 hi! link SignatureMarkerText GruvboxPurpleSign
-hi! link SignatureMarkText GruvboxBlueSign
-
-let g:SignatureMarkerTextHL='"SignatureMarkerText"'
-let g:SignatureMarkTextHL='"SignatureMarkText"'
 
 " }}}
 " ShowMarks: {{{
