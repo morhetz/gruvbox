@@ -99,7 +99,7 @@ let s:gb.gray_245    = ['#928374', 245]     " 146-131-116
 let s:gb.gray_244    = ['#928374', 244]     " 146-131-116
 
 let s:gb.light0_hard = ['#f9f5d7', 230]     " 249-245-215
-let s:gb.light0      = ['#fdf4c1', 229]     " 253-244-193
+let s:gb.light0      = ['#fbf1c7', 229]     " 253-244-193
 let s:gb.light0_soft = ['#f2e5bc', 228]     " 242-229-188
 let s:gb.light1      = ['#ebdbb2', 223]     " 235-219-178
 let s:gb.light2      = ['#d5c4a1', 250]     " 213-196-161
