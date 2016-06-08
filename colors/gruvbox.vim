@@ -278,6 +278,10 @@ if exists('g:gruvbox_hls_cursor')
 endif
 
 let s:number_column = s:bg4
+if exists('g:gruvbox_number_column')
+  let s:number_column = get(s:gb, g:gruvbox_number_column)
+endif
+
 let s:sign_column = s:bg1
 
 if exists('g:gitgutter_override_sign_column_highlight') &&
