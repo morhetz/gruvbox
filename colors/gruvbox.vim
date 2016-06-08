@@ -446,9 +446,9 @@ endif
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   s:none, s:red)
+  call s:HL('CursorLine',   s:none, s:bg1)
   " Screen column that the cursor is
-  hi! link CursorColumn CursorLine
+  call s:HL('CursorLine',   s:bg1, s:none, s:inverse)
 
   " Tab pages line filler
   call s:HL('TabLineFill', s:bg4, s:vim_bg, s:invert_tabline)
