@@ -442,7 +442,7 @@ endif
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   s:none, s:bg1)
+  call s:HL('CursorLine',   s:none, s:red)
   " Screen column that the cursor is
   hi! link CursorColumn CursorLine
 
