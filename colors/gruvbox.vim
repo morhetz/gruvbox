@@ -1039,6 +1039,21 @@ hi! link javascriptDocParamType GruvboxFg4
 hi! link javascriptDocNamedParamType GruvboxFg4
 
 " }}}
+" TypeScript: {{{
+
+hi! link typeScriptReserved GruvboxAqua
+hi! link typeScriptLabel GruvboxAqua
+hi! link typeScriptIdentifier GruvboxOrange
+hi! link typeScriptBraces GruvboxFg1
+hi! link typeScriptEndColons GruvboxFg1
+hi! link typeScriptDOMObjects GruvboxFg1
+hi! link typeScriptAjaxMethods GruvboxFg1
+hi! link typeScriptLogicSymbols GruvboxFg1
+hi! link typeScriptDocSeeTag Comment
+hi! link typeScriptDocParam Comment
+hi! link typeScriptDocTags vimCommentTitle
+
+" }}}
 " CoffeeScript: {{{
 
 hi! link coffeeExtendedOp GruvboxFg3
