@@ -1122,6 +1122,8 @@ hi! link elixirDocString Comment
 hi! link elixirStringDelimiter GruvboxGreen
 hi! link elixirInterpolationDelimiter GruvboxAqua
 
+hi! link elixirModuleDeclaration GruvboxYellow
+
 " }}}
 " Scala: {{{
 
