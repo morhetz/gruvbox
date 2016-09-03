@@ -1194,8 +1194,8 @@ hi! link haskellStatement GruvboxOrange
 
 hi! link haskellConditional GruvboxRed
 hi! link haskellKeyword GruvboxRed
+hi! link haskellLet GruvboxRed
 
-hi! link haskellLet GruvboxAqua
 hi! link haskellDefault GruvboxAqua
 hi! link haskellWhere GruvboxAqua
 hi! link haskellBottom GruvboxAqua
