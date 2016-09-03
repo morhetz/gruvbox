@@ -1181,20 +1181,19 @@ hi! link markdownIdDeclaration markdownLinkText
 " }}}
 " Haskell: {{{
 
-" hi! link haskellType GruvboxYellow
-" hi! link haskellOperators GruvboxOrange
-" hi! link haskellConditional GruvboxAqua
-" hi! link haskellLet GruvboxOrange
-"
-hi! link haskellType GruvboxFg1
+hi! link haskellType GruvboxYellow
+
 hi! link haskellIdentifier GruvboxFg1
-hi! link haskellSeparator GruvboxFg1
-hi! link haskellDelimiter GruvboxFg4
-hi! link haskellOperators GruvboxBlue
-"
-hi! link haskellBacktick GruvboxOrange
+
+hi! link haskellSeparator GruvboxFg3
+hi! link haskellDelimiter GruvboxFg3
+hi! link haskellOperators GruvboxFg3
+hi! link haskellBacktick GruvboxFg3
+
 hi! link haskellStatement GruvboxOrange
-hi! link haskellConditional GruvboxOrange
+
+hi! link haskellConditional GruvboxRed
+hi! link haskellKeyword GruvboxRed
 
 hi! link haskellLet GruvboxAqua
 hi! link haskellDefault GruvboxAqua
@@ -1203,6 +1202,7 @@ hi! link haskellBottom GruvboxAqua
 hi! link haskellBlockKeywords GruvboxAqua
 hi! link haskellImportKeywords GruvboxAqua
 hi! link haskellDeclKeyword GruvboxAqua
+hi! link haskellDecl GruvboxAqua
 hi! link haskellDeriving GruvboxAqua
 hi! link haskellAssocType GruvboxAqua
 
