@@ -1220,6 +1220,7 @@ hi! link purescriptOperator GruvboxFg3
 hi! link purescriptImportKeyword GruvboxAqua
 hi! link purescriptWhere GruvboxAqua
 hi! link purescriptModuleName GruvboxYellow
+hi! link purescriptConstructor GruvboxYellow
 hi! link purescriptModuleKeyword GruvboxAqua
 hi! link purescriptAsKeyword GruvboxAqua
 hi! link purescriptStructure GruvboxAqua
