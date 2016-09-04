@@ -1195,9 +1195,9 @@ hi! link haskellStatement GruvboxOrange
 hi! link haskellConditional GruvboxRed
 hi! link haskellKeyword GruvboxRed
 hi! link haskellLet GruvboxRed
+hi! link haskellWhere GruvboxRed
 
 hi! link haskellDefault GruvboxAqua
-hi! link haskellWhere GruvboxAqua
 hi! link haskellBottom GruvboxAqua
 hi! link haskellBlockKeywords GruvboxAqua
 hi! link haskellImportKeywords GruvboxAqua
@@ -1215,17 +1215,21 @@ hi! link haskellChar GruvboxGreen
 " }}}
 " Purescript {{{
 hi! link purescriptFunction GruvboxFg1
+hi! link purescriptTypeVar GruvboxFg1
+
 hi! link purescriptDelimiter GruvboxFg3
 hi! link purescriptOperator GruvboxFg3
+hi! link purescriptOperatorTypeSig GruvboxFg3
+hi! link purescriptForall GruvboxFg3
+
 hi! link purescriptImportKeyword GruvboxAqua
-hi! link purescriptWhere GruvboxAqua
-hi! link purescriptModuleName GruvboxYellow
-hi! link purescriptConstructor GruvboxYellow
+hi! link purescriptWhere GruvboxRed
 hi! link purescriptModuleKeyword GruvboxAqua
 hi! link purescriptAsKeyword GruvboxAqua
 hi! link purescriptStructure GruvboxAqua
-hi! link purescriptForall GruvboxFg3
-hi! link purescriptTypeVar GruvboxFg1
+
+hi! link purescriptModuleName GruvboxYellow
+hi! link purescriptConstructor GruvboxYellow
 
 
 " }}}
