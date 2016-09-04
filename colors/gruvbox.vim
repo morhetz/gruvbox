@@ -1213,6 +1213,21 @@ hi! link haskellString GruvboxGreen
 hi! link haskellChar GruvboxGreen
 
 " }}}
+" Purescript {{{
+hi! link purescriptFunction GruvboxFg1
+hi! link purescriptDelimiter GruvboxFg3
+hi! link purescriptOperator GruvboxFg3
+hi! link purescriptImportKeyword GruvboxAqua
+hi! link purescriptWhere GruvboxAqua
+hi! link purescriptModuleName GruvboxYellow
+hi! link purescriptModuleKeyword GruvboxAqua
+hi! link purescriptAsKeyword GruvboxAqua
+hi! link purescriptStructure GruvboxAqua
+hi! link purescriptForall GruvboxFg3
+hi! link purescriptTypeVar GruvboxFg1
+
+
+" }}}
 " Json: {{{
 
 hi! link jsonKeyword GruvboxGreen
