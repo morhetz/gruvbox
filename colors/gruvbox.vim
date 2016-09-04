@@ -1219,7 +1219,7 @@ hi! link purescriptTypeVar GruvboxFg1
 
 hi! link purescriptDelimiter GruvboxFg3
 hi! link purescriptOperator GruvboxFg3
-hi! link purescriptOperatorTypeSig GruvboxFg3
+hi! link purescriptFunctionDecl GruvboxFg3
 hi! link purescriptForall GruvboxFg3
 
 hi! link purescriptImportKeyword GruvboxAqua
