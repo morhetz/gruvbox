@@ -1181,28 +1181,28 @@ hi! link markdownIdDeclaration markdownLinkText
 " }}}
 " Haskell: {{{
 
-" hi! link haskellType GruvboxYellow
-" hi! link haskellOperators GruvboxOrange
-" hi! link haskellConditional GruvboxAqua
-" hi! link haskellLet GruvboxOrange
-"
-hi! link haskellType GruvboxFg1
-hi! link haskellIdentifier GruvboxFg1
-hi! link haskellSeparator GruvboxFg1
-hi! link haskellDelimiter GruvboxFg4
-hi! link haskellOperators GruvboxBlue
-"
-hi! link haskellBacktick GruvboxOrange
-hi! link haskellStatement GruvboxOrange
-hi! link haskellConditional GruvboxOrange
+hi! link haskellType GruvboxYellow
 
-hi! link haskellLet GruvboxAqua
+hi! link haskellIdentifier GruvboxFg1
+
+hi! link haskellSeparator GruvboxFg3
+hi! link haskellDelimiter GruvboxFg3
+hi! link haskellOperators GruvboxFg3
+hi! link haskellBacktick GruvboxFg3
+
+hi! link haskellStatement GruvboxOrange
+
+hi! link haskellConditional GruvboxRed
+hi! link haskellKeyword GruvboxRed
+hi! link haskellLet GruvboxRed
+hi! link haskellWhere GruvboxRed
+
 hi! link haskellDefault GruvboxAqua
-hi! link haskellWhere GruvboxAqua
 hi! link haskellBottom GruvboxAqua
 hi! link haskellBlockKeywords GruvboxAqua
 hi! link haskellImportKeywords GruvboxAqua
 hi! link haskellDeclKeyword GruvboxAqua
+hi! link haskellDecl GruvboxAqua
 hi! link haskellDeriving GruvboxAqua
 hi! link haskellAssocType GruvboxAqua
 
@@ -1211,6 +1211,26 @@ hi! link haskellPragma GruvboxPurple
 
 hi! link haskellString GruvboxGreen
 hi! link haskellChar GruvboxGreen
+
+" }}}
+" Purescript {{{
+hi! link purescriptFunction GruvboxFg1
+hi! link purescriptTypeVar GruvboxFg1
+
+hi! link purescriptDelimiter GruvboxFg3
+hi! link purescriptOperator GruvboxFg3
+hi! link purescriptFunctionDecl GruvboxFg3
+hi! link purescriptForall GruvboxFg3
+
+hi! link purescriptImportKeyword GruvboxAqua
+hi! link purescriptWhere GruvboxRed
+hi! link purescriptModuleKeyword GruvboxAqua
+hi! link purescriptAsKeyword GruvboxAqua
+hi! link purescriptStructure GruvboxAqua
+
+hi! link purescriptModuleName GruvboxYellow
+hi! link purescriptConstructor GruvboxYellow
+
 
 " }}}
 " Json: {{{
