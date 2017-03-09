@@ -932,6 +932,7 @@ hi! link pythonImport GruvboxBlue
 hi! link pythonRun GruvboxBlue
 hi! link pythonCoding GruvboxBlue
 hi! link pythonOperator GruvboxRed
+hi! link pythonException GruvboxRed
 hi! link pythonExceptions GruvboxPurple
 hi! link pythonBoolean GruvboxPurple
 hi! link pythonDot GruvboxFg3
