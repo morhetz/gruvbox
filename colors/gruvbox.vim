@@ -173,6 +173,8 @@ if s:is_dark
     let s:bg0  = s:gb.dark0_soft
   elseif g:gruvbox_contrast_dark == 'hard'
     let s:bg0  = s:gb.dark0_hard
+  elseif g:gruvbox_contrast_dark == 'none'
+    let s:bg0  = [0,0]
   endif
 
   let s:bg1  = s:gb.dark1
@@ -203,6 +205,8 @@ else
     let s:bg0  = s:gb.light0_soft
   elseif g:gruvbox_contrast_light == 'hard'
     let s:bg0  = s:gb.light0_hard
+  elseif g:gruvbox_contrast_light == 'none'
+    let s:bg0  = [0,0]
   endif
 
   let s:bg1  = s:gb.light1
