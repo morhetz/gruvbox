@@ -558,8 +558,8 @@ hi! link Repeat GruvboxRed
 hi! link Label GruvboxRed
 " try, catch, throw
 hi! link Exception GruvboxRed
-" sizeof, "+", "*", etc.
-hi! link Operator Normal
+" sizeof, and, or, etc.
+hi! link Operator GruvboxRed
 " Any other keyword
 hi! link Keyword GruvboxRed
 
