@@ -328,7 +328,7 @@ if exists('g:gruvbox_color_column')
   let s:color_column = get(s:gb, g:gruvbox_color_column)
 endif
 
-let s:vert_split = s:bg2
+let s:vert_split = s:bg0
 if exists('g:gruvbox_vert_split')
   let s:vert_split = get(s:gb, g:gruvbox_vert_split)
 endif
@@ -479,9 +479,9 @@ if version >= 700
   hi! link CursorColumn CursorLine
 
   " Tab pages line filler
-  call s:HL('TabLineFill', s:bg4, s:vim_bg, s:invert_tabline)
+  call s:HL('TabLineFill', s:bg4, s:bg1, s:invert_tabline)
   " Active tab page label
-  call s:HL('TabLineSel', s:vim_bg, s:bg4, s:bold . s:invert_tabline)
+  call s:HL('TabLineSel', s:green, s:bg1, s:invert_tabline)
   " Not active tab page label
   hi! link TabLine TabLineFill
 
@@ -511,11 +511,11 @@ call s:HL('IncSearch', s:hls_cursor, s:bg0, s:inverse)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
 
-call s:HL('StatusLine',   s:bg4, s:bg0, s:bold . s:inverse)
-call s:HL('StatusLineNC', s:bg2, s:fg4, s:bold . s:inverse)
+call s:HL('StatusLine',   s:bg2, s:fg1, s:inverse)
+call s:HL('StatusLineNC', s:bg1, s:fg4, s:inverse)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:fg4, s:vert_split)
+call s:HL('VertSplit', s:bg3, s:vert_split)
 
 " Current match in wildmenu completion
 call s:HL('WildMenu', s:blue, s:bg2, s:bold)
