@@ -541,7 +541,7 @@ hi! link lCursor Cursor
 if g:gruvbox_improved_strings == 0
   hi! link Special GruvboxOrange
 else
-  call s:HL('Special', s:bg1, s:orange, s:italic)
+  call s:HL('Special', s:orange, s:bg1, s:italic)
 endif
 
 call s:HL('Comment', s:gray, s:none, s:italicize_comments)
@@ -587,7 +587,7 @@ hi! link Character GruvboxPurple
 if g:gruvbox_improved_strings == 0
   call s:HL('String',  s:green, s:none, s:italicize_strings)
 else
-  call s:HL('String',  s:bg1, s:fg1, s:italicize_strings)
+  call s:HL('String',  s:fg1, s:bg1, s:italicize_strings)
 endif
 " Boolean constant: TRUE, false
 hi! link Boolean GruvboxPurple
