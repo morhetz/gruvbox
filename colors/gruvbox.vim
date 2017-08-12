@@ -660,10 +660,8 @@ hi! link EasyMotionShade Comment
 " }}}
 " Sneak: {{{
 
-hi! link SneakPluginTarget Search
-hi! link SneakStreakTarget Search
-call s:HL('SneakStreakMask', s:yellow, s:yellow)
-hi! link SneakStreakStatusLine Search
+autocmd ColorScheme * hi! link Sneak Search
+autocmd ColorScheme * hi! link SneakLabel Search
 
 " }}}
 " Indent Guides: {{{
