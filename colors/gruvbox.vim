@@ -805,7 +805,7 @@ call s:HL('CtrlPStats', s:fg4, s:bg2, s:bold)
 " Startify: {{{
 
 hi! link StartifyBracket GruvboxFg3
-hi! link StartifyFile GruvboxFg0
+hi! link StartifyFile GruvboxFg1
 hi! link StartifyNumber GruvboxBlue
 hi! link StartifyPath GruvboxGray
 hi! link StartifySlash GruvboxGray
@@ -846,40 +846,41 @@ hi! link ALEInfoSign GruvboxBlueSign
 " }}}
 " Dirvish: {{{
 
-call s:HL('DirvishPathTail', s:aqua)
+hi! link DirvishPathTail GruvboxAqua
+hi! link DirvishArg GruvboxYellow
 
 " }}}
 " Netrw: {{{
 
-call s:HL('netrwDir', s:aqua)
-call s:HL('netrwClassify', s:aqua)
-call s:HL('netrwLink', s:gray)
-call s:HL('netrwSymLink', s:fg1)
-call s:HL('netrwExe', s:yellow)
-call s:HL('netrwComment', s:gray)
-call s:HL('netrwList', s:blue)
-call s:HL('netrwHelpCmd', s:aqua)
-call s:HL('netrwCmdSep', s:fg3)
-call s:HL('netrwVersion', s:green)
+hi! link netrwDir GruvboxAqua
+hi! link netrwClassify GruvboxAqua
+hi! link netrwLink GruvboxGray
+hi! link netrwSymLink GruvboxFg1
+hi! link netrwExe GruvboxYellow
+hi! link netrwComment GruvboxGray
+hi! link netrwList GruvboxBlue
+hi! link netrwHelpCmd GruvboxAqua
+hi! link netrwCmdSep GruvboxFg3
+hi! link netrwVersion GruvboxGreen
 
 " }}}
 " NERDTree: {{{
 
-call s:HL('NERDTreeDir', s:aqua)
-call s:HL('NERDTreeDirSlash', s:aqua)
+hi! link NERDTreeDir GruvboxAqua
+hi! link NERDTreeDirSlash GruvboxAqua
 
-call s:HL('NERDTreeOpenable', s:orange)
-call s:HL('NERDTreeClosable', s:orange)
+hi! link NERDTreeOpenable GruvboxOrange
+hi! link NERDTreeClosable GruvboxOrange
 
-call s:HL('NERDTreeFile', s:fg0)
-call s:HL('NERDTreeExecFile', s:yellow)
+hi! link NERDTreeFile GruvboxFg1
+hi! link NERDTreeExecFile GruvboxYellow
 
-call s:HL('NERDTreeUp', s:gray)
-call s:HL('NERDTreeCWD', s:green)
-call s:HL('NERDTreeHelp', s:fg1)
+hi! link NERDTreeUp GruvboxGray
+hi! link NERDTreeCWD GruvboxGreen
+hi! link NERDTreeHelp GruvboxFg1
 
-call s:HL('NERDTreeToggleOn', s:green)
-call s:HL('NERDTreeToggleOff', s:red)
+hi! link NERDTreeToggleOn GruvboxGreen
+hi! link NERDTreeToggleOff GruvboxRed
 
 " }}}
 
