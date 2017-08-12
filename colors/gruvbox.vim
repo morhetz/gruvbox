@@ -1182,6 +1182,26 @@ hi! link typeScriptNull GruvboxPurple
 hi! link typeScriptInterpolationDelimiter GruvboxAqua
 
 " }}}
+" PureScript: {{{
+
+hi! link purescriptModuleKeyword GruvboxAqua
+hi! link purescriptModuleName GruvboxFg1
+hi! link purescriptWhere GruvboxAqua
+hi! link purescriptDelimiter GruvboxFg4
+hi! link purescriptType GruvboxFg1
+hi! link purescriptImportKeyword GruvboxAqua
+hi! link purescriptHidingKeyword GruvboxAqua
+hi! link purescriptAsKeyword GruvboxAqua
+hi! link purescriptStructure GruvboxAqua
+hi! link purescriptOperator GruvboxBlue
+
+hi! link purescriptTypeVar GruvboxFg1
+hi! link purescriptConstructor GruvboxFg1
+hi! link purescriptFunction GruvboxFg1
+hi! link purescriptConditional GruvboxOrange
+hi! link purescriptBacktick GruvboxOrange
+
+" }}}
 " CoffeeScript: {{{
 
 hi! link coffeeExtendedOp GruvboxFg3
