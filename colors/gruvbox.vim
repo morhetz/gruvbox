@@ -883,6 +883,12 @@ hi! link NERDTreeToggleOn GruvboxGreen
 hi! link NERDTreeToggleOff GruvboxRed
 
 " }}}
+" Vim Multiple Cursors: {{{
+
+call s:HL('multiple_cursors_cursor', s:none, s:none, s:inverse)
+call s:HL('multiple_cursors_visual', s:none, s:bg2)
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
