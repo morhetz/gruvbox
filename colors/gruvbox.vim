@@ -748,6 +748,12 @@ hi! link SyntasticErrorSign GruvboxRedSign
 hi! link SyntasticWarningSign GruvboxYellowSign
 
 " }}}
+" ALE: {{{
+
+hi! link ALEWarningSign GruvboxYellowSign
+hi! link ALEErrorSign GruvboxRedSign
+
+" }}}
 " Signature: {{{
 hi! link SignatureMarkText   GruvboxBlueSign
 hi! link SignatureMarkerText GruvboxPurpleSign
