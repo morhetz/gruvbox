@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 04 Sep 2015
+" Last Modified: 12 Aug 2017
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -999,9 +999,24 @@ hi! link javascriptEndColons GruvboxFg1
 hi! link javascriptFuncArg GruvboxFg1
 hi! link javascriptGlobalMethod GruvboxFg1
 hi! link javascriptNodeGlobal GruvboxFg1
+hi! link javascriptBOMWindowProp GruvboxFg1
+hi! link javascriptArrayMethod GruvboxFg1
+hi! link javascriptArrayStaticMethod GruvboxFg1
+hi! link javascriptCacheMethod GruvboxFg1
+hi! link javascriptDateMethod GruvboxFg1
+hi! link javascriptMathStaticMethod GruvboxFg1
 
-" hi! link javascriptVariable GruvboxOrange
-hi! link javascriptVariable GruvboxRed
+" hi! link javascriptProp GruvboxFg1
+hi! link javascriptURLUtilsProp GruvboxFg1
+hi! link javascriptBOMNavigatorProp GruvboxFg1
+hi! link javascriptDOMDocMethod GruvboxFg1
+hi! link javascriptDOMDocProp GruvboxFg1
+hi! link javascriptBOMLocationMethod GruvboxFg1
+hi! link javascriptBOMWindowMethod GruvboxFg1
+hi! link javascriptStringMethod GruvboxFg1
+
+hi! link javascriptVariable GruvboxOrange
+" hi! link javascriptVariable GruvboxRed
 " hi! link javascriptIdentifier GruvboxOrange
 " hi! link javascriptClassSuper GruvboxOrange
 hi! link javascriptIdentifier GruvboxOrange
@@ -1030,13 +1045,38 @@ hi! link javascriptObjectLabel GruvboxFg1
 hi! link javascriptPropertyName GruvboxFg1
 
 hi! link javascriptLogicSymbols GruvboxFg1
-hi! link javascriptArrowFunc GruvboxFg1
+hi! link javascriptArrowFunc GruvboxYellow
 
 hi! link javascriptDocParamName GruvboxFg4
 hi! link javascriptDocTags GruvboxFg4
 hi! link javascriptDocNotation GruvboxFg4
 hi! link javascriptDocParamType GruvboxFg4
 hi! link javascriptDocNamedParamType GruvboxFg4
+
+hi! link javascriptBrackets GruvboxFg1
+hi! link javascriptDOMElemAttrs GruvboxFg1
+hi! link javascriptDOMEventMethod GruvboxFg1
+hi! link javascriptDOMNodeMethod GruvboxFg1
+hi! link javascriptDOMStorageMethod GruvboxFg1
+hi! link javascriptHeadersMethod GruvboxFg1
+
+hi! link javascriptAsyncFuncKeyword GruvboxRed
+hi! link javascriptAwaitFuncKeyword GruvboxRed
+
+" }}}
+" PanglossJS: {{{
+
+hi! link jsClassKeyword GruvboxAqua
+hi! link jsExtendsKeyword GruvboxAqua
+hi! link jsExportDefault GruvboxAqua
+hi! link jsTemplateBraces GruvboxAqua
+hi! link jsGlobalNodeObjects GruvboxFg1
+hi! link jsGlobalObjects GruvboxFg1
+hi! link jsFunction GruvboxAqua
+hi! link jsFuncParens GruvboxFg3
+hi! link jsParens GruvboxFg3
+hi! link jsNull GruvboxPurple
+hi! link jsUndefined GruvboxPurple
 
 " }}}
 " TypeScript: {{{
