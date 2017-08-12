@@ -844,6 +844,44 @@ hi! link ALEWarningSign GruvboxYellowSign
 hi! link ALEInfoSign GruvboxBlueSign
 
 " }}}
+" Dirvish: {{{
+
+call s:HL('DirvishPathTail', s:aqua)
+
+" }}}
+" Netrw: {{{
+
+call s:HL('netrwDir', s:aqua)
+call s:HL('netrwClassify', s:aqua)
+call s:HL('netrwLink', s:gray)
+call s:HL('netrwSymLink', s:fg1)
+call s:HL('netrwExe', s:yellow)
+call s:HL('netrwComment', s:gray)
+call s:HL('netrwList', s:blue)
+call s:HL('netrwHelpCmd', s:aqua)
+call s:HL('netrwCmdSep', s:fg3)
+call s:HL('netrwVersion', s:green)
+
+" }}}
+" NERDTree: {{{
+
+call s:HL('NERDTreeDir', s:aqua)
+call s:HL('NERDTreeDirSlash', s:aqua)
+
+call s:HL('NERDTreeOpenable', s:orange)
+call s:HL('NERDTreeClosable', s:orange)
+
+call s:HL('NERDTreeFile', s:fg0)
+call s:HL('NERDTreeExecFile', s:yellow)
+
+call s:HL('NERDTreeUp', s:gray)
+call s:HL('NERDTreeCWD', s:green)
+call s:HL('NERDTreeHelp', s:fg1)
+
+call s:HL('NERDTreeToggleOn', s:green)
+call s:HL('NERDTreeToggleOff', s:red)
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
