@@ -1157,12 +1157,14 @@ hi! link jsFuncParens GruvboxFg3
 hi! link jsParens GruvboxFg3
 hi! link jsNull GruvboxPurple
 hi! link jsUndefined GruvboxPurple
+hi! link jsClassDefinition GruvboxYellow
 
 " }}}
 " TypeScript: {{{
 
 hi! link typeScriptReserved GruvboxAqua
 hi! link typeScriptLabel GruvboxAqua
+hi! link typeScriptFuncKeyword GruvboxAqua
 hi! link typeScriptIdentifier GruvboxOrange
 hi! link typeScriptBraces GruvboxFg1
 hi! link typeScriptEndColons GruvboxFg1
@@ -1172,6 +1174,12 @@ hi! link typeScriptLogicSymbols GruvboxFg1
 hi! link typeScriptDocSeeTag Comment
 hi! link typeScriptDocParam Comment
 hi! link typeScriptDocTags vimCommentTitle
+hi! link typeScriptGlobalObjects GruvboxFg1
+hi! link typeScriptParens GruvboxFg3
+hi! link typeScriptOpSymbols GruvboxFg3
+hi! link typeScriptHtmlElemProperties GruvboxFg1
+hi! link typeScriptNull GruvboxPurple
+hi! link typeScriptInterpolationDelimiter GruvboxAqua
 
 " }}}
 " CoffeeScript: {{{
