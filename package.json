@@ -4,7 +4,7 @@
   "repository": "git@github.com:morhetz/gruvbox.git",
   "author": "Pavel Pertsev <morhetz@gmail.com>",
   "license": "MIT",
-  "files": [
-    "opt"
-  ]
+  "vim": {
+    "optional": true
+  }
 }
