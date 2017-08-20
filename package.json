@@ -5,6 +5,6 @@
   "author": "Pavel Pertsev <morhetz@gmail.com>",
   "license": "MIT",
   "vim": {
-    "optional": true
+    "opt": true
   }
 }
