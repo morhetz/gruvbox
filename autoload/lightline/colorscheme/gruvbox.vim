@@ -7,8 +7,8 @@
 " -----------------------------------------------------------------------------
 
 function! s:getGruvColor(group)
-  let guiColor = synIDattr(hlID(a:group), "fg", "gui") 
-  let termColor = synIDattr(hlID(a:group), "fg", "cterm") 
+  let guiColor = synIDattr(hlID(a:group), "fg", "gui")
+  let termColor = synIDattr(hlID(a:group), "fg", "cterm")
   return [ guiColor, termColor ]
 endfunction
 
