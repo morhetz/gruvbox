@@ -1335,36 +1335,44 @@ hi! link markdownIdDeclaration markdownLinkText
 " }}}
 " Haskell: {{{
 
-" hi! link haskellType GruvboxYellow
-" hi! link haskellOperators GruvboxOrange
-" hi! link haskellConditional GruvboxAqua
-" hi! link haskellLet GruvboxOrange
-"
-hi! link haskellType GruvboxFg1
-hi! link haskellIdentifier GruvboxFg1
-hi! link haskellSeparator GruvboxFg1
-hi! link haskellDelimiter GruvboxFg4
-hi! link haskellOperators GruvboxBlue
-"
-hi! link haskellBacktick GruvboxOrange
-hi! link haskellStatement GruvboxOrange
-hi! link haskellConditional GruvboxOrange
+hi! link haskellType GruvboxBlue
+hi! link haskellIdentifier GruvboxAqua
+hi! link haskellSeparator GruvboxFg4
+hi! link haskellDelimiter GruvboxOrange
+hi! link haskellOperators GruvboxPurple
 
-hi! link haskellLet GruvboxAqua
-hi! link haskellDefault GruvboxAqua
-hi! link haskellWhere GruvboxAqua
-hi! link haskellBottom GruvboxAqua
-hi! link haskellBlockKeywords GruvboxAqua
-hi! link haskellImportKeywords GruvboxAqua
-hi! link haskellDeclKeyword GruvboxAqua
-hi! link haskellDeriving GruvboxAqua
+hi! link haskellBacktick GruvboxOrange
+hi! link haskellStatement GruvboxPurple
+hi! link haskellConditional GruvboxPurple
+
+hi! link haskellLet GruvboxRed
+hi! link haskellDefault GruvboxRed
+hi! link haskellWhere GruvboxRed
+hi! link haskellBottom GruvboxRedBold
+hi! link haskellImportKeywords GruvboxPurpleBold
+hi! link haskellDeclKeyword GruvboxOrange
+hi! link haskellDecl GruvboxOrange
+hi! link haskellDeriving GruvboxPurple
 hi! link haskellAssocType GruvboxAqua
 
-hi! link haskellNumber GruvboxPurple
-hi! link haskellPragma GruvboxPurple
-
-hi! link haskellString GruvboxGreen
-hi! link haskellChar GruvboxGreen
+hi! link haskellNumber GruvboxAqua
+hi! link haskellPragma GruvboxRedBold
+ 
+hi! link haskellTH GruvboxAquaBold
+hi! link haskellForeignKeywords GruvboxGreen
+hi! link haskellKeyword GruvboxRed
+hi! link haskellFloat GruvboxAqua
+hi! link haskellInfix GruvboxPurple
+hi! link haskellQuote GruvboxGreenBold
+hi! link haskellShebang GruvboxYellowBold
+hi! link haskellLiquid GruvboxPurpleBold
+hi! link haskellQuasiQuoted GruvboxBlueBold
+hi! link haskellRecursiveDo GruvboxPurlpe
+hi! link haskellQuotedType GruvboxRed
+hi! link haskellPreProc GruvboxFg4
+hi! link haskellTypeRoles GruvboxRedBold
+hi! link haskellTypeForall GruvboxRed
+hi! link haskellPatternKeyword GruvboxBlue
 
 " }}}
 " Json: {{{
