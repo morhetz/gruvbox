@@ -3,7 +3,7 @@
 " Description: Gruvbox colorscheme for Lightline (itchyny/lightline.vim)
 " Author: gmoe <me@griffinmoe.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 20 Sep 2017
+" Last Modified: 01 Dec 2017
 " -----------------------------------------------------------------------------
 
 function! s:getGruvColor(group)
@@ -13,7 +13,6 @@ function! s:getGruvColor(group)
 endfunction
 
 if exists('g:lightline')
-
   let s:bg0  = s:getGruvColor('GruvboxBg0')
   let s:bg1  = s:getGruvColor('GruvboxBg1')
   let s:bg2  = s:getGruvColor('GruvboxBg2')
@@ -48,7 +47,7 @@ if exists('g:lightline')
   let s:p.visual.middle = [ [ s:fg4, s:bg1 ] ]
   let s:p.tabline.left = [ [ s:fg4, s:bg2 ] ]
   let s:p.tabline.tabsel = [ [ s:bg0, s:fg4 ] ]
-  let s:p.tabline.middle = [ [ s:bg0, s:bg0 ] ]
+  let s:p.tabline.middle = [ [ s:bg0, s:bg4 ] ]
   let s:p.tabline.right = [ [ s:bg0, s:orange ] ]
   let s:p.normal.error = [ [ s:bg0, s:orange ] ]
   let s:p.normal.warning = [ [ s:bg2, s:yellow ] ]
