@@ -688,8 +688,11 @@ hi! link EasyMotionShade Comment
 " }}}
 " Sneak: {{{
 
-autocmd ColorScheme gruvbox hi! link Sneak Search
-autocmd ColorScheme gruvbox hi! link SneakLabel Search
+augroup gruvbox-sneak
+  autocmd!
+  autocmd ColorScheme gruvbox hi! link Sneak Search
+  autocmd ColorScheme gruvbox hi! link SneakLabel Search
+augroup END
 
 " }}}
 " Indent Guides: {{{
