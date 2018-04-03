@@ -1159,6 +1159,7 @@ hi! link jsTemplateBraces GruvboxAqua
 hi! link jsGlobalNodeObjects GruvboxFg1
 hi! link jsGlobalObjects GruvboxFg1
 hi! link jsFunction GruvboxAqua
+hi! link jsFuncCall GruvboxBlue
 hi! link jsFuncParens GruvboxFg3
 hi! link jsParens GruvboxFg3
 hi! link jsNull GruvboxPurple
