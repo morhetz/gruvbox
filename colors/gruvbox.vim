@@ -1067,6 +1067,7 @@ hi! link javaScriptMember GruvboxBlue
 hi! link javaScriptNumber GruvboxPurple
 hi! link javaScriptNull GruvboxPurple
 hi! link javaScriptParens GruvboxFg3
+hi! link javaScriptLabel GruvboxRed
 
 " }}}
 " YAJS: {{{
@@ -1126,7 +1127,7 @@ hi! link javascriptTemplateSubstitution GruvboxFg1
 " hi! link javascriptLabel GruvboxBlue
 " hi! link javascriptObjectLabel GruvboxBlue
 " hi! link javascriptPropertyName GruvboxBlue
-hi! link javascriptLabel GruvboxFg1
+hi! link javascriptLabel GruvboxRed
 hi! link javascriptObjectLabel GruvboxFg1
 hi! link javascriptPropertyName GruvboxFg1
 
