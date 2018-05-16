@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - '5'
+  - '4'
+  - '3'
+  - '2'
+  - '1'
+  - '0.12'
+  - '0.10'
+before_script:
+  - git config --global user.name 'Travis-CI'
+  - git config --global user.email 'dummy@example.org'
+after_script: NODE_ENV=test istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage

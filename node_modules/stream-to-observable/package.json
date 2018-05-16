@@ -1,0 +1,39 @@
+{
+  "name": "stream-to-observable",
+  "version": "0.1.0",
+  "description": "Convert Node Streams into ECMAScript-Observables",
+  "license": "MIT",
+  "repository": "jamestalmage/stream-to-observable",
+  "author": {
+    "name": "James Talmage",
+    "email": "james@talmage.io",
+    "url": "github.com/jamestalmage"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  },
+  "scripts": {
+    "test": "xo && nyc --reporter=lcov --reporter=text ava"
+  },
+  "files": [
+    "index.js",
+    "zen.js",
+    "rxjs.js",
+    "rxjs-all.js"
+  ],
+  "keywords": [
+    "stream",
+    "observable"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "array-to-events": "^1.0.0",
+    "ava": "^0.14.0",
+    "coveralls": "^2.11.9",
+    "delay": "^1.3.1",
+    "nyc": "^6.4.0",
+    "rxjs": "^5.0.0-beta.6",
+    "xo": "^0.14.0",
+    "zen-observable": "^0.2.1"
+  }
+}

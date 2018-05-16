@@ -1,0 +1,50 @@
+{
+  "name": "findup-sync",
+  "description": "Find the first file matching a given pattern in the current directory or the nearest ancestor directory.",
+  "version": "0.4.2",
+  "homepage": "https://github.com/cowboy/node-findup-sync",
+  "author": "\"Cowboy\" Ben Alman (http://benalman.com)",
+  "repository": "cowboy/node-findup-sync",
+  "bugs": {
+    "url": "https://github.com/cowboy/node-findup-sync/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt && mocha"
+  },
+  "dependencies": {
+    "detect-file": "^0.1.0",
+    "is-glob": "^2.0.1",
+    "micromatch": "^2.3.7",
+    "resolve-dir": "^0.1.0"
+  },
+  "devDependencies": {
+    "fs-exists-sync": "^0.1.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^0.12.0",
+    "is-absolute": "^0.2.3",
+    "minimist": "^1.2.0",
+    "mocha": "^2.4.5",
+    "normalize-path": "^2.0.1",
+    "os-homedir": "^1.0.1",
+    "resolve": "^1.1.7"
+  },
+  "keywords": [
+    "file",
+    "find",
+    "find-up",
+    "findup",
+    "glob",
+    "match",
+    "pattern",
+    "resolve",
+    "search"
+  ]
+}

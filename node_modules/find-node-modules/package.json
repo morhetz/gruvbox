@@ -1,0 +1,27 @@
+{
+  "name": "find-node-modules",
+  "version": "1.0.4",
+  "description": "Return an array of all parent node_modules directories",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test | faucet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/callumacrae/find-node-modules"
+  },
+  "author": "Callum Macrae <callum@macr.ae>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/callumacrae/find-node-modules/issues"
+  },
+  "homepage": "https://github.com/callumacrae/find-node-modules",
+  "dependencies": {
+    "findup-sync": "0.4.2",
+    "merge": "^1.2.0"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "4.6.0"
+  }
+}

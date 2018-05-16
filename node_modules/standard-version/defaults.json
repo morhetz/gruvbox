@@ -1,0 +1,13 @@
+{
+  "infile": "CHANGELOG.md",
+  "message": "chore(release): %s",
+  "firstRelease": false,
+  "sign": false,
+  "noVerify": false,
+  "commitAll": false,
+  "silent": false,
+  "tagPrefix": "v",
+  "scripts": {},
+  "skip": {},
+  "dryRun": false
+}

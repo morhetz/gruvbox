@@ -4,6 +4,28 @@
   "repository": "git@github.com:morhetz/gruvbox.git",
   "author": "Pavel Pertsev <morhetz@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "commitmsg": "validate-commit-msg",
+    "cz": "git-cz",
+    "postcheckout": "track-changed checkout",
+    "postmerge": "track-changed merge",
+    "postrewrite": "track-changed rewrite"
+  },
+  "devDependencies": {
+    "@bruitt/commit": "^1.0.0",
+    "babel-runtime": "^6.26.0",
+    "husky": "^0.13.1",
+    "standard-version": "^4.3.0",
+    "track-changed": "^1.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "track-changed": {
+    "yarn.lock": "yarn"
+  },
   "vim": {
     "opt": true
   }

@@ -1,0 +1,19 @@
+environment:
+  matrix:
+    - nodejs_version: '6'
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - git config --global user.name 'Appveyor'
+  - git config --global user.email 'dummy@example.org'
+  - set CI=true
+  - npm -g install npm@latest
+  - set PATH=%APPDATA%\npm;%PATH%
+  - npm install
+matrix:
+  fast_finish: true
+build: off
+version: '{build}'
+test_script:
+  - node --version
+  - npm --version
+  - npm test
