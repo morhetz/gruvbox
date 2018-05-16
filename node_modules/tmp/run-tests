@@ -1,7 +1,0 @@
-#!/bin/sh
-
-DIR="x"
-
-rm -rf ${DIR}
-mkdir ${DIR} 
-TMPDIR=${DIR} vows $*
