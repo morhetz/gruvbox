@@ -1191,7 +1191,7 @@ hi! link typeScriptInterpolationDelimiter GruvboxAqua
 " JSX: maxmellon/vim-jsx-pretty: {{{
 
 hi! link jsxTagName GruvboxAqua
-hi! link jsxComponentName GruvboxOrange
+hi! link jsxComponentName GruvboxGreen
 hi! link jsxCloseString GruvboxFg4
 hi! link jsxAttrib GruvboxYellow
 hi! link jsxEqual GruvboxAqua
