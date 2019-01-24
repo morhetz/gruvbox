@@ -18,7 +18,7 @@ function! airline#themes#gruvbox#refresh()
 
   let s:N1 = airline#themes#get_highlight2(['Normal', 'bg'], ['StatusLineNC', 'bg'])
   let s:N2 = airline#themes#get_highlight2(['StatusLineNC', 'bg'], ['Pmenu', 'bg'])
-  let s:N3 = airline#themes#get_highlight2(['StatusLineNC', 'bg'], ['CursorLine', 'bg'])
+  let s:N3 = airline#themes#get_highlight2(['StatusLineNC', 'bg'], ['StatusLineNC', 'fg'])
   let g:airline#themes#gruvbox#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
   let g:airline#themes#gruvbox#palette.normal_modified = { 'airline_c': modified_group }
   let g:airline#themes#gruvbox#palette.normal.airline_warning = warning_group
