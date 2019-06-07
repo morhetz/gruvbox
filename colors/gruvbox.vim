@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 12 Aug 2017
+" Last Modified: 07 Jun 2019
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -683,7 +683,6 @@ endif
 " Plugin specific -------------------------------------------------------------
 " EasyMotion: {{{
 
-hi! link EasyMotionTarget Search
 hi! link EasyMotionShade Comment
 
 " }}}
@@ -1398,6 +1397,11 @@ hi! link jsonKeyword GruvboxGreen
 hi! link jsonQuote GruvboxGreen
 hi! link jsonBraces GruvboxFg1
 hi! link jsonString GruvboxFg1
+
+" }}}
+" Tex: {{{
+
+hi! link texMathSymbol GruvboxAqua
 
 " }}}
 
