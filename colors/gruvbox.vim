@@ -1402,6 +1402,9 @@ hi! link jsonString GruvboxFg1
 " Tex: {{{
 
 hi! link texMathSymbol GruvboxAqua
+hi! link texOnlyMath cleared
+hi! link texSuperscript texMath
+hi! link texSubscript texMath
 
 " }}}
 
