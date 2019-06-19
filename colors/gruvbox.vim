@@ -307,6 +307,11 @@ if exists("g:gruvbox_transparent_bg")
   endif
 endif
 
+let s:cursor_column = s:bg1
+if exists("g:gruvbox_cursor_column")
+  let s:cursor_column = get(s:gb, g:gruvbox_cursor_column)
+endif
+
 let s:hls_cursor = s:orange
 if exists('g:gruvbox_hls_cursor')
   let s:hls_cursor = get(s:gb, g:gruvbox_hls_cursor)
@@ -352,6 +357,11 @@ if exists('g:gruvbox_invert_selection')
   if g:gruvbox_invert_selection == 0
     let s:invert_selection = ''
   endif
+endif
+
+let s:selection_bg = s:bg3
+if exists('g:gruvbox_selection_bg')
+  let s:selection_bg = get(s:gb, g:gruvbox_selection_bg)
 endif
 
 let s:invert_tabline = ''
@@ -481,7 +491,7 @@ endif
 
 if version >= 700
   " Screen line that the cursor is
-  call s:HL('CursorLine',   s:none, s:bg1)
+  call s:HL('CursorLine',   s:none, s:cursor_column)
   " Screen column that the cursor is
   hi! link CursorColumn CursorLine
 
@@ -504,13 +514,13 @@ if version >= 703
   call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:yellow, s:bg1)
+  call s:HL('CursorLineNr', s:yellow, s:cursor_column)
 endif
 
 hi! link NonText GruvboxBg2
 hi! link SpecialKey GruvboxBg2
 
-call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)
+call s:HL('Visual',    s:none,  s:selection_bg, s:invert_selection)
 hi! link VisualNOS Visual
 
 call s:HL('Search',    s:yellow, s:bg0, s:inverse)
