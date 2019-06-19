@@ -300,6 +300,13 @@ endif
 " }}}
 " Overload Setting: {{{
 
+let s:background = s:bg0
+if exists("g:gruvbox_transparent_bg")
+  if g:gruvbox_transparent_bg == 1
+    let s:background = s:none
+  endif
+endif
+
 let s:hls_cursor = s:orange
 if exists('g:gruvbox_hls_cursor')
   let s:hls_cursor = get(s:gb, g:gruvbox_hls_cursor)
@@ -1391,3 +1398,6 @@ endfunction
 " }}}
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
+
+call s:HL('Normal', s:fg1, s:background)
+
