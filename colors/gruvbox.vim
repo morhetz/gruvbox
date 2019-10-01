@@ -1164,6 +1164,7 @@ hi! link jsParens GruvboxFg3
 hi! link jsNull GruvboxPurple
 hi! link jsUndefined GruvboxPurple
 hi! link jsClassDefinition GruvboxYellow
+hi! link jsOperatorKeyword GruvboxRed
 
 " }}}
 " TypeScript: {{{
