@@ -558,7 +558,7 @@ call s:HL('FoldColumn', s:gray, s:bg1)
 call s:HL('Cursor', s:none, s:none, s:inverse)
 " Visual mode cursor, selection
 hi! link vCursor Cursor
-" Input moder cursor
+" Input mode cursor
 hi! link iCursor Cursor
 " Language mapping cursor
 hi! link lCursor Cursor
