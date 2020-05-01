@@ -311,16 +311,8 @@ if exists('g:gruvbox_number_column')
 endif
 
 let s:sign_column = s:bg1
-
-if exists('g:gitgutter_override_sign_column_highlight') &&
-      \ g:gitgutter_override_sign_column_highlight == 1
-  let s:sign_column = s:number_column
-else
-  let g:gitgutter_override_sign_column_highlight = 0
-
-  if exists('g:gruvbox_sign_column')
-    let s:sign_column = get(s:gb, g:gruvbox_sign_column)
-  endif
+if exists('g:gruvbox_sign_column')
+  let s:sign_column = get(s:gb, g:gruvbox_sign_column)
 endif
 
 let s:color_column = s:bg1
