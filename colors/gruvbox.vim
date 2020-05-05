@@ -761,6 +761,21 @@ hi! link gitcommitSelectedFile GruvboxGreen
 hi! link gitcommitDiscardedFile GruvboxRed
 
 " }}}
+" vim-lsp: "{{{
+
+hi! link LspErrorHighlight GruvboxRed
+hi! link LspWarningHighlight GruvboxYellow
+hi! link LspInformationHighlight GruvboxBlue
+hi! link LspHintHighlight GruvboxBlue
+
+hi! link LspErrorText GruvboxRedSign
+hi! link LspWarningText GruvboxYellowSign
+hi! link LspInformationText GruvboxBlueSign
+hi! link LspHintText GruvboxBlueSign
+
+call s:HL('lspReference', s:none, s:none, s:inverse . s:italic, s:none)
+
+" }}}
 " Signify: {{{
 
 hi! link SignifySignAdd GruvboxGreenSign
