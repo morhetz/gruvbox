@@ -1263,6 +1263,13 @@ hi! link goDeclType GruvboxBlue
 hi! link goBuiltins GruvboxOrange
 
 " }}}
+" Rust: {{{
+
+hi! link rustFuncCall GruvboxBlue
+hi! link rustCommentLineDoc GruvboxFg3
+hi! link rustLifetime GruvboxAqua
+
+" }}}
 " Lua: {{{
 
 hi! link luaIn GruvboxRed
