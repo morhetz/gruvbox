@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 07 Jun 2019
+" Last Modified: 04 Jun 2020
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -1397,7 +1397,17 @@ hi! link jsonString GruvboxFg1
 " }}}
 " Tex: {{{
 
+hi! link texStatement GruvboxAqua
+hi! link texCmdName GruvboxAqua
+hi! link texNewCmd GruvboxAqua
+hi! link texDefCmd GruvboxAqua
+hi! link texDefName GruvboxAqua
+hi! link texNewEnv GruvboxAqua
+hi! link texRefZone GruvboxBlue
+hi! link texBeginEndName GruvboxBlue
+
 hi! link texMathSymbol GruvboxAqua
+hi! link texMathDelim GruvboxAqua
 hi! link texOnlyMath cleared
 hi! link texSuperscript texMath
 hi! link texSubscript texMath
