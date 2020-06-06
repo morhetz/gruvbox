@@ -914,6 +914,18 @@ call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
 call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 
 " }}}
+" Nvim LSP client {{{
+
+hi! link LspDiagnosticsErrorSign GruvboxRedSign
+hi! link LspDiagnosticsWarningSign GruvboxOrangeSign
+hi! link LspDiagnosticInformationSign GruvboxYellowSign
+hi! link LspDiagnosticHintSign GruvboxBlueSign
+hi! link LspDiagnosticsError GruvboxRed
+hi! link LspDiagnosticsWarning GruvboxOrange
+hi! link LspDiagnosticInformation GruvboxYellow
+hi! link LspDiagnosticHint GruvboxBlue
+
+" }}}
 
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
