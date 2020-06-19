@@ -920,6 +920,10 @@ hi! link LspDiagnosticsErrorSign GruvboxRedSign
 hi! link LspDiagnosticsWarningSign GruvboxOrangeSign
 hi! link LspDiagnosticsInformationSign GruvboxYellowSign
 hi! link LspDiagnosticsHintSign GruvboxBlueSign
+hi! link LspDiagnosticsErrorFloating GruvboxRed
+hi! link LspDiagnosticsWarningFloating GruvboxOrange
+hi! link LspDiagnosticsInformationFloating GruvboxYellow
+hi! link LspDiagnosticsHintFloating GruvboxBlue
 hi! link LspDiagnosticsError GruvboxRed
 hi! link LspDiagnosticsWarning GruvboxOrange
 hi! link LspDiagnosticsInformation GruvboxYellow
