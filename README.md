@@ -24,9 +24,13 @@ Refer [Gallery][] for more syntax-specific screenshots.
 
 ### Dark mode
 
+`:set background=dark`
+
 ![Screenshot Dark](http://i.imgur.com/GkIl8Fn.png)
 
 ### Light mode
+
+`:set background=light`
 
 ![Screenshot Light](http://i.imgur.com/X75niEa.png)
 
