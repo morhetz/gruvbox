@@ -930,19 +930,19 @@ hi! link diffLine GruvboxBlue
 " }}}
 " Html: {{{
 
-hi! link htmlTag GruvboxBlue
-hi! link htmlEndTag GruvboxBlue
+hi! link htmlTag GruvboxAquaBold
+hi! link htmlEndTag GruvboxAquaBold
 
-hi! link htmlTagName GruvboxAquaBold
-hi! link htmlArg GruvboxAqua
+hi! link htmlTagName GruvboxBlue
+hi! link htmlArg GruvboxOrange
 
 hi! link htmlScriptTag GruvboxPurple
 hi! link htmlTagN GruvboxFg1
-hi! link htmlSpecialTagName GruvboxAquaBold
+hi! link htmlSpecialTagName GruvboxBlue
 
 call s:HL('htmlLink', s:fg4, s:none, s:underline)
 
-hi! link htmlSpecialChar GruvboxOrange
+hi! link htmlSpecialChar GruvboxRed
 
 call s:HL('htmlBold', s:vim_fg, s:vim_bg, s:bold)
 call s:HL('htmlBoldUnderline', s:vim_fg, s:vim_bg, s:bold . s:underline)
