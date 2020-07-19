@@ -773,6 +773,10 @@ hi! link LspWarningText GruvboxYellowSign
 hi! link LspInformationText GruvboxBlueSign
 hi! link LspHintText GruvboxBlueSign
 
+call s:HL('LspErrorHighlight', s:none, s:none, s:undercurl, s:red)
+call s:HL('LspWarningHighlight', s:none, s:none, s:undercurl, s:orange)
+call s:HL('LspInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
+call s:HL('LspHintHighlight', s:none, s:none, s:undercurl, s:blue)
 call s:HL('lspReference', s:none, s:none, s:inverse . s:italic, s:none)
 
 " }}}
