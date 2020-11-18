@@ -1325,6 +1325,14 @@ hi! link scalaInstanceDeclaration GruvboxFg1
 hi! link scalaInterpolation GruvboxAqua
 
 " }}}
+
+" R: {{{
+hi! link rBoolean     GruvboxPurple
+hi! link rFunction    GruvboxAqua
+hi! link rSpaceFun    GruvboxAqua
+hi! link rOperator    GruvboxRed
+" }}}
+
 " Markdown: {{{
 
 call s:HL('markdownItalic', s:fg3, s:none, s:italic)
