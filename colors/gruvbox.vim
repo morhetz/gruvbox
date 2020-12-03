@@ -3,7 +3,7 @@
 " Description: Retro groove color scheme for Vim
 " Author: morhetz <morhetz@gmail.com>
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 12 Aug 2017
+" Last Modified: 04 Jun 2020
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -87,7 +87,7 @@ let s:gb = {}
 
 " fill it with absolute colors
 let s:gb.dark0_hard  = ['#1d2021', 234]     " 29-32-33
-let s:gb.dark0       = ['#282828', 235]     " 40-40-40
+let s:gb.dark0       = ['#262626', 235]     " 38-38-38
 let s:gb.dark0_soft  = ['#32302f', 236]     " 50-48-47
 let s:gb.dark1       = ['#3c3836', 237]     " 60-56-54
 let s:gb.dark2       = ['#504945', 239]     " 80-73-69
@@ -664,18 +664,14 @@ call s:HL('DiffText',   s:yellow, s:bg0, s:inverse)
 " Spelling: {{{
 
 if has("spell")
-  " Not capitalised word, or compile warnings
-  if g:gruvbox_improved_warnings == 0
-    call s:HL('SpellCap',   s:none, s:none, s:undercurl, s:red)
-  else
-    call s:HL('SpellCap',   s:green, s:none, s:bold . s:italic)
-  endif
+  " Not capitalised word
+  call s:HL('SpellCap', s:red, s:none, s:italic . s:undercurl, s:red)
   " Not recognized word
-  call s:HL('SpellBad',   s:none, s:none, s:undercurl, s:blue)
+  call s:HL('SpellBad', s:blue, s:none, s:italic . s:undercurl, s:blue)
   " Wrong spelling for selected region
-  call s:HL('SpellLocal', s:none, s:none, s:undercurl, s:aqua)
+  call s:HL('SpellLocal', s:aqua, s:none, s:italic . s:undercurl, s:aqua)
   " Rare word
-  call s:HL('SpellRare',  s:none, s:none, s:undercurl, s:purple)
+  call s:HL('SpellRare', s:purple, s:none, s:italic . s:undercurl, s:purple)
 endif
 
 " }}}
@@ -683,7 +679,6 @@ endif
 " Plugin specific -------------------------------------------------------------
 " EasyMotion: {{{
 
-hi! link EasyMotionTarget Search
 hi! link EasyMotionShade Comment
 
 " }}}
@@ -1398,6 +1393,28 @@ hi! link jsonKeyword GruvboxGreen
 hi! link jsonQuote GruvboxGreen
 hi! link jsonBraces GruvboxFg1
 hi! link jsonString GruvboxFg1
+
+" }}}
+" Tex: {{{
+
+hi! link texStatement GruvboxAqua
+hi! link texCmdName GruvboxAqua
+hi! link texNewCmd GruvboxAqua
+hi! link texDefCmd GruvboxAqua
+hi! link texDefName GruvboxAqua
+hi! link texNewEnv GruvboxAqua
+hi! link texRefZone GruvboxBlue
+hi! link texBeginEndName GruvboxBlue
+
+hi! link texMathSymbol GruvboxAqua
+hi! link texMathDelim GruvboxAqua
+hi! link texOnlyMath cleared
+hi! link texSuperscript texMath
+hi! link texSubscript texMath
+
+" vimtex 2.0
+hi! link texCmd GruvboxAqua
+hi! link texArg GruvboxBlue
 
 " }}}
 
