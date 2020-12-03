@@ -1412,6 +1412,10 @@ hi! link texOnlyMath cleared
 hi! link texSuperscript texMath
 hi! link texSubscript texMath
 
+" vimtex 2.0
+hi! link texCmd GruvboxAqua
+hi! link texArg GruvboxBlue
+
 " }}}
 
 
