@@ -498,7 +498,8 @@ if version >= 703
   call s:HL('Conceal', s:blue, s:none)
 
   " Line number of CursorLine
-  call s:HL('CursorLineNr', s:yellow, s:bg1)
+  " call s:HL('CursorLineNr', s:yellow, s:bg1)
+  call s:HL('CursorLineNr', s:yellow, s:bg0)
 endif
 
 hi! link NonText GruvboxBg2
@@ -639,9 +640,11 @@ hi! link Typedef GruvboxYellow
 
 if version >= 700
   " Popup menu: normal item
-  call s:HL('Pmenu', s:fg1, s:bg2)
+  " call s:HL('Pmenu', s:fg1, s:bg2)
+  call s:HL('Pmenu', s:fg1, s:bg1)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
+  " call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
+  call s:HL('PmenuSel', s:orange, s:bg1)
   " Popup menu: scrollbar
   call s:HL('PmenuSbar', s:none, s:bg2)
   " Popup menu: scrollbar thumb
@@ -1400,6 +1403,40 @@ hi! link jsonBraces GruvboxFg1
 hi! link jsonString GruvboxFg1
 
 " }}}
+" Mail: {{{
+
+" mail header
+hi! link mailHeader GruvBoxBlue
+hi! link mailHeaderKey GruvBoxBlue
+hi! link mailHeaderEmail GruvBoxBlue
+hi! link mailSubject GruvboxBlue
+
+" mail quoted text 
+hi! link mailQuoted1 GruvBoxAqua
+hi! link mailQuoted2 GruvBoxPurple
+hi! link mailQuoted3 GruvBoxYellow
+hi! link mailQuoted4 GruvBoxGreen
+hi! link mailQuoted5 GruvBoxRed
+hi! link mailQuoted6 GruvBoxOrange
+
+hi! link mailQuotedExp1 GruvBoxAqua
+hi! link mailQuotedExp2 GruvBoxPurple
+hi! link mailQuotedExp3 GruvBoxYellow
+hi! link mailQuotedExp4 GruvBoxGreen
+hi! link mailQuotedExp5 GruvBoxRed
+hi! link mailQuotedExp6 GruvBoxOrange
+
+" I did not discover yet for what this is used
+" hi! link mailVerbatim GruvBoxRed
+
+" mail signature 
+hi! link mailSignature GruvBoxFg 
+
+" mail url and emails 
+hi! link mailURL GruvBoxOrange
+hi! link mailEmail GruvBoxOrange
+
+" }}}
 
 
 " Functions -------------------------------------------------------------------
@@ -1414,5 +1451,28 @@ function! GruvboxHlsHideCursor()
 endfunction
 
 " }}}
+
+" fzf: {{{
+
+if exists(':FZF')
+  let g:fzf_colors = {}
+
+  let g:fzf_colors.fg      = ['fg', 'GruvboxFg1']
+  let g:fzf_colors.bg      = ['fg', 'GruvboxBg0']
+  let g:fzf_colors.hl      = ['fg', 'GruvboxRed']
+  let g:fzf_colors['fg+']  = ['fg', 'GruvboxGreen']
+  let g:fzf_colors['bg+']  = ['fg', 'GruvboxBg1']
+  let g:fzf_colors['hl+']  = ['fg', 'GruvboxRed']
+  let g:fzf_colors.info    = ['fg', 'GruvboxOrange']
+  let g:fzf_colors.border  = ['fg', 'GruvboxBg0']
+  let g:fzf_colors.prompt  = ['fg', 'GruvboxAqua']
+  let g:fzf_colors.pointer = ['fg', 'GruvboxOrange']
+  let g:fzf_colors.marker  = ['fg', 'GruvboxYellow']
+  let g:fzf_colors.spinner = ['fg', 'GruvboxGreen']
+  let g:fzf_colors.header  = ['fg', 'GruvboxBlue']
+endif
+
+" }}}
+
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
