@@ -1424,4 +1424,27 @@ endfunction
 
 " }}}
 
+" fzf: {{{
+
+if exists(':FZF')
+  let g:fzf_colors = {}
+
+  let g:fzf_colors.fg      = ['fg', 'GruvboxFg1']
+  let g:fzf_colors.bg      = ['fg', 'GruvboxBg0']
+  let g:fzf_colors.hl      = ['fg', 'GruvboxRed']
+  let g:fzf_colors['fg+']  = ['fg', 'GruvboxGreen']
+  let g:fzf_colors['bg+']  = ['fg', 'GruvboxBg1']
+  let g:fzf_colors['hl+']  = ['fg', 'GruvboxRed']
+  let g:fzf_colors.info    = ['fg', 'GruvboxOrange']
+  let g:fzf_colors.border  = ['fg', 'GruvboxBg0']
+  let g:fzf_colors.prompt  = ['fg', 'GruvboxAqua']
+  let g:fzf_colors.pointer = ['fg', 'GruvboxOrange']
+  let g:fzf_colors.marker  = ['fg', 'GruvboxYellow']
+  let g:fzf_colors.spinner = ['fg', 'GruvboxGreen']
+  let g:fzf_colors.header  = ['fg', 'GruvboxBlue']
+endif
+
+" }}}
+
+
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
