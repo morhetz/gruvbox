@@ -1302,6 +1302,7 @@ hi! link elixirInterpolationDelimiter GruvboxAqua
 hi! link elixirModuleDeclaration GruvboxYellow
 hi! link elixirModuleDefine GruvboxRed
 hi! link elixirDefine GruvboxRed
+hi! link elixirBlockDefition GruvboxRed
 
 " }}}
 " Scala: {{{
