@@ -1297,11 +1297,11 @@ hi! link javaVarArg GruvboxGreen
 " Elixir: {{{
 
 hi! link elixirDocString Comment
-
 hi! link elixirStringDelimiter GruvboxGreen
 hi! link elixirInterpolationDelimiter GruvboxAqua
-
 hi! link elixirModuleDeclaration GruvboxYellow
+hi! link elixirModuleDefine GruvboxRed
+hi! link elixirDefine GruvboxRed
 
 " }}}
 " Scala: {{{
