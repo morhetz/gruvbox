@@ -1328,6 +1328,8 @@ hi! link scalaInterpolation GruvboxAqua
 " Markdown: {{{
 
 call s:HL('markdownItalic', s:fg3, s:none, s:italic)
+call s:HL('markdownBold', s:fg3, s:none, s:bold)
+call s:HL('markdownBoldItalic', s:fg3, s:none, s:bold . s:italic)
 
 hi! link markdownH1 GruvboxGreenBold
 hi! link markdownH2 GruvboxGreenBold
