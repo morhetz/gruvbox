@@ -21,14 +21,26 @@ Screenshots
 Refer [Gallery][] for more syntax-specific screenshots.
 
    [Gallery]: https://github.com/morhetz/gruvbox/wiki/Gallery
+   
+   
 
 ### Dark mode
 
 ![Screenshot Dark](http://i.imgur.com/GkIl8Fn.png)
+   
+   to enable this you need to set background as dark
+   ```
+   set bg=dark
+   ```
 
 ### Light mode
 
 ![Screenshot Light](http://i.imgur.com/X75niEa.png)
+
+   light theme is enabled by default, to enable this manually you need to set background as light
+   ```
+   set bg=dark
+   ```
 
 ### Airline theme
 
