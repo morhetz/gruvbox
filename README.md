@@ -21,8 +21,6 @@ Screenshots
 Refer [Gallery][] for more syntax-specific screenshots.
 
    [Gallery]: https://github.com/morhetz/gruvbox/wiki/Gallery
-   
-   
 
 ### Dark mode
 
@@ -39,7 +37,7 @@ Refer [Gallery][] for more syntax-specific screenshots.
 
    light theme is enabled by default, to enable this manually you need to set background as light
    ```
-   set bg=dark
+   set bg=light
    ```
 
 ### Airline theme
