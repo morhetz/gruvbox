@@ -26,7 +26,7 @@ Refer [Gallery][] for more syntax-specific screenshots.
 
 ![Screenshot Dark](http://i.imgur.com/GkIl8Fn.png)
    
-   to enable this you need to set background as dark
+   to enable dark theme you need to set background as dark
    ```
    set bg=dark
    ```
