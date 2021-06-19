@@ -333,6 +333,11 @@ if exists('g:gruvbox_vert_split')
   let s:vert_split = get(s:gb, g:gruvbox_vert_split)
 endif
 
+let s:vert_split_line = s:bg3
+if exists('g:gruvbox_vert_split_line')
+  let s:vert_split_line = get(s:gb, g:gruvbox_vert_split_line)
+endif
+
 let s:invert_signs = ''
 if exists('g:gruvbox_invert_signs')
   if g:gruvbox_invert_signs == 1
@@ -516,7 +521,7 @@ call s:HL('StatusLine',   s:bg2, s:fg1, s:inverse)
 call s:HL('StatusLineNC', s:bg1, s:fg4, s:inverse)
 
 " The column separating vertically split windows
-call s:HL('VertSplit', s:bg3, s:vert_split)
+call s:HL('VertSplit', s:vert_split_line, s:vert_split)
 
 " Current match in wildmenu completion
 call s:HL('WildMenu', s:blue, s:bg2, s:bold)
