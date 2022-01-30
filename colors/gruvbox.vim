@@ -702,10 +702,10 @@ endif
 if g:indent_guides_auto_colors == 0
   if g:gruvbox_invert_indent_guides == 0
     call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2)
-    call s:HL('IndentGuidesEven', s:vim_bg, s:bg1)
+    call s:HL('IndentGuidesEven', s:bg1, s:vim_bg)
   else
     call s:HL('IndentGuidesOdd', s:vim_bg, s:bg2, s:inverse)
-    call s:HL('IndentGuidesEven', s:vim_bg, s:bg3, s:inverse)
+    call s:HL('IndentGuidesEven', s:bg3, s:vim_bg, s:inverse)
   endif
 endif
 
