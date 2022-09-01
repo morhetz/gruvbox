@@ -641,7 +641,7 @@ if version >= 700
   " Popup menu: normal item
   call s:HL('Pmenu', s:fg1, s:bg2)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
+  call s:HL('PmenuSel', s:bg2, s:bg3, s:bold)
   " Popup menu: scrollbar
   call s:HL('PmenuSbar', s:none, s:bg2)
   " Popup menu: scrollbar thumb
