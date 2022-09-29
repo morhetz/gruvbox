@@ -131,6 +131,12 @@ let s:gb.faded_purple   = ['#8f3f71', 96]      " 143-63-113
 let s:gb.faded_aqua     = ['#427b58', 66]      " 66-123-88
 let s:gb.faded_orange   = ['#af3a03', 130]     " 175-58-3
 
+" apply palette overrides
+if !exists('g:gruvbox_palette_overrides')
+  let g:gruvbox_palette_overrides = {}
+endif
+call extend(s:gb, g:gruvbox_palette_overrides)
+
 " }}}
 " Setup Emphasis: {{{
 
