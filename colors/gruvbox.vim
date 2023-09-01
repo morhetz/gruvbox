@@ -271,30 +271,35 @@ let s:gb.orange = s:orange
 " }}}
 " Setup Terminal Colors For Neovim: {{{
 
-if has('nvim')
+if has('nvim') || has('terminal')
   let g:terminal_color_0 = s:bg0[0]
   let g:terminal_color_8 = s:gray[0]
-
   let g:terminal_color_1 = s:gb.neutral_red[0]
   let g:terminal_color_9 = s:red[0]
-
   let g:terminal_color_2 = s:gb.neutral_green[0]
   let g:terminal_color_10 = s:green[0]
-
   let g:terminal_color_3 = s:gb.neutral_yellow[0]
   let g:terminal_color_11 = s:yellow[0]
-
   let g:terminal_color_4 = s:gb.neutral_blue[0]
   let g:terminal_color_12 = s:blue[0]
-
   let g:terminal_color_5 = s:gb.neutral_purple[0]
   let g:terminal_color_13 = s:purple[0]
-
   let g:terminal_color_6 = s:gb.neutral_aqua[0]
   let g:terminal_color_14 = s:aqua[0]
-
   let g:terminal_color_7 = s:fg4[0]
   let g:terminal_color_15 = s:fg1[0]
+  if ! has('nvim')
+    let g:terminal_ansi_colors = [
+          \ g:terminal_color_0, g:terminal_color_1,
+          \ g:terminal_color_2, g:terminal_color_3,
+          \ g:terminal_color_4, g:terminal_color_5,
+          \ g:terminal_color_6, g:terminal_color_7,
+          \ g:terminal_color_8, g:terminal_color_9,
+          \ g:terminal_color_10, g:terminal_color_11,
+          \ g:terminal_color_12, g:terminal_color_13,
+          \ g:terminal_color_14, g:terminal_color_15
+          \ ]
+  endif
 endif
 
 " }}}
