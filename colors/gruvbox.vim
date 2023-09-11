@@ -1048,6 +1048,11 @@ hi! link pythonRepeat GruvboxRed
 hi! link pythonDottedName GruvboxGreenBold
 
 " }}}
+" Perl: {{{
+
+hi! link perlOperator GruvboxRed
+
+" }}}
 " CSS: {{{
 
 hi! link cssBraces GruvboxBlue
