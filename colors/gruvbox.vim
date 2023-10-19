@@ -934,7 +934,7 @@ hi! link htmlTag GruvboxBlue
 hi! link htmlEndTag GruvboxBlue
 
 hi! link htmlTagName GruvboxAquaBold
-hi! link htmlArg GruvboxAqua
+hi! link htmlArg GruvboxOrange
 
 hi! link htmlScriptTag GruvboxPurple
 hi! link htmlTagN GruvboxFg1
