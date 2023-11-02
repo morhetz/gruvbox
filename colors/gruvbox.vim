@@ -915,6 +915,55 @@ call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
 
 " }}}
 
+" Diagnostic: {{{
+
+hi! link DiagnosticError GruvboxRed
+hi! link DiagnosticWarn GruvboxYellow
+hi! link DiagnosticInfo GruvboxBlue
+hi! link DiagnosticHint GruvboxGray
+hi! link DiagnosticSignError GruvboxRedSign
+hi! link DiagnosticSignWarn GruvboxYellowSign
+hi! link DiagnosticSignInfo GruvboxBlueSign
+hi! link DiagnosticSignHint GruvboxGraySign
+
+call s:HL('DiagnosticUnderlineError', s:none, s:none, s:underline, s:red)
+call s:HL('DiagnosticUnderlineWarn', s:none, s:none, s:underline, s:yellow)
+call s:HL('DiagnosticUnderlineInfo', s:none, s:none, s:underline, s:blue)
+call s:HL('DiagnosticUnderlineHint', s:none, s:none, s:underline, s:gray)
+
+" }}} 
+" Navic {{{ 
+hi! link NavicIconsFile GruvboxFg2
+hi! link NavicIconsModule GruvboxYellow
+hi! link NavicIconsNamespace GruvboxFg2
+hi! link NavicIconsPackage GruvboxOrange
+hi! link NavicIconsClass GruvboxOrange
+hi! link NavicIconsMethod GruvboxBlue
+hi! link NavicIconsProperty GruvboxGreen
+hi! link NavicIconsField GruvboxGreen
+hi! link NavicIconsConstructor GruvboxOrange
+hi! link NavicIconsEnum GruvboxOrange
+hi! link NavicIconsInterface GruvboxOrange
+hi! link NavicIconsFunction GruvboxBlue
+hi! link NavicIconsVariable GruvboxPurple
+hi! link NavicIconsConstant GruvboxPurple
+hi! link NavicIconsString GruvboxGreen
+hi! link NavicIconsNumber GruvboxOrange
+hi! link NavicIconsBoolea GruvboxOrangen
+hi! link NavicIconsArra GruvboxOrangeny
+hi! link NavicIconsObjec GruvboxOrangent
+hi! link NavicIconsKey GruvboxRed
+hi! link NavicIconsNull GruvboxOrange
+hi! link NavicIconsEnumMember GruvboxGreen
+hi! link NavicIconsStruc GruvboxOranget
+hi! link NavicIconsEven GruvboxOranget
+hi! link NavicIconsOperator GruvboxFg2
+hi! link NavicIconsTypeParameter GruvboxGreen
+hi! link NavicTex GruvboxFg2t
+hi! link NavicSeparator GruvboxFg2
+
+" }}}
+
 " Filetype specific -----------------------------------------------------------
 " Diff: {{{
 
