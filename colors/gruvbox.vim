@@ -932,7 +932,27 @@ call s:HL('DiagnosticUnderlineInfo', s:none, s:none, s:underline, s:blue)
 call s:HL('DiagnosticUnderlineHint', s:none, s:none, s:underline, s:gray)
 
 " }}} 
+" Cmp: {{{
+
+hi! link CmpItemAbbrDeprecated GruvboxFg0
+
+hi! link CmpItemAbbrMatch GruvboxFg1
+hi! link CmpItemAbbrMatchFuzzy GruvboxFg2
+
+hi! link CmpItemKindVariable GruvboxPurple
+hi! link CmpItemKindInterface GruvboxOrange
+hi! link CmpItemKindText GruvboxFg3
+
+hi! link CmpItemKindFunction GruvboxBlue
+hi! link CmpItemKindMethod GruvboxBlue
+
+hi! link CmpItemKindKeyword GruvboxRed
+hi! link CmpItemKindProperty GruvboxGreen
+hi! link CmpItemKindUnit GruvboxFg2
+
+" }}}
 " Navic {{{ 
+
 hi! link NavicIconsFile GruvboxFg2
 hi! link NavicIconsModule GruvboxYellow
 hi! link NavicIconsNamespace GruvboxFg2
@@ -959,7 +979,7 @@ hi! link NavicIconsStruc GruvboxOranget
 hi! link NavicIconsEven GruvboxOranget
 hi! link NavicIconsOperator GruvboxFg2
 hi! link NavicIconsTypeParameter GruvboxGreen
-hi! link NavicTex GruvboxFg2t
+hi! link NavicTex GruvboxFg2
 hi! link NavicSeparator GruvboxFg2
 
 " }}}
