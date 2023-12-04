@@ -953,9 +953,9 @@ hi! link CmpItemKindUnit GruvboxFg2
 " }}}
 " Navic {{{ 
 
-hi! link NavicIconsFile GruvboxFg2
+hi! link NavicIconsFile GruvboxFg4
 hi! link NavicIconsModule GruvboxYellow
-hi! link NavicIconsNamespace GruvboxFg2
+hi! link NavicIconsNamespace GruvboxFg3 
 hi! link NavicIconsPackage GruvboxOrange
 hi! link NavicIconsClass GruvboxOrange
 hi! link NavicIconsMethod GruvboxBlue
@@ -977,10 +977,10 @@ hi! link NavicIconsNull GruvboxOrange
 hi! link NavicIconsEnumMember GruvboxGreen
 hi! link NavicIconsStruc GruvboxOranget
 hi! link NavicIconsEven GruvboxOranget
-hi! link NavicIconsOperator GruvboxFg2
+hi! link NavicIconsOperator GruvboxFg4
 hi! link NavicIconsTypeParameter GruvboxGreen
-hi! link NavicTex GruvboxFg2
-hi! link NavicSeparator GruvboxFg2
+hi! link NavicText GruvboxGray
+hi! link NavicSeparator GruvboxFg4
 
 " }}}
 
