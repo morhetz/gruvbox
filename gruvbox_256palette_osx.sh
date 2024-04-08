@@ -1,116 +1,71 @@
 #!/bin/sh
 
+colors=(
+  # --- Background shades (used in layers, UI sections) ---
+  "234=16/18/19"   # bg0_h - very dark background
+  "235=1e/1e/1e"   # bg0    - base background
+  "236=26/24/23"   # bg1    - slightly lighter bg
+  "237=2e/2a/29"   # bg2    - line numbers, subtle bg
+  "239=3f/39/35"   # bg3    - border lines, splitbars
+  "241=53/4a/42"   # bg4    - cursor line bg, subtle contrast
+  "243=68/5c/51"   # bg5    - low contrast UI elements
+
+  # --- Faded foreground / comments / subdued text ---
+  "244=7f/70/61"   # gray1  - comments
+  "245=7f/70/61"   # gray2  - docstrings, hints (same as gray1)
+
+  # --- Main foreground and subtle variants ---
+  "250=cb/b8/90"   # fg     - default foreground text
+  "248=af/9f/81"   # fg1    - slightly faded text
+  "246=97/87/71"   # fg2    - further dimmed
+
+  # --- Light background highlights (e.g. selection, search) ---
+  "228=ef/df/ae"   # yellow1 - selection bg
+  "229=fa/ee/bb"   # yellow2 - search highlight bg
+  "230=f8/f4/cd"   # lightest - special highlights
+  "223=e6/d4/a3"   # alt highlight bg
+
+  # --- Core Gruvbox accent colors ---
+  "167=f7/30/28"   # red     - errors, removals
+  "142=aa/b0/1e"   # green   - additions, success
+  "214=f7/b1/25"   # yellow  - warnings
+  "175=c7/70/89"   # purple  - function names, git renamed
+  "108=7d/b6/69"   # aqua    - type hints, diffs
+  "109=71/95/86"   # teal    - status bars, cursor
+  "208=fb/6a/16"   # orange  - search match, bright UI
+
+  # --- Darker accent variants for backgrounds or subtle diff ---
+  "88=89/00/09"    # red dark     - error background
+  "100=66/62/0d"   # green dark   - diff bg
+  "136=a5/63/11"   # yellow dark  - change marker
+  "130=9d/28/07"   # orange dark  - symbol/markup
+  "24=0e/53/65"    # blue dark    - info, links
+  "96=7b/2b/5e"    # purple dark  - markdown, hint bg
+  "66=35/6a/46"    # green deep   - background diff +
+)
+
+# Detect terminal escape sequence wrapping
 if [ "${TERM%%-*}" = "screen" ]; then
   if [ -n "$TMUX" ]; then
-    printf "\033Ptmux;\033\033]4;236;rgb:26/24/23\007\033\\"
-    printf "\033Ptmux;\033\033]4;234;rgb:16/18/19\007\033\\"
-
-    printf "\033Ptmux;\033\033]4;235;rgb:1e/1e/1e\007\033\\"
-    printf "\033Ptmux;\033\033]4;237;rgb:2e/2a/29\007\033\\"
-    printf "\033Ptmux;\033\033]4;239;rgb:3f/39/35\007\033\\"
-    printf "\033Ptmux;\033\033]4;241;rgb:53/4a/42\007\033\\"
-    printf "\033Ptmux;\033\033]4;243;rgb:68/5c/51\007\033\\"
-
-    printf "\033Ptmux;\033\033]4;244;rgb:7f/70/61\007\033\\"
-    printf "\033Ptmux;\033\033]4;245;rgb:7f/70/61\007\033\\"
-
-    printf "\033Ptmux;\033\033]4;228;rgb:ef/df/ae\007\033\\"
-    printf "\033Ptmux;\033\033]4;230;rgb:f8/f4/cd\007\033\\"
-
-    printf "\033Ptmux;\033\033]4;229;rgb:fa/ee/bb\007\033\\"
-    printf "\033Ptmux;\033\033]4;223;rgb:e6/d4/a3\007\033\\"
-    printf "\033Ptmux;\033\033]4;250;rgb:cb/b8/90\007\033\\"
-    printf "\033Ptmux;\033\033]4;248;rgb:af/9f/81\007\033\\"
-    printf "\033Ptmux;\033\033]4;246;rgb:97/87/71\007\033\\"
-
-    printf "\033Ptmux;\033\033]4;167;rgb:f7/30/28\007\033\\"
-    printf "\033Ptmux;\033\033]4;142;rgb:aa/b0/1e\007\033\\"
-    printf "\033Ptmux;\033\033]4;214;rgb:f7/b1/25\007\033\\"
-    printf "\033Ptmux;\033\033]4;109;rgb:71/95/86\007\033\\"
-    printf "\033Ptmux;\033\033]4;175;rgb:c7/70/89\007\033\\"
-    printf "\033Ptmux;\033\033]4;108;rgb:7d/b6/69\007\033\\"
-    printf "\033Ptmux;\033\033]4;208;rgb:fb/6a/16\007\033\\"
-
-    printf "\033Ptmux;\033\033]4;88;rgb:89/00/09\007\033\\"
-    printf "\033Ptmux;\033\033]4;100;rgb:66/62/0d\007\033\\"
-    printf "\033Ptmux;\033\033]4;136;rgb:a5/63/11\007\033\\"
-    printf "\033Ptmux;\033\033]4;24;rgb:0e/53/65\007\033\\"
-    printf "\033Ptmux;\033\033]4;96;rgb:7b/2b/5e\007\033\\"
-    printf "\033Ptmux;\033\033]4;66;rgb:35/6a/46\007\033\\"
-    printf "\033Ptmux;\033\033]4;130;rgb:9d/28/07\007\033\\"
+    prefix="\033Ptmux;\033"
+    suffix="\033\\"
   else
-    printf "\033P\033]4;236;rgb:26/24/23\007\033\\"
-    printf "\033P\033]4;234;rgb:16/18/19\007\033\\"
-
-    printf "\033P\033]4;235;rgb:1e/1e/1e\007\033\\"
-    printf "\033P\033]4;237;rgb:2e/2a/29\007\033\\"
-    printf "\033P\033]4;239;rgb:3f/39/35\007\033\\"
-    printf "\033P\033]4;241;rgb:53/4a/42\007\033\\"
-    printf "\033P\033]4;243;rgb:68/5c/51\007\033\\"
-
-    printf "\033P\033]4;244;rgb:7f/70/61\007\033\\"
-    printf "\033P\033]4;245;rgb:7f/70/61\007\033\\"
-
-    printf "\033P\033]4;228;rgb:ef/df/ae\007\033\\"
-    printf "\033P\033]4;230;rgb:f8/f4/cd\007\033\\"
-
-    printf "\033P\033]4;229;rgb:fa/ee/bb\007\033\\"
-    printf "\033P\033]4;223;rgb:e6/d4/a3\007\033\\"
-    printf "\033P\033]4;250;rgb:cb/b8/90\007\033\\"
-    printf "\033P\033]4;248;rgb:af/9f/81\007\033\\"
-    printf "\033P\033]4;246;rgb:97/87/71\007\033\\"
-
-    printf "\033P\033]4;167;rgb:f7/30/28\007\033\\"
-    printf "\033P\033]4;142;rgb:aa/b0/1e\007\033\\"
-    printf "\033P\033]4;214;rgb:f7/b1/25\007\033\\"
-    printf "\033P\033]4;109;rgb:71/95/86\007\033\\"
-    printf "\033P\033]4;175;rgb:c7/70/89\007\033\\"
-    printf "\033P\033]4;108;rgb:7d/b6/69\007\033\\"
-    printf "\033P\033]4;208;rgb:fb/6a/16\007\033\\"
-
-    printf "\033P\033]4;88;rgb:89/00/09\007\033\\"
-    printf "\033P\033]4;100;rgb:66/62/0d\007\033\\"
-    printf "\033P\033]4;136;rgb:a5/63/11\007\033\\"
-    printf "\033P\033]4;24;rgb:0e/53/65\007\033\\"
-    printf "\033P\033]4;96;rgb:7b/2b/5e\007\033\\"
-    printf "\033P\033]4;66;rgb:35/6a/46\007\033\\"
-    printf "\033P\033]4;130;rgb:9d/28/07\007\033\\"
+    prefix="\033P"
+    suffix="\033\\"
   fi
 else
-  printf "\033]4;236;rgb:26/24/23\033\\"
-  printf "\033]4;234;rgb:16/18/19\033\\"
-
-  printf "\033]4;235;rgb:1e/1e/1e\033\\"
-  printf "\033]4;237;rgb:2e/2a/29\033\\"
-  printf "\033]4;239;rgb:3f/39/35\033\\"
-  printf "\033]4;241;rgb:53/4a/42\033\\"
-  printf "\033]4;243;rgb:68/5c/51\033\\"
-
-  printf "\033]4;244;rgb:7f/70/61\033\\"
-  printf "\033]4;245;rgb:7f/70/61\033\\"
-
-  printf "\033]4;228;rgb:ef/df/ae\033\\"
-  printf "\033]4;230;rgb:f8/f4/cd\033\\"
-
-  printf "\033]4;229;rgb:fa/ee/bb\033\\"
-  printf "\033]4;223;rgb:e6/d4/a3\033\\"
-  printf "\033]4;250;rgb:cb/b8/90\033\\"
-  printf "\033]4;248;rgb:af/9f/81\033\\"
-  printf "\033]4;246;rgb:97/87/71\033\\"
-
-  printf "\033]4;167;rgb:f7/30/28\033\\"
-  printf "\033]4;142;rgb:aa/b0/1e\033\\"
-  printf "\033]4;214;rgb:f7/b1/25\033\\"
-  printf "\033]4;109;rgb:71/95/86\033\\"
-  printf "\033]4;175;rgb:c7/70/89\033\\"
-  printf "\033]4;108;rgb:7d/b6/69\033\\"
-  printf "\033]4;208;rgb:fb/6a/16\033\\"
-
-  printf "\033]4;88;rgb:89/00/09\033\\"
-  printf "\033]4;100;rgb:66/62/0d\033\\"
-  printf "\033]4;136;rgb:a5/63/11\033\\"
-  printf "\033]4;24;rgb:0e/53/65\033\\"
-  printf "\033]4;96;rgb:7b/2b/5e\033\\"
-  printf "\033]4;66;rgb:35/6a/46\033\\"
-  printf "\033]4;130;rgb:9d/28/07\033\\"
+  prefix=""
+  suffix="\033\\"
 fi
+
+# Apply one color index+value to the terminal palette
+set_color() {
+  index="${1%%=*}"
+  value="${1#*=}"
+  printf "${prefix}\033]4;%s;rgb:%s\007${suffix}" "$index" "$value"
+}
+
+# Loop over all defined colors
+for color in "${colors[@]}"; do
+  set_color "$color"
+done
