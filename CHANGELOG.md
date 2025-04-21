@@ -68,7 +68,7 @@
 
 - For terminals, turn off italics by default. [\#47](https://github.com/morhetz/gruvbox/pull/47) ([ryanmjacobs](https://github.com/ryanmjacobs))
 
-- Change color of vertical/horizontal seperators between split windows [\#45](https://github.com/morhetz/gruvbox/pull/45) ([deshtop](https://github.com/deshtop))
+- Change color of vertical/horizontal separators between split windows [\#45](https://github.com/morhetz/gruvbox/pull/45) ([deshtop](https://github.com/deshtop))
 
 - Improve gruvbox with C code [\#34](https://github.com/morhetz/gruvbox/pull/34) ([gladiac](https://github.com/gladiac))
 
