@@ -588,7 +588,7 @@ hi! link Label GruvboxRed
 " try, catch, throw
 hi! link Exception GruvboxRed
 " sizeof, "+", "*", etc.
-hi! link Operator Normal
+hi! link Operator GruvboxBg5 
 " Any other keyword
 hi! link Keyword GruvboxRed
 
@@ -912,6 +912,75 @@ call s:HL('CocErrorHighlight', s:none, s:none, s:undercurl, s:red)
 call s:HL('CocWarningHighlight', s:none, s:none, s:undercurl, s:orange)
 call s:HL('CocInfoHighlight', s:none, s:none, s:undercurl, s:yellow)
 call s:HL('CocHintHighlight', s:none, s:none, s:undercurl, s:blue)
+
+" }}}
+
+" Diagnostic: {{{
+
+hi! link DiagnosticError GruvboxRed
+hi! link DiagnosticWarn GruvboxYellow
+hi! link DiagnosticInfo GruvboxBlue
+hi! link DiagnosticHint GruvboxGray
+hi! link DiagnosticSignError GruvboxRedSign
+hi! link DiagnosticSignWarn GruvboxYellowSign
+hi! link DiagnosticSignInfo GruvboxBlueSign
+hi! link DiagnosticSignHint GruvboxGraySign
+
+call s:HL('DiagnosticUnderlineError', s:none, s:none, s:underline, s:red)
+call s:HL('DiagnosticUnderlineWarn', s:none, s:none, s:underline, s:yellow)
+call s:HL('DiagnosticUnderlineInfo', s:none, s:none, s:underline, s:blue)
+call s:HL('DiagnosticUnderlineHint', s:none, s:none, s:underline, s:gray)
+
+" }}} 
+" Cmp: {{{
+
+hi! link CmpItemAbbrDeprecated GruvboxFg0
+
+hi! link CmpItemAbbrMatch GruvboxFg1
+hi! link CmpItemAbbrMatchFuzzy GruvboxFg2
+
+hi! link CmpItemKindVariable GruvboxPurple
+hi! link CmpItemKindInterface GruvboxOrange
+hi! link CmpItemKindText GruvboxFg3
+
+hi! link CmpItemKindFunction GruvboxBlue
+hi! link CmpItemKindMethod GruvboxBlue
+
+hi! link CmpItemKindKeyword GruvboxRed
+hi! link CmpItemKindProperty GruvboxGreen
+hi! link CmpItemKindUnit GruvboxFg2
+
+" }}}
+" Navic {{{ 
+
+hi! link NavicIconsFile GruvboxFg4
+hi! link NavicIconsModule GruvboxYellow
+hi! link NavicIconsNamespace GruvboxFg3 
+hi! link NavicIconsPackage GruvboxOrange
+hi! link NavicIconsClass GruvboxOrange
+hi! link NavicIconsMethod GruvboxBlue
+hi! link NavicIconsProperty GruvboxGreen
+hi! link NavicIconsField GruvboxGreen
+hi! link NavicIconsConstructor GruvboxOrange
+hi! link NavicIconsEnum GruvboxOrange
+hi! link NavicIconsInterface GruvboxOrange
+hi! link NavicIconsFunction GruvboxBlue
+hi! link NavicIconsVariable GruvboxPurple
+hi! link NavicIconsConstant GruvboxPurple
+hi! link NavicIconsString GruvboxGreen
+hi! link NavicIconsNumber GruvboxOrange
+hi! link NavicIconsBoolea GruvboxOrangen
+hi! link NavicIconsArra GruvboxOrangeny
+hi! link NavicIconsObjec GruvboxOrangent
+hi! link NavicIconsKey GruvboxRed
+hi! link NavicIconsNull GruvboxOrange
+hi! link NavicIconsEnumMember GruvboxGreen
+hi! link NavicIconsStruc GruvboxOranget
+hi! link NavicIconsEven GruvboxOranget
+hi! link NavicIconsOperator GruvboxFg4
+hi! link NavicIconsTypeParameter GruvboxGreen
+hi! link NavicText GruvboxGray
+hi! link NavicSeparator GruvboxFg4
 
 " }}}
 
