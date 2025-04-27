@@ -905,6 +905,9 @@ hi! link CocDiagnosticsWarning GruvboxOrange
 hi! link CocDiagnosticsInfo GruvboxYellow
 hi! link CocDiagnosticsHint GruvboxBlue
 
+hi! link CocListMode StatusLine
+hi! link CocListPath StatusLine
+
 hi! link CocSelectedText GruvboxRed
 hi! link CocCodeLens GruvboxGray
 
