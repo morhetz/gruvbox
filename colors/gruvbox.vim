@@ -933,12 +933,12 @@ hi! link diffLine GruvboxBlue
 hi! link htmlTag GruvboxBlue
 hi! link htmlEndTag GruvboxBlue
 
-hi! link htmlTagName GruvboxAquaBold
-hi! link htmlArg GruvboxAqua
+hi! link htmlTagName GruvboxRed
+hi! link htmlArg GruvboxYellow
 
-hi! link htmlScriptTag GruvboxPurple
+hi! link htmlScriptTag GruvboxBlue
 hi! link htmlTagN GruvboxFg1
-hi! link htmlSpecialTagName GruvboxAquaBold
+hi! link htmlSpecialTagName GruvboxPurple
 
 call s:HL('htmlLink', s:fg4, s:none, s:underline)
 
