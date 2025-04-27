@@ -305,6 +305,11 @@ if exists('g:gruvbox_hls_cursor')
   let s:hls_cursor = get(s:gb, g:gruvbox_hls_cursor)
 endif
 
+let s:hls_highlight = s:orange
+if exists('g:gruvbox_hls_highlight')
+  let s:hls_highlight = get(s:gb, g:gruvbox_hls_highlight)
+endif
+
 let s:number_column = s:none
 if exists('g:gruvbox_number_column')
   let s:number_column = get(s:gb, g:gruvbox_number_column)
@@ -507,7 +512,7 @@ hi! link SpecialKey GruvboxBg2
 call s:HL('Visual',    s:none,  s:bg3, s:invert_selection)
 hi! link VisualNOS Visual
 
-call s:HL('Search',    s:yellow, s:bg0, s:inverse)
+call s:HL('Search', s:hls_highlight, s:bg0, s:inverse)
 call s:HL('IncSearch', s:hls_cursor, s:bg0, s:inverse)
 
 call s:HL('Underlined', s:blue, s:none, s:underline)
