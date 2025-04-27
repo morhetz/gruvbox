@@ -777,6 +777,13 @@ hi! link SyntasticErrorSign GruvboxRedSign
 hi! link SyntasticWarningSign GruvboxYellowSign
 
 " }}}
+" Termdebug: {{{
+
+call s:HL('debugPC', s:none, s:gb.faded_blue)
+hi! link debugBreakpoint GruvboxRedSign
+
+" }}}
+
 " Signature: {{{
 hi! link SignatureMarkText   GruvboxBlueSign
 hi! link SignatureMarkerText GruvboxPurpleSign
