@@ -25,10 +25,22 @@ Refer [Gallery][] for more syntax-specific screenshots.
 ### Dark mode
 
 ![Screenshot Dark](http://i.imgur.com/GkIl8Fn.png)
+   
+   to enable dark theme you need to set background as dark in your .vimrc
+   ```
+   set bg=dark
+   colorscheme gruvbox
+   ```
 
 ### Light mode
 
 ![Screenshot Light](http://i.imgur.com/X75niEa.png)
+
+   light theme is enabled by default, to enable this manually you need to set background as light in your .vimrc
+   ```
+   set bg=light
+   colorscheme gruvbox
+   ```
 
 ### Airline theme
 
