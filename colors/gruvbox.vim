@@ -1181,8 +1181,9 @@ hi! link jsClassKeyword GruvboxAqua
 hi! link jsExtendsKeyword GruvboxAqua
 hi! link jsExportDefault GruvboxAqua
 hi! link jsTemplateBraces GruvboxAqua
-hi! link jsGlobalNodeObjects GruvboxFg1
-hi! link jsGlobalObjects GruvboxFg1
+hi! link jsGlobalNodeObjects GruvboxBlue
+hi! link jsGlobalObjects GruvboxBlue
+hi! link jsObjectKey GruvboxGreenBold
 hi! link jsFunction GruvboxAqua
 hi! link jsFuncParens GruvboxFg3
 hi! link jsParens GruvboxFg3
