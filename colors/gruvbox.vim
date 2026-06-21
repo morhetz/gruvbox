@@ -298,6 +298,37 @@ if has('nvim')
 endif
 
 " }}}
+" Setup Terminal Colors For Vim with termguicolors: {{{
+
+if exists('*term_setansicolors')
+  let g:terminal_ansi_colors = repeat([0], 16)
+
+  let g:terminal_ansi_colors[0] = s:bg0[0]
+  let g:terminal_ansi_colors[8] = s:gray[0]
+
+  let g:terminal_ansi_colors[1] = s:gb.neutral_red[0]
+  let g:terminal_ansi_colors[9] = s:red[0]
+
+  let g:terminal_ansi_colors[2] = s:gb.neutral_green[0]
+  let g:terminal_ansi_colors[10] = s:green[0]
+
+  let g:terminal_ansi_colors[3] = s:gb.neutral_yellow[0]
+  let g:terminal_ansi_colors[11] = s:yellow[0]
+
+  let g:terminal_ansi_colors[4] = s:gb.neutral_blue[0]
+  let g:terminal_ansi_colors[12] = s:blue[0]
+
+  let g:terminal_ansi_colors[5] = s:gb.neutral_purple[0]
+  let g:terminal_ansi_colors[13] = s:purple[0]
+
+  let g:terminal_ansi_colors[6] = s:gb.neutral_aqua[0]
+  let g:terminal_ansi_colors[14] = s:aqua[0]
+
+  let g:terminal_ansi_colors[7] = s:fg4[0]
+  let g:terminal_ansi_colors[15] = s:fg1[0]
+endif
+
+" }}}
 " Overload Setting: {{{
 
 let s:hls_cursor = s:orange
