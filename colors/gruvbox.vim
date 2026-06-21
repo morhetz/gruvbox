@@ -354,6 +354,11 @@ if exists('g:gruvbox_invert_tabline')
   endif
 endif
 
+let s:tabline_sel = s:green
+if exists('g:gruvbox_tabline_sel')
+  let s:tabline_sel = get(s:gb, g:gruvbox_tabline_sel)
+endif
+
 let s:italicize_comments = s:italic
 if exists('g:gruvbox_italicize_comments')
   if g:gruvbox_italicize_comments == 0
@@ -482,7 +487,7 @@ if version >= 700
   " Tab pages line filler
   call s:HL('TabLineFill', s:bg4, s:bg1, s:invert_tabline)
   " Active tab page label
-  call s:HL('TabLineSel', s:green, s:bg1, s:invert_tabline)
+  call s:HL('TabLineSel', s:tabline_sel, s:bg1, s:invert_tabline)
   " Not active tab page label
   hi! link TabLine TabLineFill
 
