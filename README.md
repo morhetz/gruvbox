@@ -1,5 +1,11 @@
 <p align="center"><img src="https://morhetz.com/gruvbox.svg"></p>
 
+> [!NOTE]
+> Long time no see, folks. morhetz here. \
+> I'm building a desktop database client rn. \
+> If you're interested in early access once it's ready, drop me a line at
+> [t5qQuRzLpVxe@morhetz.com](mailto:t5qQuRzLpVxe@morhetz.com?subject=early%20access).
+
 gruvbox is heavily inspired by [badwolf][], [jellybeans][] and [solarized][].
 
 Designed as a bright theme with pastel 'retro groove' colors and light/dark mode switching in the way of [solarized][]. The main focus when developing gruvbox is to keep colors easily distinguishable, contrast enough and still pleasant for the eyes.
